@@ -6,6 +6,7 @@ function Header() {
 
   return (
     <>
+    
       <header className="header">
           <img 
             src={logo} 
@@ -17,9 +18,6 @@ function Header() {
             <li className="header__link">Про нас</li>
           </ul>
       </header>
-      <main>
-        Some text
-      </main>
     </>
   )
 };

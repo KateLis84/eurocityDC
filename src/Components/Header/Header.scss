@@ -1,6 +1,8 @@
+@use '../General Styles/fonts.scss' as *;
+
 .header {
-  // background-image: url(../../Assets/Images/header.png);
-  background-image: url(../../Assets/Images/3.png);
+  @include text;
+  background-image: url(../../Assets/Images/headerImage.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -27,17 +29,28 @@
     margin: 0;
     display: flex;
     color: white;
-    // position: sticky;
-    // top: 0;
+  
+    @media (max-width: 500px) {
+      &::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        position: absolute;
+        right: 0;
+      }
+    }
+  
   }
-
+  
   &__link {
     padding: 5px;
     margin-left: 45px;
     align-items: center;
     user-select: none;
     position: relative;
-
+  
     &::after {
       content: '';
       display: block;
@@ -46,15 +59,15 @@
       background: #3d7557;
       transition: width .4s;
     }
-
+  
     &:hover {
       cursor: pointer;
     }
-
+  
     &:hover:after {
       width: 100%;
     }
-
+  
     &:active {
       color: #3D7658;
     }
