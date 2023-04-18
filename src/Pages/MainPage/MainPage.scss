@@ -1,90 +1,33 @@
 @use '../../Components/General Styles/fonts.scss' as *;
 
-.mainPage {
-  height: 100vh;
+.mainPage { 
+  padding: 140px;
+  padding-top: 100px;
 
   &__slides {
-    margin: 100px;
     display: block;
-    width: 90vw;
+    width: calc(100vw - 280px);
     height: 90vh;
-    margin: 0 auto;
-    margin-top: 150px;
-  }
-}
-
-.slides {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-
-  &__part {
-    width: 20%;
-    height: 100%;
-    position: relative;
-    transition: all .5s;
-
-    &:hover {
-      cursor: pointer;
-      width: 50%;
-    }
-
-    &:hover .slides__overlay{
-      display: flex;
-      animation: slide__overlay .5s forwards;
-    }
+    margin-top: 20px;
   }
 
-  @keyframes slide__overlay {
-    0% {
-      opacity: 0;
-    }
-
-    50% {
-      opacity: 0.8;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  &__photo {
-    width: 100%;
-    height: inherit;
-    object-fit: cover;
-  }
-
-  &__overlay {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #041818 99.49%);
-    position: absolute;
-    width: 100%;
-    height: inherit;
-    display: block;
-    top: 0;
-    transition: .5s;
-    display: none;
-    opacity: 0;
+  &__cardBlock {
+    margin-top: 100px;
   }
 
   &__title {
-    color: white;
-    display: block;
-    margin: 10px;
+    padding: 20px;
+    color: #051C1B;
+    @include text;
+    text-align: center;
+    font-size: 40px;
+    border-top: 1px solid #051C1B;
   }
 
-  &__description {
-    color: white;
-    margin: 10px;
-    @include textLight;
-    flex-wrap: wrap;
-    width: 600px;
-  }
-
-  &__text {
-    align-self: flex-end;
-    // white-space: nowrap;
-    // overflow: hidden;
-    // text-overflow: ellipsis;
+  &__cards {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
   }
 }

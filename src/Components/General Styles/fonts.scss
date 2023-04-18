@@ -2,7 +2,7 @@
 @mixin text {
   font-family: 'Inter', sans-serif;
   font-family: 'Open Sans', sans-serif;
-
+  font-weight: 400;
   @media (min-width: 768px) {
 
   }
@@ -13,4 +13,10 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.519);
+}
+
+@mixin textBold {
+  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
 }
