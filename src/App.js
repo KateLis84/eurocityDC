@@ -5,8 +5,8 @@ import LevelPage from './Pages/LevelPage/LevelPage'
 function App() {
   return (
     <div>
-      {/* <Header/>
-      <MainPage/> */}
+      {/* <Header/> */}
+      {/* <MainPage/> */}
       <LevelPage/>
     </div>
   );

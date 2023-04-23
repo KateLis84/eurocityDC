@@ -5,24 +5,6 @@ import $ from 'jquery'
 import { maphilight } from 'maphilight'
 import HoverInfo from './HoverInfo'
 
-let coords = [
-  {
-    x: [8, 8, 278, 278],
-    y: [8, 214, 214, 8]
-  },
-  {
-    x: [8, 162, 162, 8], 
-    y: [225, 225, 470, 470]
-  },
-  {
-    x: [285, 285, 441, 441], 
-    y: [9, 214, 214, 9] 
-  },
-  {
-    x: [450, 450, 609, 609], 
-    y: [8, 213, 213, 8] 
-  }
-];
 
 function Area(props) {
   let scale = 1;
@@ -32,9 +14,13 @@ function Area(props) {
     isDisplayed: false,
     info: '',
   });
+  let coords = props.flats.map((e)=>{
+    return e.mapCoords;
+  })
 
-  function visibleInfo() {
-    setInfo({...infoProperties, isDisplayed: true});
+  function visibleInfo(e) {
+    let flat = props.flats[e.currentTarget.id]
+    setInfo({...infoProperties, isDisplayed: true, info: flat});
   }
 
   function invisibleInfo() {
@@ -76,12 +62,12 @@ function Area(props) {
             }
             return(
               <area 
-                key={index}
+                id={index}
                 alt="flat"
                 shape="poly" 
                 coords={tempAreaShape} 
                 href="#"
-                onMouseOver={()=>{visibleInfo()}}
+                onMouseOver={visibleInfo}
                 onMouseLeave={()=>{invisibleInfo()}}
               />
             )

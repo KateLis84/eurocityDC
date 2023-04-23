@@ -1,12 +1,13 @@
 import {React, useEffect} from 'react';
+import './Area.scss'
 
 function HoverInfo (props) {
 
-  let myDiv=document.getElementsByClassName('test')[0];
+  let myDiv=document.getElementsByClassName('popup')[0];
 
   useEffect(()=>{
-    myDiv=document.getElementsByClassName('test')[0];
-    myDiv.style.display = props.isDisplayed ? 'block' : 'none';
+    myDiv=document.getElementsByClassName('popup')[0];
+    myDiv.style.display = props.isDisplayed ? 'grid' : 'none';
   })
 
   function isTouchDevice() {
@@ -20,7 +21,6 @@ function HoverInfo (props) {
   }
 
   const move = (e) => {
-    console.log('aaa')
     try{
       var x = !isTouchDevice() ? e.pageX : e.touches[0].pageX;
       var y = !isTouchDevice() ? e.pageY : e.touches[0].pageY;
@@ -31,16 +31,17 @@ function HoverInfo (props) {
   };
 
   document.addEventListener("mousemove", (e)=> {
-    myDiv=document.getElementsByClassName('test')[0];
+    myDiv=document.getElementsByClassName('popup')[0];
     move(e);
   })
 
-  document.addEventListener("touchmove", (e)=> {
-    move(e)
-  })
-
   return(
-    <div className="test">Hello world</div>
+    <div className="popup">
+      <div className="popup__field">{props.info.flat}</div>
+      <div className="popup__field">{props.info.area}</div>
+      <div className="popup__field">{props.info.rooms}</div>
+      <div className="popup__field">{props.info.flat}</div>
+    </div>
   )
 }
 
