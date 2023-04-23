@@ -1,17 +1,17 @@
-@use '../../Components/General Styles/fonts.scss' as *;
+@use '../../Components/GeneralStyles/fonts.scss' as *;
 
-.slides {
+.slides{
   display: flex;
   justify-content: center;
   gap: 20px;
 
-  &__part {
+  &__part{
     width: 20%;
     height: 100%;
     position: relative;
     transition: all .5s;
 
-    &:hover {
+    &:hover{
       cursor: pointer;
       width: 50%;
     }
@@ -22,27 +22,27 @@
     }
   }
 
-  @keyframes slide__overlay {
-    0% {
+  @keyframes slide__overlay{
+    0%{
       opacity: 0;
     }
 
-    50% {
+    50%{
       opacity: 0.8;
     }
 
-    100% {
+    100%{
       opacity: 1;
     }
   }
 
-  &__photo {
+  &__photo{
     width: 100%;
     height: inherit;
     object-fit: cover;
   }
 
-  &__overlay {
+  &__overlay{
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #041818 99.49%);
     position: absolute;
     width: 100%;
@@ -54,13 +54,13 @@
     opacity: 0;
   }
 
-  &__title {
+  &__title{
     color: white;
     display: block;
     margin: 10px;
   }
 
-  &__description {
+  &__description{
     color: white;
     margin: 10px;
     @include textLight;
@@ -68,7 +68,7 @@
     width: 600px;
   }
 
-  &__text {
+  &__text{
     align-self: flex-end;
     // white-space: nowrap;
     // overflow: hidden;

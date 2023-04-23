@@ -1,4 +1,4 @@
-.popup {
+.popup{
   background-color: aquamarine;
   width: 100px;
   padding: 5px;
@@ -10,10 +10,10 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.popup__field {
+.popup__field{
   margin-left: 5px;
 }
 
-.popup__field:nth-child(-n+2) {
+.popup__field:nth-child(-n+2){
   border-bottom: 1px solid black;
 }

@@ -1,6 +1,6 @@
-@use '../General Styles/fonts.scss' as *;
+@use '../GeneralStyles/fonts.scss' as *;
 
-.header {
+.header{
   @include text;
   background-image: url(../../Assets/Images/headerImage.png);
   background-repeat: no-repeat;
@@ -13,7 +13,7 @@
   box-sizing: border-box;
   font-size: 20px;
 
-  &::before {
+  &::before{
     content: "";
     position: absolute;
     background-color: rgba(0, 0, 0, 0.226);
@@ -23,15 +23,15 @@
     width: 100%;
   }
 
-  &__list {
+  &__list{
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     color: white;
   
-    @media (max-width: 500px) {
-      &::before {
+    @media (max-width: 500px){
+      &::before{
         content: "";
         display: block;
         width: 20px;
@@ -44,14 +44,14 @@
   
   }
   
-  &__link {
+  &__link{
     padding: 5px;
     margin-left: 45px;
     align-items: center;
     user-select: none;
     position: relative;
   
-    &::after {
+    &::after{
       content: '';
       display: block;
       width: 0;
@@ -60,21 +60,21 @@
       transition: width .4s;
     }
   
-    &:hover {
+    &:hover{
       cursor: pointer;
     }
   
-    &:hover:after {
+    &:hover:after{
       width: 100%;
     }
   
-    &:active {
+    &:active{
       color: #3D7658;
     }
   }
 }
 
-.logo {
+.logo{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -82,6 +82,6 @@
   user-select: none;
 }
 
-main {
+main{
   height: 100vh;
 }

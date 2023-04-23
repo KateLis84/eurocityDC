@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Open+Sans:wght@300;400;700&display=swap');
-@mixin text {
+@mixin text{
   font-family: 'Inter', sans-serif;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  @media (min-width: 768px) {
+  @media (min-width: 768px){
 
   }
 }
 
-@mixin textLight {
+@mixin textLight{
   font-family: 'Inter', sans-serif;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.519);
 }
 
-@mixin textBold {
+@mixin textBold{
   font-family: 'Inter', sans-serif;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
