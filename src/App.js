@@ -1,13 +1,13 @@
 import Header from './Components/Header/Header'
 import MainPage from './Pages/MainPage/MainPage'
-import Canvas from './Components/Area/Area'
+import LevelPage from './Pages/LevelPage/LevelPage'
 
 function App() {
   return (
     <div>
       {/* <Header/>
       <MainPage/> */}
-      <Canvas/>
+      <LevelPage/>
     </div>
   );
 }
