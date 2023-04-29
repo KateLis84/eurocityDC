@@ -7,12 +7,10 @@ import Constructor from './Pages/Constructor/Constructor.js'
 function App() {
   return (
     <div>
-      <Header/>
-      <div className='container'>
-        {/* <MainPage/> */}
-        <LevelPage/>
-        {/* <Constructor/> */}
-      </div>
+      {/* <Header/> */}
+      {/* <MainPage/> */}
+      <LevelPage/>
+      {/* <Constructor/> */}
     </div>
   );
 }

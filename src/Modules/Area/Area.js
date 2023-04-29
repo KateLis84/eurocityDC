@@ -36,9 +36,9 @@ function Area({level}) {
 
   useEffect(()=>{
     $('.mapF').maphilight({
-      stroke: true,
-      fillColor: 'FF0000',
-      fillOpacity: 0.2
+      stroke: false,
+      fillColor: '90C55B',
+      fillOpacity: 0.7
     });
     scaleImage();
   }, [level]);

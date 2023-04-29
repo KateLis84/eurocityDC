@@ -7,7 +7,7 @@ function HoverInfo ({isDisplayed, info}) {
 
   useEffect(()=>{
     myDiv=document.getElementsByClassName('popup')[0];
-    myDiv.style.display = isDisplayed ? 'grid' : 'none';
+    myDiv.style.display = isDisplayed ? 'block' : 'none';
   })
 
   function isTouchDevice() {
@@ -27,7 +27,7 @@ function HoverInfo ({isDisplayed, info}) {
     } catch (e) {}
 
     myDiv.style.left = x +10+ "px";
-    myDiv.style.top = y -20+ "px";
+    myDiv.style.top = y -150+ "px";
   };
 
   document.addEventListener("mousemove", (e)=> {
@@ -37,10 +37,13 @@ function HoverInfo ({isDisplayed, info}) {
 
   return(
     <div className="popup">
-      <div className="popup__field">{info.flat}</div>
+      {/* <div className="popup__field">{info.flat}</div>
       <div className="popup__field">{info.area}</div>
       <div className="popup__field">{info.rooms}</div>
-      <div className="popup__field">{info.flat}</div>
+      <div className="popup__field">{info.flat}</div> */}
+      <div className="popup__flat">Квартира {info.flat}</div>
+      <div className="popup__field">Площа: {info.area}</div>
+      <div className="popup__field">Кімнат: {info.rooms}</div>
     </div>
   )
 }
