@@ -1,13 +1,13 @@
 import {React, useEffect} from 'react';
 import './Area.scss'
 
-function HoverInfo (props) {
+function HoverInfo ({isDisplayed, info}) {
 
   let myDiv=document.getElementsByClassName('popup')[0];
 
   useEffect(()=>{
     myDiv=document.getElementsByClassName('popup')[0];
-    myDiv.style.display = props.isDisplayed ? 'grid' : 'none';
+    myDiv.style.display = isDisplayed ? 'grid' : 'none';
   })
 
   function isTouchDevice() {
@@ -37,10 +37,10 @@ function HoverInfo (props) {
 
   return(
     <div className="popup">
-      <div className="popup__field">{props.info.flat}</div>
-      <div className="popup__field">{props.info.area}</div>
-      <div className="popup__field">{props.info.rooms}</div>
-      <div className="popup__field">{props.info.flat}</div>
+      <div className="popup__field">{info.flat}</div>
+      <div className="popup__field">{info.area}</div>
+      <div className="popup__field">{info.rooms}</div>
+      <div className="popup__field">{info.flat}</div>
     </div>
   )
 }

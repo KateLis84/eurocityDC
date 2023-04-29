@@ -1,0 +1,54 @@
+@use '../../Constants/GeneralStyles/fonts.scss' as *;
+
+.levelPage {
+
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  grid-gap: 100px;
+  margin-top: 100px;
+
+  &__levels {
+    // background-color: red;
+  }
+}
+
+.levels {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  user-select: none;
+
+  $sizes: 60px;
+  &__level {
+    width: $sizes;
+    height: $sizes;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    @include text;
+    font-size: 38px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:nth-child(n+2) {
+      margin-left: calc($sizes - 20px);
+    }
+
+    transition: 1s;
+  }
+
+  &__choseBox {
+    background-color: #3D7658;
+    width: calc($sizes + 1px);
+    height: calc($sizes + 1px);;
+    position: absolute;
+    z-index: -1;
+    transition: all .5s;
+    left: 0px;
+  }
+}

@@ -1,25 +1,25 @@
 import {React, useEffect, useState} from 'react'
-import model from '../../Assets/Images/model.jpg'
 import './Area.scss'
 import $ from 'jquery'
 import { maphilight } from 'maphilight'
 import HoverInfo from './HoverInfo'
 
 
-function Area(props) {
+function Area({level}) {
   let scale = 1;
   let tempAreaShape = "";
-  let image;
+  let image = level.photo;
+  let minWidth='950px';
   const [infoProperties, setInfo] = useState({
     isDisplayed: false,
     info: '',
   });
-  let coords = props.flats.map((e)=>{
+  let coords = level.flats.map((e)=>{
     return e.mapCoords;
   })
 
   function visibleInfo(e) {
-    let flat = props.flats[e.currentTarget.id]
+    let flat = level.flats[e.currentTarget.id]
     setInfo({...infoProperties, isDisplayed: true, info: flat});
   }
 
@@ -29,8 +29,8 @@ function Area(props) {
 
   function scaleImage() {
     let image = document.getElementById("mapImg");
-    let scaledImage = image.naturalWidth * scale;
-    console.log(image.naturalWidth)
+    image.style.width = minWidth;
+    let scaledImage = image.offsetWidth * scale;
     image.style.width = `${scaledImage}px`;
   }
 
@@ -41,12 +41,12 @@ function Area(props) {
       fillOpacity: 0.2
     });
     scaleImage();
-  },[]);
+  }, [level]);
 
   return(
-    <>
+    <div>
       <img 
-        src={model} 
+        src={image}
         usemap="#shape" 
         className="mapF" 
         id="mapImg"
@@ -61,7 +61,7 @@ function Area(props) {
               tempAreaShape += `${el.x[i]*scale}, ${el.y[i]*scale},`
             }
             return(
-              <area 
+              <a href="#"><area 
                 id={index}
                 alt="flat"
                 shape="poly" 
@@ -69,7 +69,7 @@ function Area(props) {
                 href="#"
                 onMouseOver={visibleInfo}
                 onMouseLeave={()=>{invisibleInfo()}}
-              />
+              /></a>
             )
           })
           
@@ -79,7 +79,7 @@ function Area(props) {
         isDisplayed={infoProperties.isDisplayed}
         info={infoProperties.info}
       />
-    </>
+    </div>
   )
 }
 
