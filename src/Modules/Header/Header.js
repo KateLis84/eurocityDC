@@ -7,10 +7,13 @@ function Header() {
   useEffect(()=>{
     if(document.getElementsByClassName('mainPage')[0]==undefined) {
       document.getElementsByTagName('header')[0].classList.remove('header__mainPage')
-      document.getElementsByClassName("header__list")[0].style.color = "black"
+      document.getElementsByTagName('header')[0].style.position = 'fixed';
+      document.getElementsByClassName("header__list")[0].style.color = "white"
+      document.getElementsByClassName("header__logo")[0].style.display = "none"
     } else {
       document.getElementsByTagName('header')[0].classList.add('header__mainPage')
       document.getElementsByClassName("header__list")[0].style.color = "white"
+      document.getElementsByClassName("header__logo")[0].style.display = "block"
     }
   }, [])
 
@@ -19,7 +22,7 @@ function Header() {
         <img 
           src={logo} 
           alt="logo"
-          className='logo'/>
+          className='logo header__logo'/>
         <ul className="header__list">
           <li className="header__link">Проекти</li>
           <li className="header__link">Контакти</li>

@@ -9,6 +9,10 @@
   padding: 20px;
   box-sizing: border-box;
   font-size: 20px;
+  background-color: #051C1B;
+  left: 0;
+  right: 0;
+  z-index: 4;
 
   &__mainPage {
     background-image: url(../../Assets/Images/headerImage.png);

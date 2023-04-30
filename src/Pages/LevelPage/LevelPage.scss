@@ -4,11 +4,13 @@
 
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 1fr 3fr;
   justify-items: center;
-  grid-gap: 100px;
+  // grid-gap: 100px;
   // min-height: 150vh;
+  padding: 100px;
 
-  // background-image: url('../../Assets/Images/building2.jpg');
+  // background-image: url('../../Assets/Images/buildingBackground.png');
   // background-repeat: no-repeat;
   // background-size: cover;
 
@@ -21,6 +23,7 @@
 .levels {
   display: flex;
   position: relative;
+  align-items: center;
   flex-direction: row;
   user-select: none;
   $sizes: 60px;
