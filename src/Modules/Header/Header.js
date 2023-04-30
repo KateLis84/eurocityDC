@@ -1,23 +1,31 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import './Header.scss'
 import logo from '../../Assets/Images/logoWhite.png'
 
 function Header() {
 
+  useEffect(()=>{
+    if(document.getElementsByClassName('mainPage')[0]==undefined) {
+      document.getElementsByTagName('header')[0].classList.remove('header__mainPage')
+      document.getElementsByClassName("header__list")[0].style.color = "black"
+    } else {
+      document.getElementsByTagName('header')[0].classList.add('header__mainPage')
+      document.getElementsByClassName("header__list")[0].style.color = "white"
+    }
+  }, [])
+
   return (
-    <>
-      <header className="header">
-          <img 
-            src={logo} 
-            alt="logo"
-            className='logo'/>
-          <ul className="header__list">
-            <li className="header__link">Проекти</li>
-            <li className="header__link">Контакти</li>
-            <li className="header__link">Про нас</li>
-          </ul>
+      <header className="header header__mainPage">
+        <img 
+          src={logo} 
+          alt="logo"
+          className='logo'/>
+        <ul className="header__list">
+          <li className="header__link">Проекти</li>
+          <li className="header__link">Контакти</li>
+          <li className="header__link">Про нас</li>
+        </ul>
       </header>
-    </>
   )
 };
 

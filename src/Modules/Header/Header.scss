@@ -2,26 +2,30 @@
 
 .header{
   @include text;
-  background-image: url(../../Assets/Images/headerImage.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  border: 1px solid black;
-  height: 100vh;
   padding: 20px;
   box-sizing: border-box;
   font-size: 20px;
 
-  &::before{
-    content: "";
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.226);
+  &__mainPage {
+    background-image: url(../../Assets/Images/headerImage.png);
     height: 100vh;
-    top: 0;
-    left: 0;
-    width: 100%;
+
+    &::before{
+      content: "";
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.226);
+      height: 100vh;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
   }
+
+  
 
   &__list{
     list-style: none;
@@ -29,6 +33,7 @@
     margin: 0;
     display: flex;
     color: white;
+    color: black;
   
     @media (max-width: 500px){
       &::before{

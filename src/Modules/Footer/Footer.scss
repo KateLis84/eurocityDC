@@ -1,0 +1,47 @@
+@use '../../Constants/GeneralStyles/fonts.scss' as *;
+.footer {
+  @include text;
+  color: white;
+  background-color: #051C1B;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+  padding-left: 150px;
+  // margin-top: 20px;
+
+  // position:absolute;
+  // bottom:0;
+  // left:0;
+  // right:0;
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 15px;
+    margin-bottom: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__element {
+
+    &_cities {
+      display: grid;
+      text-align: center;
+    }
+
+    &_phone {
+      text-align: center;
+    }
+  }
+
+  &__cities {
+    display: flex;
+    justify-content: space-around;
+  }
+}

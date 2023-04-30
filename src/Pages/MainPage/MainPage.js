@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import './MainPage.scss'
 import Slides from '../../Components/Slides/Slides'
 import Card from '../../Components/Card/Card'
@@ -7,7 +7,7 @@ import Card from '../../Components/Card/Card'
 function MainPage() {
 
   return (
-    <main className="mainPage">
+    <div className="mainPage">
       
       <Slides/>
       
@@ -28,9 +28,7 @@ function MainPage() {
           <Card/> 
         </div>
       </div>
-      
-      rfrf
-    </main>
+    </div>
   );
 }
 
