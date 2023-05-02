@@ -24,6 +24,7 @@ function Header() {
           alt="logo"
           className='logo header__logo'/>
         <ul className="header__list">
+          {/* <img src={logo} className="header__link logo"/> */}
           <li className="header__link">Проекти</li>
           <li className="header__link">Контакти</li>
           <li className="header__link">Про нас</li>

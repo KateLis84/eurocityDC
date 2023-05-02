@@ -1,4 +1,5 @@
 import './App.css'
+import { Routes, Route } from 'react-router-dom';
 import Header from './Modules/Header/Header'
 import Footer from './Modules/Footer/Footer.js'
 import MainPage from './Pages/MainPage/MainPage'
@@ -7,15 +8,14 @@ import Constructor from './Pages/Constructor/Constructor.js'
 
 function App() {
   return (
-    <div>
+    <>
       <Header/>
-      <div>
-        {/* <MainPage/> */}
-        <LevelPage/>
-        {/* <Constructor/> */}
-      </div>
+      <Routes>
+        <Route path="/" element={<MainPage/>} />
+        <Route path="/level" element={<LevelPage/>} />
+      </Routes>
       <Footer/>
-    </div>
+    </>
   );
 }
 

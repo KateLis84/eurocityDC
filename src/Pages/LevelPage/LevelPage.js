@@ -9,6 +9,7 @@ function LevelPage() {
   const [map, setMap] = useState(json.levels[0]);
 
   useEffect(() => {
+    console.log(window.screen.width)
     setLoading(false);
   });
 
