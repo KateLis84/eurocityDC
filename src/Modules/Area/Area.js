@@ -6,10 +6,11 @@ import HoverInfo from './HoverInfo'
 
 
 function Area({level}) {
-  let scale = 1;
+  let scale = setScale();
   let tempAreaShape = "";
   let image = level.photo;
   let minWidth='950px';
+  
   const [infoProperties, setInfo] = useState({
     isDisplayed: false,
     info: '',
@@ -25,6 +26,12 @@ function Area({level}) {
 
   function invisibleInfo() {
     setInfo({...infoProperties, isDisplayed: false});
+  }
+
+  function setScale() {
+    let screenWidth = window.screen.width;
+    let imageWidth = screenWidth * 0.62;
+    return (imageWidth/950).toFixed(1);
   }
 
   function scaleImage() {
@@ -56,7 +63,6 @@ function Area({level}) {
       <map name="shape">
         {
           coords.map((el, index)=>{
-            tempAreaShape = ""
             for(let i = 0; i<el.x.length; i++){
               tempAreaShape += `${el.x[i]*scale}, ${el.y[i]*scale},`
             }
