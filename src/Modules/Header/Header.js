@@ -1,9 +1,10 @@
 import {React, useEffect} from 'react';
 import './Header.scss'
 import logo from '../../Assets/Images/logoWhite.png'
+import { HashLink as Link } from 'react-router-hash-link';
 
 function Header() {
-
+  
   useEffect(()=>{
     if(document.getElementsByClassName('mainPage')[0]==undefined) {
       document.getElementsByTagName('header')[0].classList.remove('header__mainPage')
@@ -25,7 +26,7 @@ function Header() {
           className='logo header__logo'/>
         <ul className="header__list">
           {/* <img src={logo} className="header__link logo"/> */}
-          <li className="header__link">Проекти</li>
+          <Link to="#JKgallery" class="routeLink"><li className="header__link">Проєкти</li></Link>
           <li className="header__link">Контакти</li>
           <li className="header__link">Про нас</li>
         </ul>

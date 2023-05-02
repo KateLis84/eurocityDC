@@ -1,5 +1,13 @@
 @use '../../Constants/GeneralStyles/fonts.scss' as *;
 
+html {
+  scroll-behavior: smooth;
+}
+
+.routeLink {
+  all: unset;
+}
+
 .header{
   @include text;
   background-repeat: no-repeat;

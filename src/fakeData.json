@@ -1,8 +1,70 @@
 {
-  "complexes": {
-    "HalBud": {
-      "levels": [
+  "complexes": [
+    {
+      "name": "Стожари",
+      "description": "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+      "photo": "images/building1.jpg",
+      "levels": [{
+        "level": 1,
+        "photo": "images/model1.jpg",
+        "flats": [
+            {
+              "flat": "7",
+              "area": "80.96",
+              "rooms": 3,
+              "mapCoords": {
+                "x": [
+                  8,
+                  8,
+                  278,
+                  278
+                ],
+                "y": [
+                  8,
+                  214,
+                  214,
+                  8
+                ]
+              }
+            }
+        ]
+        },
         {
+          "level": 2,
+          "photo": "images/model2.jpg",
+          "flats": [
+            {
+              "flat": "3",
+              "area": "80.96",
+              "rooms": 3,
+              "mapCoords": {
+                "x": [
+                  796,
+                  500,
+                  436,
+                  591,
+                  643,
+                  799
+                ],
+                "y": [
+                  298,
+                  296,
+                  361,
+                  519,
+                  467,
+                  468
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+        "name": "Green Village",
+        "description": "Contrary to popular belief, Lorem Ipsum is not simply random text",
+        "photo": "images/building2.jpg",
+        "levels": [{
           "level": 1,
           "photo": "images/model1.jpg",
           "flats": [
@@ -57,6 +119,66 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Маєток Винниківський",
+      "description": "Contrary to popular belief, Lorem Ipsum is not simply random text",
+      "photo": "images/building3.jpg",
+        "levels": [{
+        "level": 1,
+        "photo": "images/model1.jpg",
+        "flats": [
+          {
+            "flat": "7",
+            "area": "80.96",
+            "rooms": 3,
+            "mapCoords": {
+              "x": [
+                8,
+                8,
+                278,
+                278
+              ],
+              "y": [
+                8,
+                214,
+                214,
+                8
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "photo": "images/model2.jpg",
+        "flats": [
+          {
+            "flat": "3",
+            "area": "80.96",
+            "rooms": 3,
+            "mapCoords": {
+              "x": [
+                796,
+                500,
+                436,
+                591,
+                643,
+                799
+              ],
+              "y": [
+                298,
+                296,
+                361,
+                519,
+                467,
+                468
+              ]
+            }
+          }
+        ]
+      }
+    ]
     }
-  }
+  ]
 }

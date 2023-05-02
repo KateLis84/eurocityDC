@@ -2,7 +2,7 @@ import { React, useEffect, useState } from "react";
 import LevelMap from "../../Modules/Area/Area";
 import "./LevelPage.scss";
 
-let json = require("../../fakeData.json").complexes.HalBud;
+let json = require("../../fakeData.json").complexes[0];
 
 function LevelPage() {
   const [loading, setLoading] = useState(true);
