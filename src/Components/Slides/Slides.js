@@ -7,7 +7,7 @@ let data = require("../../fakeData.json").complexes;
 function Slides() {
   return (
     
-      <div className="slides mainPage__slides" id="JKgallery">
+      <div className="slides mainPage__slides">
         {data.map((e)=>{
           return(
             <div className="slides__part">

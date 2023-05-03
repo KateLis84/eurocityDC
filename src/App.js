@@ -5,16 +5,18 @@ import Footer from './Modules/Footer/Footer.js'
 import MainPage from './Pages/MainPage/MainPage'
 import LevelPage from './Pages/LevelPage/LevelPage'
 import Constructor from './Pages/Constructor/Constructor.js'
+import MobileSlides from './Components/MobileSlides/MobileSlides.js'
 
 function App() {
   return (
     <>
-      <Header/>
+      {/* <Header/>
       <Routes>
         <Route path="/" element={<MainPage/>} />
         <Route path="/level" element={<LevelPage/>} />
       </Routes>
-      <Footer/>
+      <Footer/> */}
+      <MobileSlides/>
     </>
   );
 }

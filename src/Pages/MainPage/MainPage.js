@@ -8,13 +8,13 @@ function MainPage() {
 
   return (
     <div className="mainPage">
-      
+      <div className='mainPage__title' id="JKgallery">Проєкти</div>
       <Slides/>
       
       <div className='mainPage__cardBlock'>
         <div className='mainPage__title'>Новини</div>
         <div className='mainPage__cards'>
-          <Card/>
+          <Card/> 
           <Card/>
           <Card/>
         </div>
