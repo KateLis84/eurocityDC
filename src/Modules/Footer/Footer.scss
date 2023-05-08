@@ -15,12 +15,12 @@
   }
 
   &__title {
-    font-size: 24px;
+    font-size: 34px;
     margin-bottom: 20px;
   }
 
   &__text {
-    font-size: 15px;
+    font-size: 20px;
     margin-bottom: 10px;
 
     &:hover {
@@ -58,6 +58,67 @@
       display: grid;
       width: 50vw;
       grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media(max-width: 1000px) {
+  .footer {
+    grid-template-columns: 1fr;
+    padding: 0;
+    padding-left: 20px;
+  
+    &__title {
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+  
+    &__text {
+      font-size: 20px;
+      margin-bottom: 10px;
+  
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  
+    &__element {
+      &_cities {
+        text-align: left;
+      }
+  
+      &_phone {
+        text-align: left;
+      }
+  
+      margin-top: 20px;
+    }
+  
+    &__cities {
+        display: grid;
+        width: 50vw;
+        grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .footer {
+    padding: 0;
+    padding-left: 20px;
+  
+    &__title {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+  
+    &__text {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+  
+    &__cities {
+      width: 50vw;
     }
   }
 }

@@ -5,7 +5,7 @@
 
   justify-self: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  max-width: 500px;
+  max-width: 450px;
 
   &:nth-child(3){
     justify-self: end;
@@ -39,7 +39,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 350px;
+    height: 300px;
     transition: .5s;
   }
 
@@ -192,11 +192,15 @@
 
 @media(max-width: 450px) {
   .card{
+    margin-bottom: 30px;
     &__title{
       font-size: 25px;
     }
     &__description{
       font-size: 15px;
+    }
+    &__pic{
+      height: 200px;
     }
   }
 }

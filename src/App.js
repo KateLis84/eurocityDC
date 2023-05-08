@@ -4,8 +4,7 @@ import Header from './Modules/Header/Header'
 import Footer from './Modules/Footer/Footer.js'
 import MainPage from './Pages/MainPage/MainPage'
 import LevelPage from './Pages/LevelPage/LevelPage'
-import Constructor from './Pages/Constructor/Constructor.js'
-import MobileSlides from './Components/MobileSlides/MobileSlides.js'
+import Testing from './Components/Test/Test.js'
 
 function App() {
   return (
@@ -16,6 +15,7 @@ function App() {
         <Route path="/level" element={<LevelPage/>} />
       </Routes>
       <Footer/>
+      {/* <Testing/> */}
     </>
   );
 }

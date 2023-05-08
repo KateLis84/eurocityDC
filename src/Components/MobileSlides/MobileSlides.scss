@@ -275,7 +275,7 @@
     width: 200px;
     max-width: 408px;
     height: 100%;
-    background-color: #e4e4e4;
+    // background-color: #e4e4e4;
     position: absolute;
     left: -100px;
   }
@@ -448,7 +448,7 @@
     bottom: 0;
     left: 0;
     z-index: 2;
-    background: linear-gradient(to top,#f2f3f3,rgba(248,248,248,0));
+    background: linear-gradient(to top,#000000,rgba(248,248,248,0));
   }
 }
 

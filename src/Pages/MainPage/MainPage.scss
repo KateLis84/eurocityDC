@@ -90,18 +90,29 @@
 }
 
 @media(max-width: 450px) {
-  @media(max-width: 1000px) {
+  #JKgallery {
+    display: none;
+  }
     .mainPage{ 
       padding: 0px;
-      padding-top: 100px;
+      padding-top: 0px;
     
       &__title{
-        padding: 20px;
-        color: #051C1B;
-        @include text;
+        margin: 0 auto;
+        padding: 10px;
+        color: #2B614C;
+        @include textBold;
         text-align: center;
-        font-size: 40px;
-        border-top: 1px solid #051C1B;
+        font-size: 50px;
+        border: 0;
+      }
+
+      // &__title:first-child {
+      //   display: none;
+      // }
+
+      &__cardBlock{
+        margin-top: 50px;
       }
     
       &__cards{
@@ -111,5 +122,4 @@
         grid-template-columns: 1fr;
       }
     }
-  }
 }

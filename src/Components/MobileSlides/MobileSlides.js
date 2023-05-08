@@ -16,7 +16,7 @@ export default function MobileSlide() {
           spaceBetween={30}
           speed={1500}
           autoplay={2500}
-          loop={false}
+          loop={true}
         >
 
           {data.map((el, index)=>{
