@@ -1,7 +1,7 @@
 {
   "complexes": [
     {
-      "name": "Стожари",
+      "name": "ЖК Стожари",
       "description": "Contrary to popular belief, Lorem Ipsum is not simply random text.",
       "photo": "images/building1.jpg",
       "levels": [{
@@ -121,7 +121,7 @@
       ]
     },
     {
-      "name": "Маєток Винниківський",
+      "name": "Маєток Винковий",
       "description": "Contrary to popular belief, Lorem Ipsum is not simply random text",
       "photo": "images/building3.jpg",
         "levels": [{
