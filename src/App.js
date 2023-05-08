@@ -10,13 +10,12 @@ import MobileSlides from './Components/MobileSlides/MobileSlides.js'
 function App() {
   return (
     <>
-      {/* <Header/>
+      <Header/>
       <Routes>
         <Route path="/" element={<MainPage/>} />
         <Route path="/level" element={<LevelPage/>} />
       </Routes>
-      <Footer/> */}
-      <MobileSlides/>
+      <Footer/>
     </>
   );
 }

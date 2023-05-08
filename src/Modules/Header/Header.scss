@@ -37,8 +37,6 @@ html {
     }
   }
 
-  
-
   &__list{
     list-style: none;
     padding: 0;
@@ -46,19 +44,10 @@ html {
     display: flex;
     color: white;
     color: black;
-  
-    @media (max-width: 500px){
-      &::before{
-        content: "";
-        display: block;
-        width: 20px;
-        height: 20px;
-        background-color: red;
-        position: absolute;
-        right: 0;
-      }
+
+    @media(max-width: 800px) {
+      display: none;
     }
-  
   }
   
   &__link{
@@ -88,6 +77,10 @@ html {
     &:active{
       color: #3D7658;
     }
+  }
+
+  @media (max-width: 800px) {
+    min-width: 100vw;
   }
 }
 

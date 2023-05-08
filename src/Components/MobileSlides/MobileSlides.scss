@@ -97,7 +97,7 @@
 }
 
 .swiper-container {
-  width: 100%;
+  overflow: hidden;
   height: auto;
   margin-left: auto;
   margin-right: auto;
@@ -458,4 +458,3 @@
     width: 100%;
   }
 }
-

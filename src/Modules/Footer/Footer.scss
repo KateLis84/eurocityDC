@@ -7,12 +7,12 @@
   grid-template-columns: 1fr 1fr 1fr;
   padding: 20px;
   padding-left: 150px;
-  // margin-top: 20px;
 
-  // position:absolute;
-  // bottom:0;
-  // left:0;
-  // right:0;
+  @media(max-width: 1000px) {
+    grid-template-columns: 1fr;
+    padding: 0;
+    padding-left: 20px;
+  }
 
   &__title {
     font-size: 24px;
@@ -29,19 +29,35 @@
   }
 
   &__element {
-
     &_cities {
       display: grid;
       text-align: center;
+
+      @media(max-width: 1000px) {
+        text-align: left;
+      }
     }
 
     &_phone {
       text-align: center;
+      @media(max-width: 1000px) {
+        text-align: left;
+      }
+    }
+
+    @media(max-width: 1000px) {
+      margin-top: 20px;
     }
   }
 
   &__cities {
     display: flex;
     justify-content: space-around;
+
+    @media(max-width: 1000px) {
+      display: grid;
+      width: 50vw;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }

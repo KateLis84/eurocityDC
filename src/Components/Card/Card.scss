@@ -4,10 +4,8 @@
   $textPadding: 20px;
 
   justify-self: center;
-
-  box-shadow: 1px 5px 36px -1px rgba(0, 0, 0, 0.25);
-  // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 350px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  max-width: 500px;
 
   &:nth-child(3){
     justify-self: end;
@@ -32,15 +30,16 @@
     font-size: 13px;
     text-align: center;
     color: #2B614C;
-
+    font-size: 20px;
     border-bottom: 1px solid #2B614C;
   }
 
   &__pic{
     background-image: url('../../Assets/Images/work.png');
+    background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
-    height: 250px;
+    background-size: cover;
+    height: 350px;
     transition: .5s;
   }
 
@@ -52,13 +51,152 @@
 
   &__title{
     @include textBold;
+    font-size: 30px;
   }
   &__description{
     @include text;
     margin-top: $textPadding;
+    font-size: 20px;
   }
 
   &:hover{
     cursor: pointer;
+  }
+}
+
+@media(max-width: 1400px) {
+  .card{
+    $textPadding: 20px;
+  
+    justify-self: center;
+    max-width: 450px;
+  
+    &:nth-child(3){
+      justify-self: center;
+    }
+  
+    &:nth-child(2){
+      justify-self: center;
+    }
+  
+    &:nth-child(1){
+      justify-self: center;
+    }
+
+    margin-bottom: 80px;
+    
+  
+    &__date{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      right: 15px;
+      top: $textPadding;
+      @include text;
+      font-size: 13px;
+      text-align: center;
+      color: #2B614C;
+  
+      border-bottom: 1px solid #2B614C;
+    }
+  
+    &__pic{
+      background-image: url('../../Assets/Images/work.png');
+      background-size: cover;
+      height: 350px;
+      transition: .5s;
+    }
+  
+    &__text{
+      position: relative;
+      @include textBold;
+      padding: $textPadding;
+    }
+  
+    &__title{
+      @include textBold;
+    }
+    &__description{
+      @include text;
+      margin-top: $textPadding;
+    }
+  
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+@media(max-width: 1000px) {
+  .card{
+    $textPadding: 20px;
+  
+    justify-self: center;
+    max-width: 550px;
+  
+    &:nth-child(3){
+      justify-self: center;
+    }
+  
+    &:nth-child(2){
+      justify-self: center;
+    }
+  
+    &:nth-child(1){
+      justify-self: center;
+    }
+
+    margin-bottom: 80px;
+    
+  
+    &__date{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      right: 15px;
+      top: $textPadding;
+      @include text;
+      font-size: 13px;
+      text-align: center;
+      color: #2B614C;
+  
+      border-bottom: 1px solid #2B614C;
+    }
+  
+    &__pic{
+      background-image: url('../../Assets/Images/work.png');
+      background-position: center;
+      height: 350px;
+      transition: .5s;
+    }
+  
+    &__text{
+      position: relative;
+      @include textBold;
+      padding: $textPadding;
+    }
+  
+    &__title{
+      @include textBold;
+    }
+    &__description{
+      @include text;
+      margin-top: $textPadding;
+    }
+  
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+@media(max-width: 450px) {
+  .card{
+    &__title{
+      font-size: 25px;
+    }
+    &__description{
+      font-size: 15px;
+    }
   }
 }

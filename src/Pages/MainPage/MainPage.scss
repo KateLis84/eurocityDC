@@ -3,6 +3,10 @@
   padding: 140px;
   padding-top: 100px;
 
+  @media (max-width: 800px) {
+    padding: 0;
+  }
+
   &__slides{
     display: block;
     width: calc(100vw - 280px);
@@ -27,6 +31,85 @@
     margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
     justify-content: center;
+
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+
+@media(max-width: 1400px) {
+  .mainPage{ 
+    padding: 140px;
+    padding-top: 100px;
+  
+    &__cardBlock{
+      margin-top: 100px;
+    }
+  
+    &__title{
+      padding: 20px;
+      color: #051C1B;
+      @include text;
+      text-align: center;
+      font-size: 40px;
+      border-top: 1px solid #051C1B;
+    }
+  
+    &__cards{
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media(max-width: 1000px) {
+  .mainPage{ 
+    padding: 40px;
+    padding-top: 100px;
+  
+    &__title{
+      padding: 20px;
+      color: #051C1B;
+      @include text;
+      text-align: center;
+      font-size: 40px;
+      border-top: 1px solid #051C1B;
+    }
+  
+    &__cards{
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media(max-width: 450px) {
+  @media(max-width: 1000px) {
+    .mainPage{ 
+      padding: 0px;
+      padding-top: 100px;
+    
+      &__title{
+        padding: 20px;
+        color: #051C1B;
+        @include text;
+        text-align: center;
+        font-size: 40px;
+        border-top: 1px solid #051C1B;
+      }
+    
+      &__cards{
+        padding: 40px;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+    }
   }
 }

@@ -1,8 +1,5 @@
 import { React } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import building1 from '../../Assets/Images/building1.jpg'
-import building2 from '../../Assets/Images/building2.jpg'
-import building3 from '../../Assets/Images/building3.jpg'
 import "swiper/css";
 import "./MobileSlides.scss";
 
@@ -11,14 +8,15 @@ let data = require("../../fakeData.json").complexes;
 export default function MobileSlide() {
 
   return (
+    <>
         <Swiper class="swiper-container"
           direction="horizontal"
           slidesPerView="1"
           paginationClickable="!0"
-          spaceBetween={0}
+          spaceBetween={30}
           speed={1500}
           autoplay={2500}
-          loop={true}
+          loop={false}
         >
 
           {data.map((el, index)=>{
@@ -31,7 +29,7 @@ export default function MobileSlide() {
                       class="swiper-slide__block__img"
                       data-swiper-parallax-y="70%"
                     >
-                      <img src={building1} alt="" />
+                      <img src={el.photo} alt="" />
                     </div>
                     <div class="swiper-slide__block__text">
                       <h2 data-swiper-parallax-x="-60%" class="main__title">
@@ -58,8 +56,7 @@ export default function MobileSlide() {
               );
             })
           }
-          <div class="swiper-wrapper">
-          </div>
         </Swiper>
+        </>
   );
 }
