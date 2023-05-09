@@ -2,9 +2,40 @@
   "complexes": [
     {
       "name": "ЖК Стожари",
-      "description": "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+      "description": "Анонсуємо новий проєкт від AUROOM клубного формату: парк 700 річчя на відстані витягнутої руки, через дорогу храм Св. Йосафата та школа №78, зручна транспортна розв’язка Замарстинівська -Липинського та піша доступність до центру. Додай до цього дизайнерське лоббі, елегантну малоповерхову архітектуру та підземний паркінг – і ти закохаєшся в цей проєкт, як і ми Лише тобі обирати – чи ти сьогодні на драйві в центрі подій, чи на чілі насолоджуєшся краєвидами з своєї тераси!",
       "photo": "images/building1.jpg",
-      "levels": [{
+      "gallery": [
+        "images/Stozary1.png", 
+        "images/Stozary2.png", 
+        "images/Stozary3.png", 
+        "images/Stozary4.png", 
+        "images/Stozary5.png", 
+        "images/Stozary6.png"
+      ],
+      "levelsCoords": {
+        "x": [
+          80,
+          396,
+          664,
+          765,
+          763,
+          664,
+          396,
+          80
+        ],
+        "y": [
+          175,
+          64,
+          98,
+          246,
+          262,
+          128,
+          102,
+          204
+        ]
+      },
+      "levels": [
+        {
         "level": 1,
         "photo": "images/model1.jpg",
         "flats": [
