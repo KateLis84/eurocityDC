@@ -20,6 +20,9 @@ export default function MobileSlide() {
         >
 
           {data.map((el, index)=>{
+            let desc = ''
+            if(el.description.length>80) desc = el.description.slice(0, 90) + "..."
+            else desc = el.description;
               return (
                 <SwiperSlide class="swiper-slide"
                 style={{minHeight: '100%'}}
@@ -37,7 +40,7 @@ export default function MobileSlide() {
                         <span>.</span>
                       </h2>
                       <p data-swiper-parallax-x="-40%" class="paragraphe">
-                        {el.description}
+                        {desc}
                       </p>
                       <a
                         data-swiper-parallax-x="-30%"

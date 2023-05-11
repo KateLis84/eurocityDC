@@ -9,7 +9,6 @@ export default function JKpage() {
 
   const params = useParams();
   const JK = data[params.jkId-1];
-  console.log(JK)
 
   return (
     <div className="jkPage">

@@ -2,6 +2,8 @@
   "complexes": [
     {
       "name": "ЖК Стожари",
+      "city": "Львів",
+      "address": "вул. Одеська 25",
       "description": "Анонсуємо новий проєкт від AUROOM клубного формату: парк 700 річчя на відстані витягнутої руки, через дорогу храм Св. Йосафата та школа №78, зручна транспортна розв’язка Замарстинівська -Липинського та піша доступність до центру. Додай до цього дизайнерське лоббі, елегантну малоповерхову архітектуру та підземний паркінг – і ти закохаєшся в цей проєкт, як і ми Лише тобі обирати – чи ти сьогодні на драйві в центрі подій, чи на чілі насолоджуєшся краєвидами з своєї тераси!",
       "photo": "images/building1.jpg",
       "gallery": [
@@ -40,7 +42,7 @@
         "photo": "images/model1.jpg",
         "flats": [
             {
-              "flat": "7",
+              "flat": "1",
               "area": "80.96",
               "rooms": 3,
               "mapCoords": {
@@ -65,9 +67,67 @@
           "photo": "images/model2.jpg",
           "flats": [
             {
+              "flat": "2",
+              "area": "80.96",
+              "rooms": 3,
+              "mapCoords": {
+                "x": [
+                  796,
+                  500,
+                  436,
+                  591,
+                  643,
+                  799
+                ],
+                "y": [
+                  298,
+                  296,
+                  361,
+                  519,
+                  467,
+                  468
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "photo": "images/model2.jpg",
+          "flats": [
+            {
               "flat": "3",
               "area": "80.96",
               "rooms": 3,
+              "mapCoords": {
+                "x": [
+                  796,
+                  500,
+                  436,
+                  591,
+                  643,
+                  799
+                ],
+                "y": [
+                  298,
+                  296,
+                  361,
+                  519,
+                  467,
+                  468
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "photo": "images/model2.jpg",
+          "flats": [
+            {
+              "flat": "WHY 4",
+              "area": "80.96",
+              "rooms": 4,
               "mapCoords": {
                 "x": [
                   796,
@@ -94,40 +154,106 @@
     {
         "name": "Green Village",
         "description": "Contrary to popular belief, Lorem Ipsum is not simply random text",
+        "city": "Львів",
+        "adress": "вул. Одеська 25",
         "photo": "images/building2.jpg",
-        "levels": [{
-          "level": 1,
-          "photo": "images/model1.jpg",
-          "flats": [
-            {
-              "flat": "7",
-              "area": "80.96",
-              "rooms": 3,
-              "mapCoords": {
-                "x": [
-                  8,
-                  8,
-                  278,
-                  278
-                ],
-                "y": [
-                  8,
-                  214,
-                  214,
-                  8
-                ]
+        "levels": [
+          {
+            "level": 1,
+            "photo": "images/model1.jpg",
+            "flats": [
+              {
+                "flat": "5",
+                "area": "80.96",
+                "rooms": 3,
+                "mapCoords": {
+                  "x": [
+                    8,
+                    8,
+                    278,
+                    278
+                  ],
+                  "y": [
+                    8,
+                    214,
+                    214,
+                    8
+                  ]
+                }
               }
+            ]
+          },
+          {
+            "level": 2,
+            "photo": "images/model2.jpg",
+            "flats": [
+              {
+                "flat": "6",
+                "area": "80.96",
+                "rooms": 3,
+                "mapCoords": {
+                  "x": [
+                    796,
+                    500,
+                    436,
+                    591,
+                    643,
+                    799
+                  ],
+                  "y": [
+                    298,
+                    296,
+                    361,
+                    519,
+                    467,
+                    468
+                  ]
+                }
+              }
+            ]
+          }
+      ]
+    },
+    {
+      "name": "Маєток Винковий",
+      "city": "Київ",
+      "address": "вул. Одеська 25",
+      "description": "Contrary to popular belief, Lorem Ipsum is not simply random text",
+      "photo": "images/building3.jpg",
+      "levels": [
+        {
+        "level": 1,
+        "photo": "images/model1.jpg",
+        "flats": [
+          { 
+            "flat": "77",
+            "area": "80.96",
+            "rooms": 1,
+            "mapCoords": {
+              "x": [
+                8,
+                8,
+                278,
+                278
+              ],
+              "y": [
+                8,
+                214,
+                214,
+                8
+              ]
             }
-          ]
+          }
+        ]
         },
         {
           "level": 2,
           "photo": "images/model2.jpg",
           "flats": [
             {
-              "flat": "3",
+              "flat": "88",
               "area": "80.96",
-              "rooms": 3,
+              "rooms": 2,
               "mapCoords": {
                 "x": [
                   796,
@@ -150,66 +276,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "Маєток Винковий",
-      "description": "Contrary to popular belief, Lorem Ipsum is not simply random text",
-      "photo": "images/building3.jpg",
-        "levels": [{
-        "level": 1,
-        "photo": "images/model1.jpg",
-        "flats": [
-          {
-            "flat": "7",
-            "area": "80.96",
-            "rooms": 3,
-            "mapCoords": {
-              "x": [
-                8,
-                8,
-                278,
-                278
-              ],
-              "y": [
-                8,
-                214,
-                214,
-                8
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "photo": "images/model2.jpg",
-        "flats": [
-          {
-            "flat": "3",
-            "area": "80.96",
-            "rooms": 3,
-            "mapCoords": {
-              "x": [
-                796,
-                500,
-                436,
-                591,
-                643,
-                799
-              ],
-              "y": [
-                298,
-                296,
-                361,
-                519,
-                467,
-                468
-              ]
-            }
-          }
-        ]
-      }
-    ]
     }
   ]
 }

@@ -9,6 +9,7 @@ function Header() {
   const [isMobile, setMobile] = useState(false);
   
   useEffect(()=>{
+    
     if(document.getElementsByClassName('mainPage')[0]==undefined) {
       document.getElementsByTagName('header')[0].classList.remove('header__mainPage')
       document.getElementsByTagName('header')[0].style.position = 'fixed';

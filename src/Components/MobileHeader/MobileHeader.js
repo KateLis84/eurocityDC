@@ -22,7 +22,7 @@ export default function MobileHeader() {
       <nav className="mobileNav">
         <ul className="main ulClass">
           <li onClick={()=>{changeClasses()}}>
-            <Link to="#JKgallery" class="routeLink">Проєкти</Link>
+            <Link to="/#JKgallery" class="routeLink">Проєкти</Link>
           </li>
           <li>
             <a href="#0">Контакти</a>
