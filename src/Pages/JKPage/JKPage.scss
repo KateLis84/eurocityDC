@@ -9,7 +9,7 @@
     margin-bottom: 50px;
 
     &_area {
-      background-color: #EBEBEB;
+      // background-color: #EBEBEB;
       display: grid;
       justify-items: center;
     }
@@ -23,6 +23,12 @@
       display: flex;
       justify-content: space-between;
       z-index: 9;
+    }
+
+    &_txtInfo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 240px;
     }
 
     &_map {
@@ -51,6 +57,18 @@
 
       }
     }
+  }
+
+  &__BlockiconInfo {
+    // justify-self: center;
+    align-self: center;
+  }
+
+  &__iconInfo{
+    margin-bottom: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
   }
 
   &__btn {
@@ -103,6 +121,9 @@
       font-size: 17px;
       line-height: 30px;
       color: #2B614C;
+      border-top: 1px solid #2B614C;
+      border-bottom: 1px solid #2B614C;
+      padding: 30px 0px;
     }
   }
   &__image {
@@ -320,5 +341,3 @@
     }
   } 
 }
-
-

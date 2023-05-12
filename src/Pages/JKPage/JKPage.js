@@ -6,8 +6,14 @@ import { HashLink as Link } from 'react-router-hash-link';
 import LevelMap from "../../Modules/Area/Area";
 import Pagination from '../../Components/LevelPagination/LevelPagination.js';
 
+// ICONS
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
+import ForestIcon from '@mui/icons-material/Forest';
+import LocationCityIcon from '@mui/icons-material/LocationCity';
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
 
 let data = require("../../fakeData.json").complexes;
 
@@ -50,6 +56,48 @@ export default function JKpage() {
     }
   }
 
+  function addView() {
+    switch(JK.details.view){
+      case 'nature':
+        return(
+          <div className="jkPage__iconInfo">
+            <ForestIcon sx={{fontSize: "50px"}}/>
+            <div>Вигляд на природу</div>
+          </div>
+        )
+      case 'city':
+        return(
+          <div className="jkPage__iconInfo">
+            <LocationCityIcon sx={{fontSize: "50px"}}/>
+            <div>Вигляд на місто</div>
+          </div>
+        )
+      default:
+        break;
+      }
+  }
+
+  function addFacilities() {
+    switch(JK.details.facilities){
+      case 'parking':
+        return(
+          <div className="jkPage__iconInfo">
+            <DirectionsCarIcon sx={{fontSize: "50px"}}/>
+            <div>Підземний паркінг</div>
+          </div>
+        )
+      case 'park':
+        return(
+          <div className="jkPage__iconInfo">
+            <FamilyRestroomIcon sx={{fontSize: "50px"}}/>
+            <div>Дозвілля для сім'ї</div>
+          </div>
+        )
+      default:
+        break;
+    }
+  }
+
   return (
     <div className="jkPage">
 
@@ -81,15 +129,27 @@ export default function JKpage() {
         <Pagination data={JK} setMap={ChangeMap}/>
       </div>
 
+
+      <h3>Про комплекс</h3>
       <div className="jkPage__block jkPage__block_txtInfo">
-        <div className="jkPage__txt_description">{JK.description}</div>
+        <div className="jkPage__txt_description">
+          {JK.description}
+        </div>
+        <div className="jkPage__BlockiconInfo">
+          <div className="jkPage__iconInfo">
+            <DirectionsWalkIcon sx={{fontSize: "50px"}}/>
+            {JK.details.fromCityCenter} хв від центру міста
+          </div>
+            {addView()}
+            {addFacilities()}
+        </div>
       </div>
 
       <div className="jkPage__block">
         <iframe
           className="jkPage__block_map"
           title="map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2572.491758264307!2d24.021774976466723!3d49.85200657148402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add0a2aabbcb9%3A0xed7e50b5ae62c05!2sParking!5e0!3m2!1suk!2sua!4v1683634374243!5m2!1suk!2sua"
+          src={JK.details.googleMap}
           style={{border: 0}}
           allowfullscreen=""
           loading="lazy"
