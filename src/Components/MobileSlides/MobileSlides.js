@@ -1,5 +1,6 @@
 import { React } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { HashLink as Link } from 'react-router-hash-link';
 import "swiper/css";
 import "./MobileSlides.scss";
 
@@ -42,14 +43,13 @@ export default function MobileSlide() {
                       <p data-swiper-parallax-x="-40%" class="paragraphe">
                         {desc}
                       </p>
-                      <a
+                      <Link
+                        to={`/jkpage/${index+1}`}
                         data-swiper-parallax-x="-30%"
                         class="link"
-                        target="_blank"
-                        href="#"
                       >
                         Дізнатись більше
-                      </a>
+                      </Link>
                       <span data-swiper-parallax-y="60%" class="number">
                         {index+1}
                       </span>
@@ -60,6 +60,6 @@ export default function MobileSlide() {
             })
           }
         </Swiper>
-        </>
+    </>
   );
 }

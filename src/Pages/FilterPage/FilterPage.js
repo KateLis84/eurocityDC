@@ -1,117 +1,47 @@
-import { React, useEffect, useState, useMemo } from "react";
-import "./FilterPage.scss";
-import Button from '../../Components/Filters/Buttons/Buttons.js';
-import ButtonsGroup from '../../Modules/Filters/ButtonsGroup.js';
-import Range from '../../Modules/Filters/Range.js';
-import Selection from '../../Modules/Filters/Selection.js';
+import {React, useState, useEffect} from "react";
+import Filters from './Filters.js';
+import Card from '../../Components/Card/Card.js';
 
-export default function FilterPage(props) {
-  let json = require("../../fakeData.json").complexes;
-  const [complexes, setComplexes] = useState(json);
-  const [floors, setFloors] = useState([1, 4])
+export default function FilterPage() {
 
-  const setDefaultData = useMemo(() => {
-    let temp = [];
-    complexes.map((complex)=>{
-      complex.levels.map((level)=>{
-        if(level.level >= floors[0] && level.level <= floors[1]){
-          level.flats.map((flat)=>{
-            temp.push(flat)
-          })
-        }
-      })
-    })
-    return temp;
-  }, [json]);
-
-  function setNewFlats() {
-    let temp = [];
-    complexes.map((complex)=>{
-      complex.levels.map((level)=>{
-        if(level.level >= floors[0] && level.level <= floors[1]){
-          level.flats.map((flat)=>{
-            temp.push(flat)
-          })
-        }
-      })
-    })
-    return temp;
-  }
-
-  const [flats, setFlats] = useState(setDefaultData);
-  const [filtered, setFilters] = useState(setDefaultData);
-  const [rooms, setRooms] = useState([1, 2, 3, 4])
-  
-  useEffect(()=>{
-    setFlats(setNewFlats())
-  }, [complexes])
+  const [filtered, setFiltered] = useState([])
+  window.scrollTo(0, 0)
+  document.getElementsByTagName('header')[0].classList.remove('header__mainPage')
+  document.getElementsByTagName('header')[0].style.position = 'fixed';
+  document.getElementsByClassName("header__list")[0].style.color = "white"
+  document.getElementsByClassName("header__logo")[0].style.display = "none"
 
   useEffect(()=>{
-    setFlats(setNewFlats())
-  }, [floors])
+    console.log(filtered)
+    console.log("1")
+  }, [filtered])
 
-
-  useEffect(()=>{
-    filterRooms(rooms)
-  }, [flats])
-
-
-  function changeCity(cities, whichToChange) {
-    if (cities.includes('Усі')) {
-      setComplexes(json);
-      return;
-    }
-    let temp = [];
-    json.map((complex)=>{
-      if(cities.includes(complex.city)) temp.push(complex)
-    })
-    setComplexes(temp);
-  }
-  
-  function filterRooms(data) {
-    setRooms(data)
-    let temp = [];
-    flats.map((e) => {
-      if (data.includes(e.rooms)) temp.push(e);
-    });
-    setFilters(temp)
-  }
-  
-  function changeData(data, typeOfData) {
-    switch(typeOfData) {
-      case 'rooms': 
-        filterRooms(data);
-        break;
-      default:
-        break;
-    }
+  function setNewValues(flats) {
+    console.log("2")
+    setFiltered(flats)
   }
 
-  function changeFloor(floors) {
-    setFloors(floors)
-  }
+  return(
+    <div className="filterPage">
+      <Filters setNewValues={setNewValues}/>
 
-  return (
-    <div style={{minHeight: '90vh', padding: '100px'}}>
-      <Selection data={json} changeComplex={changeCity}/>
-      <div style={{width: '400px'}}>
-        <Range data={json} changeFloor={changeFloor}/>
-      </div>
-      <ButtonsGroup flats={flats} changeData={filterRooms}/>
-
-      <ul>
+      <div className="filterPage__list">
         {
           filtered.map((el)=>{
             return(
-              <li>
-                Flat: {el.flat},
-                Rooms: {el.rooms}
-              </li>
+              <Card 
+                image={el.img} 
+                title={"Квартира:" + el.flat}
+                description={
+                  `Кількість кімнат: ${el.rooms}
+                    Адреса: ${el.address}
+                    Житловий комплекс: ${el.complex}`
+                }
+              />
             )
           })
         }
-      </ul>
-
+      </div>
     </div>
-  );
+  )
 }

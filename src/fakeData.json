@@ -45,6 +45,7 @@
               "flat": "1",
               "area": "80.96",
               "rooms": 3,
+              "img": "images/flats/flat1.jpg", 
               "mapCoords": {
                 "x": [
                   8,
@@ -69,6 +70,7 @@
             {
               "flat": "2",
               "area": "80.96",
+              "img": "images/flats/flat2.jpg",
               "rooms": 3,
               "mapCoords": {
                 "x": [
@@ -98,36 +100,8 @@
             {
               "flat": "3",
               "area": "80.96",
+              "img": "images/flats/flat3.jpg",
               "rooms": 3,
-              "mapCoords": {
-                "x": [
-                  796,
-                  500,
-                  436,
-                  591,
-                  643,
-                  799
-                ],
-                "y": [
-                  298,
-                  296,
-                  361,
-                  519,
-                  467,
-                  468
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "photo": "images/model2.jpg",
-          "flats": [
-            {
-              "flat": "WHY 4",
-              "area": "80.96",
-              "rooms": 4,
               "mapCoords": {
                 "x": [
                   796,
@@ -157,6 +131,14 @@
         "city": "Львів",
         "adress": "вул. Одеська 25",
         "photo": "images/building2.jpg",
+        "gallery": [
+          "images/Stozary1.png", 
+          "images/Stozary2.png", 
+          "images/Stozary3.png", 
+          "images/Stozary4.png", 
+          "images/Stozary5.png", 
+          "images/Stozary6.png"
+        ],
         "levels": [
           {
             "level": 1,
@@ -165,6 +147,7 @@
               {
                 "flat": "5",
                 "area": "80.96",
+                "img": "images/flats/flat4.jpg",
                 "rooms": 3,
                 "mapCoords": {
                   "x": [
@@ -190,6 +173,7 @@
               {
                 "flat": "6",
                 "area": "80.96",
+                "img": "images/flats/flat5.jpg",
                 "rooms": 3,
                 "mapCoords": {
                   "x": [
@@ -212,7 +196,7 @@
               }
             ]
           }
-      ]
+        ]
     },
     {
       "name": "Маєток Винковий",
@@ -220,6 +204,14 @@
       "address": "вул. Одеська 25",
       "description": "Contrary to popular belief, Lorem Ipsum is not simply random text",
       "photo": "images/building3.jpg",
+      "gallery": [
+        "images/Stozary1.png", 
+        "images/Stozary2.png", 
+        "images/Stozary3.png", 
+        "images/Stozary4.png", 
+        "images/Stozary5.png", 
+        "images/Stozary6.png"
+      ],
       "levels": [
         {
         "level": 1,
@@ -228,7 +220,10 @@
           { 
             "flat": "77",
             "area": "80.96",
+            "img": "images/flats/flat6.jpg",
             "rooms": 1,
+            "address": "вул. Одеська 25",
+            "complex": "Маєток Винковий",
             "mapCoords": {
               "x": [
                 8,
@@ -253,6 +248,7 @@
             {
               "flat": "88",
               "area": "80.96",
+              "img": "images/flats/flat7.jpg",
               "rooms": 2,
               "mapCoords": {
                 "x": [

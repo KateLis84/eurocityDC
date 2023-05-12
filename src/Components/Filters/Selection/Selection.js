@@ -174,7 +174,6 @@ export default function CustomizedHook({values, changeCities}) {
   return (
     <div>
       <div {...getRootProps()}>
-        <div className="customized-label" {...getInputLabelProps()}>Місто</div>
         <InputWrapper ref={setAnchorEl} className={focused ? 'focused' : ''}>
           {value.map((option, index) => (
             <StyledTag label={option} {...getTagProps({ index })} />

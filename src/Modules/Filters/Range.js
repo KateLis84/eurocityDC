@@ -16,8 +16,9 @@ export default function Range({data, changeFloor}) {
   }
 
   return(
-    <>
+    <div className="rangeFilter">
+      <div className="customized-label">Поверх</div>
       <RangeItem maxValue={getMaxFloor()} setNewLevels={setNewLevels}/>
-    </>
+    </div>
   )
 }

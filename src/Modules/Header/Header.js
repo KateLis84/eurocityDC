@@ -25,11 +25,6 @@ function Header() {
     else if(window.innerWidth<580 && isMobile==true) setMobile(false)
   }, [])
 
-  // window.addEventListener("resize", (event) => {
-  //   if(window.innerWidth<570 && isMobile==false) setMobile(true)
-  //   else if(window.innerWidth<580 && isMobile==true) setMobile(false)
-  // });
-
   if(isMobile){
     return(
       <header className="header header__mainPage">
@@ -48,7 +43,7 @@ function Header() {
           alt="logo"
           className='logo header__logo'/>
         <ul className="header__list">
-          <Link to="#JKgallery" class="routeLink"><li className="header__link">Проєкти</li></Link>
+          <Link to="../#JKgallery" class="routeLink"><li className="header__link">Проєкти</li></Link>
           <li className="header__link">Контакти</li>
           <li className="header__link">Про нас</li>
         </ul>

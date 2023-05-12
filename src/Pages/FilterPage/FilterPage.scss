@@ -1,0 +1,30 @@
+.filterPage {
+  padding: 100px 150px;
+  min-height: 100vh;
+
+  &__list {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+}
+
+.filterContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  &__block {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background-color: #EBEBEB;
+    padding: 20px;
+  }
+}
+
+.rangeFilter {
+  display: flex;
+  align-items: center;
+  gap: 60px
+}

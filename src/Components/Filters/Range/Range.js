@@ -93,17 +93,14 @@ export default function CustomizedSlider({maxValue, setNewLevels}) {
 
   
   return (
-    <div>
-      <div className="customized-label">Поверх</div>
-      <AirbnbSlider
-        slots={{ thumb: AirbnbThumbComponent }}
+    <AirbnbSlider
+      slots={{ thumb: AirbnbThumbComponent }}
         getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
         defaultValue={[1, maxValue]}
         valueLabelDisplay="on"
         min={1}
         max={maxValue}
-        onChange={newValue}
-      />
-    </div>
+      onChange={newValue}
+    />
   );
 }

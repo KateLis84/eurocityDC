@@ -29,7 +29,7 @@ export default function ButtonsGroup({flats, changeData}) {
   }
 
   return(
-    <>
+    <div>
       <div className="customized-label">Кількість кімнат</div>
       <div style={{display: 'flex', gap: '10px'}}>{
         getMaxRooms().map((num)=>{
@@ -39,13 +39,6 @@ export default function ButtonsGroup({flats, changeData}) {
         })
       }
       </div>
-      {
-        chosenRooms.map((e)=>{
-          return(
-            <>{e}</>
-          )
-        })
-      }
-    </>
+    </div>
   )
 }

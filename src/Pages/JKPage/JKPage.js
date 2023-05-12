@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useEffect} from "react";
 import './JKPage.scss';
 import '../../Constants/GeneralStyles/animations.scss'
 import {useParams} from 'react-router-dom'
@@ -6,6 +6,15 @@ import {useParams} from 'react-router-dom'
 let data = require("../../fakeData.json").complexes;
 
 export default function JKpage() {
+
+  
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+    document.getElementsByTagName('header')[0].classList.remove('header__mainPage')
+    document.getElementsByTagName('header')[0].style.position = 'fixed';
+    document.getElementsByClassName("header__list")[0].style.color = "white"
+    document.getElementsByClassName("header__logo")[0].style.display = "none"
+  }, [])
 
   const params = useParams();
   const JK = data[params.jkId-1];
