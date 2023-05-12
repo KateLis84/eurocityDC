@@ -50,7 +50,7 @@ function LevelPage() {
           <div className="levels__choseBox"></div>
         </div>
         
-        <LevelMap level={map} />
+        <LevelMap level={map} typeOfData="flats"/>
       </div>
     );
   }

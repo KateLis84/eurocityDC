@@ -2,6 +2,8 @@ import {React, useEffect} from "react";
 import './JKPage.scss';
 import '../../Constants/GeneralStyles/animations.scss'
 import {useParams} from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link';
+import LevelMap from "../../Modules/Area/Area";
 
 let data = require("../../fakeData.json").complexes;
 
@@ -21,9 +23,9 @@ export default function JKpage() {
 
   return (
     <div className="jkPage">
-
+      <LevelMap level={JK} typeOfData="JK" className="jkPage__image"/>
       <div className="jkPage__block jkPage__block_info">
-        <div className="jkPage__btn buttonAnim">Переглянути квартири → </div>
+        <Link to="/level" className="jkPage__btn buttonAnim">Переглянути квартири → </Link>
         <div className="jkPage__txt">
           <div className="jkPage__txt_title">{JK.name}</div>
           <div className="jkPage__txt_description">{JK.description}</div>

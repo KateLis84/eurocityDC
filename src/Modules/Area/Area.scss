@@ -9,6 +9,10 @@
   color: white;
   font-size: 20px;
 
+  &__jk {
+    height: 100px;
+  }
+
   &__flat {
     @include textBold;
     

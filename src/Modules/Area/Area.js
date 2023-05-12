@@ -5,7 +5,7 @@ import { maphilight } from 'maphilight'
 import HoverInfo from './HoverInfo'
 
 
-function Area({level}) {
+function Area({level, typeOfData}) {
   let scale = setScale();
   let tempAreaShape = "";
   let image = level.photo;
@@ -15,13 +15,27 @@ function Area({level}) {
     isDisplayed: false,
     info: '',
   });
-  let coords = level.flats.map((e)=>{
-    return e.mapCoords;
-  })
+
+  let coords;
+
+  if(typeOfData == 'flats'){
+    coords = level.flats.map((e)=>{
+      return e.mapCoords;
+    })
+  } else if(typeOfData == "JK") {
+    coords = level.levels.map((e)=>{
+      return e.mapCoords;
+    })
+  }
 
   function visibleInfo(e) {
-    let flat = level.flats[e.currentTarget.id]
-    setInfo({...infoProperties, isDisplayed: true, info: flat});
+    if(typeOfData == "flats") {
+      let flat = level.flats[e.currentTarget.id]
+      setInfo({...infoProperties, isDisplayed: true, info: flat});
+    } else {
+      let flat = level.levels[e.currentTarget.id]
+      setInfo({...infoProperties, isDisplayed: true, info: flat});
+    }
   }
 
   function invisibleInfo() {
@@ -63,6 +77,7 @@ function Area({level}) {
       <map name="shape">
         {
           coords.map((el, index)=>{
+            tempAreaShape = '';
             for(let i = 0; i<el.x.length; i++){
               tempAreaShape += `${el.x[i]*scale}, ${el.y[i]*scale},`
             }
@@ -84,6 +99,7 @@ function Area({level}) {
       <HoverInfo
         isDisplayed={infoProperties.isDisplayed}
         info={infoProperties.info}
+        typeOfData={typeOfData}
       />
     </div>
   )
