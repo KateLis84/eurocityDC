@@ -8,11 +8,15 @@
     
     margin-bottom: 50px;
 
-    &_info {
+    &_area {
       display: grid;
-      column-gap: 100px;
-      grid-template-columns: 1fr 2fr;
-      grid-template-rows: 1fr 7fr;
+      justify-items: center;
+    }
+
+    &_info {
+      display: flex;
+      justify-content: space-between;
+      z-index: 9;
     }
 
     &_map {
@@ -41,7 +45,6 @@
 
       }
     }
-
   }
 
   &__btn {
@@ -74,7 +77,7 @@
 
     &_title {
       color: #3D7658;
-      font-size: 64px;
+      font-size: 84px;
       margin-bottom: 34px;
     }
     &_description {
@@ -298,3 +301,5 @@
     }
   } 
 }
+
+

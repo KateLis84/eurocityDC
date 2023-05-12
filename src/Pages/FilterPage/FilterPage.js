@@ -1,29 +1,38 @@
 import {React, useState, useEffect} from "react";
 import Filters from './Filters.js';
+import { useLocation } from 'react-router-dom'
 import Card from '../../Components/Card/Card.js';
 
 export default function FilterPage() {
 
   const [filtered, setFiltered] = useState([])
   window.scrollTo(0, 0)
-  document.getElementsByTagName('header')[0].classList.remove('header__mainPage')
-  document.getElementsByTagName('header')[0].style.position = 'fixed';
-  document.getElementsByClassName("header__list")[0].style.color = "white"
-  document.getElementsByClassName("header__logo")[0].style.display = "none"
 
   useEffect(()=>{
-    console.log(filtered)
-    console.log("1")
-  }, [filtered])
+    document.getElementsByTagName('header')[0].classList.remove('header__mainPage')
+    document.getElementsByTagName('header')[0].style.position = 'fixed';
+    document.getElementsByClassName("header__list")[0].style.color = "white"
+    document.getElementsByClassName("header__logo")[0].style.display = "none"
+  }, [])
+
+  let selectedComplex = null;
+  const location = useLocation()
+  if(useLocation().state == null){
+    console.log("nullss")
+  } else {
+    selectedComplex = location.state.selectedComplex
+    console.log(selectedComplex)
+  }
+  
+
 
   function setNewValues(flats) {
-    console.log("2")
     setFiltered(flats)
   }
 
   return(
     <div className="filterPage">
-      <Filters setNewValues={setNewValues}/>
+      <Filters setNewValues={setNewValues} preValues={selectedComplex}/>
 
       <div className="filterPage__list">
         {

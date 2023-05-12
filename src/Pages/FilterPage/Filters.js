@@ -4,14 +4,19 @@ import ButtonsGroup from '../../Modules/Filters/ButtonsGroup.js';
 import Range from '../../Modules/Filters/Range.js';
 import Selection from '../../Modules/Filters/Selection.js';
 
-export default function FilterPage({setNewValues}) {
+export default function FilterPage({setNewValues, preValues}) {
   let json = require("../../fakeData.json").complexes;
   const [city, setCity] = useState(json);
-  const [complexes, setComplexes] = useState(json);
+  let PreValueName = null;
+  const [complexes, setComplexes] = useState(()=>{
+    if(preValues != null) {
+      PreValueName = preValues.name;
+      return [preValues]
+    } else return json;
+  });
   const [floors, setFloors] = useState([1, 4])
 
   const setDefaultData = useMemo(() => {
-    console.log("12")
     let cities = [];
     let complexesNames = [];
     complexes.map((comp)=>{
@@ -32,7 +37,6 @@ export default function FilterPage({setNewValues}) {
   }, [json]);
 
   function setNewFlats() {
-    console.log("11")
     let cities = [];
     let complexesNames = [];
     complexes.map((comp)=>{
@@ -40,7 +44,6 @@ export default function FilterPage({setNewValues}) {
     })
     city.map((complex)=>{
       if(complexesNames.includes(complex.name) || complexesNames.includes('Усі')){
-        console.log('IM IN')
         complex.levels.map((level)=>{
           if(level.level >= floors[0] && level.level <= floors[1]){
             level.flats.map((flat)=>{
@@ -58,28 +61,22 @@ export default function FilterPage({setNewValues}) {
   const [rooms, setRooms] = useState([1, 2, 3, 4])
   
   useEffect(()=>{
-    console.log("7")
     setFlats(setNewFlats())
   }, [city, complexes])
 
   useEffect(()=>{
-    console.log("8")
     setFlats(setNewFlats())
   }, [floors])
 
-
   useEffect(()=>{
-    console.log("9")
     filterRooms(rooms)
   }, [flats])
 
   useEffect(()=>{
-    console.log("10")
     setNewValues(filtered)
   }, [filtered])
 
   function changeCity(cities) {
-    console.log("6")
     if (cities.includes('Усі')) {
       setCity(json);
       return;
@@ -92,7 +89,6 @@ export default function FilterPage({setNewValues}) {
   }
   
   function changeComplex(changesComplex) {
-    console.log("5")
     if (changesComplex.includes('Усі')) {
       setComplexes(city);
       return;
@@ -105,7 +101,6 @@ export default function FilterPage({setNewValues}) {
   }
   
   function filterRooms(data) {
-    console.log("4")
     setRooms(data)
     let temp = [];
     flats.map((e) => {
@@ -115,15 +110,14 @@ export default function FilterPage({setNewValues}) {
   }
 
   function changeFloor(floors) {
-    console.log("3")
     setFloors(floors)
   }
 
   return (
     <div className="filterContainer">
       <div className="filterContainer__block filterContainer__place">
-        <Selection data={json} changeValue={changeCity} typeOfData="Місто"/>
-        <Selection data={city} changeValue={changeComplex} typeOfData="Комплекс"/>
+        <Selection data={json} changeValue={changeCity} preValue={null} typeOfData="Місто"/>
+        <Selection data={city} changeValue={changeComplex} preValue={PreValueName} typeOfData="Комплекс"/>
       </div>
 
       <div className="filterContainer__block filterContainer__flat">

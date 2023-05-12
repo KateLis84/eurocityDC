@@ -31,6 +31,7 @@ function HoverInfo ({isDisplayed, info, typeOfData}) {
   };
 
   document.addEventListener("mousemove", (e)=> {
+    if(document.getElementById("AreaId") == null) return
     myDiv=document.getElementsByClassName('popup')[0];
     move(e);
   })

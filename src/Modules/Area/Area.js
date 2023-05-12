@@ -6,7 +6,8 @@ import HoverInfo from './HoverInfo'
 
 
 function Area({level, typeOfData}) {
-  let scale = setScale();
+  // const [scale, setInitScale] = useState(1.2)
+  let scale = 1.2;
   let tempAreaShape = "";
   let image = level.photo;
   let minWidth='950px';
@@ -44,34 +45,38 @@ function Area({level, typeOfData}) {
 
   function setScale() {
     let screenWidth = window.screen.width;
-    let imageWidth = screenWidth * 0.62;
+    let imageWidth = screenWidth * 0.78;
+    console.log("SCALE" + (imageWidth/950).toFixed(1));
     return (imageWidth/950).toFixed(1);
   }
 
   function scaleImage() {
     let image = document.getElementById("mapImg");
-    image.style.width = minWidth;
-    let scaledImage = image.offsetWidth * scale;
+    let scaledImage = minWidth.slice(0, -2) * scale;
+    // alert(minWidth.slice(0, -2))
     image.style.width = `${scaledImage}px`;
   }
 
   useEffect(()=>{
+    
     $('.mapF').maphilight({
       stroke: false,
       fillColor: '90C55B',
       fillOpacity: 0.7
     });
-    scaleImage();
+
+    // scaleImage();
   }, [level]);
 
   return(
-    <div>
+    <div id="AreaId">
       <img 
         src={image}
         usemap="#shape" 
         className="mapF" 
         id="mapImg"
         alt="map"
+        style={{width: `${minWidth.slice(0, -2) * scale}px`}}
       />
 
       <map name="shape">

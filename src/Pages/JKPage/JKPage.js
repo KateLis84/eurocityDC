@@ -23,14 +23,18 @@ export default function JKpage() {
 
   return (
     <div className="jkPage">
-      <LevelMap level={JK} typeOfData="JK" className="jkPage__image"/>
+
       <div className="jkPage__block jkPage__block_info">
-        <Link to="/level" className="jkPage__btn buttonAnim">Переглянути квартири → </Link>
-        <div className="jkPage__txt">
-          <div className="jkPage__txt_title">{JK.name}</div>
-          <div className="jkPage__txt_description">{JK.description}</div>
-        </div>
-        <img src={"../" + JK.photo} className="jkPage__image" alt="building" />
+        <div className="jkPage__txt_title">{JK.name}</div>
+        <Link to="/filters" state={{ selectedComplex: JK }} className="jkPage__btn buttonAnim">Переглянути квартири → </Link>
+      </div>
+
+      <div className="jkPage__block jkPage__block_area">
+        <LevelMap level={JK} typeOfData="JK"/>
+      </div>
+      
+      <div className="jkPage__block jkPage__block_txtInfo">
+        <div className="jkPage__txt_description">{JK.description}</div>
       </div>
 
       <div className="jkPage__block">

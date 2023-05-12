@@ -1,7 +1,7 @@
 import React from "react";
 import SelectionItem from '../../Components/Filters/Selection/Selection.js';
 
-export default function Selection({data, changeValue, typeOfData}) {
+export default function Selection({data, changeValue, typeOfData, preValue}) {
 
   function getCities(){
     let result;
@@ -28,7 +28,7 @@ export default function Selection({data, changeValue, typeOfData}) {
   return(
     <div>
       <div className="customized-label">{typeOfData}</div>
-      <SelectionItem values={getCities()} changeCities={changeCities}/>
+      <SelectionItem values={getCities()} changeCities={changeCities} preValue={preValue}/>
     </div>
     
   )

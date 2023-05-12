@@ -144,11 +144,19 @@ const Listbox = styled('ul')(
 `,
 );
 
-export default function CustomizedHook({values, changeCities}) {
+export default function CustomizedHook({values, changeCities, preValue}) {
 
   function newCities(e, cities) {
     e.preventDefault();
     changeCities(cities)
+  }
+
+  let selection = values[0];
+
+  if(preValue != null) {
+    values.map((e)=>{
+      if(e==preValue) selection = e;
+    })
   }
 
   const {
@@ -164,7 +172,7 @@ export default function CustomizedHook({values, changeCities}) {
     setAnchorEl,
   } = useAutocomplete({
     id: 'customized-hook-demo',
-    defaultValue: [values[0]],
+    defaultValue: [selection],
     multiple: true,
     options: values,
     onChange: newCities,
