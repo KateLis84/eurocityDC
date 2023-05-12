@@ -7,12 +7,12 @@
       "description": "Анонсуємо новий проєкт від AUROOM клубного формату: парк 700 річчя на відстані витягнутої руки, через дорогу храм Св. Йосафата та школа №78, зручна транспортна розв’язка Замарстинівська -Липинського та піша доступність до центру. Додай до цього дизайнерське лоббі, елегантну малоповерхову архітектуру та підземний паркінг – і ти закохаєшся в цей проєкт, як і ми Лише тобі обирати – чи ти сьогодні на драйві в центрі подій, чи на чілі насолоджуєшся краєвидами з своєї тераси!",
       "photo": "../images/building2.jpg",
       "gallery": [
-        "images/Stozary1.png", 
-        "images/Stozary2.png", 
-        "images/Stozary3.png", 
-        "images/Stozary4.png", 
-        "images/Stozary5.png", 
-        "images/Stozary6.png"
+        "../images/Stozary1.png", 
+        "../images/Stozary2.png", 
+        "../images/Stozary3.png", 
+        "../images/Stozary4.png", 
+        "../images/Stozary5.png", 
+        "../images/Stozary6.png"
       ],
       "levelsCoords": {
         "x": [
@@ -40,7 +40,7 @@
         {
         "level": 1,
         "freeFlats": 5,
-        "photo": "images/model1.jpg",
+        "photo": "../images/model1.jpg",
         "mapCoords": {
           "x": [
             80,
@@ -68,7 +68,7 @@
               "flat": "1",
               "area": "80.96",
               "rooms": 3,
-              "img": "images/flats/flat1.jpg", 
+              "img": "../images/flats/flat1.jpg", 
               "mapCoords": {
                 "x": [
                   8,
@@ -87,7 +87,7 @@
             {
               "flat": "3",
               "area": "80.96",
-              "img": "images/flats/flat3.jpg",
+              "img": "../images/flats/flat3.jpg",
               "rooms": 3,
               "mapCoords": {
                 "x": [
@@ -109,7 +109,7 @@
         {
           "level": 2,
           "freeFlats": 2,
-          "photo": "images/model2.jpg",
+          "photo": "../images/model2.jpg",
           "mapCoords": {
             "x": [
               80,
@@ -136,7 +136,7 @@
             {
               "flat": "2",
               "area": "80.96",
-              "img": "images/flats/flat2.jpg",
+              "img": "../images/flats/flat2.jpg",
               "rooms": 3,
               "mapCoords": {
                 "x": [
@@ -162,7 +162,7 @@
         {
           "level": 3,
           "freeFlats": 0,
-          "photo": "images/model2.jpg",
+          "photo": "../images/model2.jpg",
           "mapCoords": {
             "x": [
               2,65,65,0
@@ -175,7 +175,7 @@
             {
               "flat": "3",
               "area": "80.96",
-              "img": "images/flats/flat3.jpg",
+              "img": "../images/flats/flat3.jpg",
               "rooms": 3,
               "mapCoords": {
                 "x": [
@@ -205,24 +205,24 @@
         "description": "Contrary to popular belief, Lorem Ipsum is not simply random text",
         "city": "Львів",
         "adress": "вул. Одеська 25",
-        "photo": "images/building1.jpg",
+        "photo": "../images/building1.jpg",
         "gallery": [
-          "images/Stozary1.png", 
-          "images/Stozary2.png", 
-          "images/Stozary3.png", 
-          "images/Stozary4.png", 
-          "images/Stozary5.png", 
-          "images/Stozary6.png"
+          "../images/Stozary1.png", 
+          "../images/Stozary2.png", 
+          "../images/Stozary3.png", 
+          "../images/Stozary4.png", 
+          "../images/Stozary5.png", 
+          "../images/Stozary6.png"
         ],
         "levels": [
           {
             "level": 1,
-            "photo": "images/model1.jpg",
+            "photo": "../images/model1.jpg",
             "flats": [
               {
                 "flat": "5",
                 "area": "80.96",
-                "img": "images/flats/flat4.jpg",
+                "img": "../images/flats/flat4.jpg",
                 "rooms": 3,
                 "mapCoords": {
                   "x": [
@@ -243,12 +243,12 @@
           },
           {
             "level": 2,
-            "photo": "images/model2.jpg",
+            "photo": "../images/model2.jpg",
             "flats": [
               {
                 "flat": "6",
                 "area": "80.96",
-                "img": "images/flats/flat5.jpg",
+                "img": "../images/flats/flat5.jpg",
                 "rooms": 3,
                 "mapCoords": {
                   "x": [
@@ -278,24 +278,24 @@
       "city": "Київ",
       "address": "вул. Одеська 25",
       "description": "Contrary to popular belief, Lorem Ipsum is not simply random text",
-      "photo": "images/building3.jpg",
+      "photo": "../images/building3.jpg",
       "gallery": [
-        "images/Stozary1.png", 
-        "images/Stozary2.png", 
-        "images/Stozary3.png", 
-        "images/Stozary4.png", 
-        "images/Stozary5.png", 
-        "images/Stozary6.png"
+        "../images/Stozary1.png", 
+        "../images/Stozary2.png", 
+        "../images/Stozary3.png", 
+        "../images/Stozary4.png", 
+        "../images/Stozary5.png", 
+        "../images/Stozary6.png"
       ],
       "levels": [
         {
         "level": 1,
-        "photo": "images/model1.jpg",
+        "photo": "../images/model1.jpg",
         "flats": [
           { 
             "flat": "77",
             "area": "80.96",
-            "img": "images/flats/flat6.jpg",
+            "img": "../images/flats/flat6.jpg",
             "rooms": 1,
             "address": "вул. Одеська 25",
             "complex": "Маєток Винковий",
@@ -318,12 +318,12 @@
         },
         {
           "level": 2,
-          "photo": "images/model2.jpg",
+          "photo": "../images/model2.jpg",
           "flats": [
             {
               "flat": "88",
               "area": "80.96",
-              "img": "images/flats/flat7.jpg",
+              "img": "../images/flats/flat7.jpg",
               "rooms": 2,
               "mapCoords": {
                 "x": [

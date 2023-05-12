@@ -4,18 +4,30 @@ import $ from 'jquery'
 import { maphilight } from 'maphilight'
 import HoverInfo from './HoverInfo'
 
-
-function Area({level, typeOfData}) {
+function Area({level, typeOfData, changeMap}) {
   // const [scale, setInitScale] = useState(1.2)
   let scale = 1.2;
   let tempAreaShape = "";
-  let image = level.photo;
+  const [image, setImage] = useState("")
+  // let image = level.photo;
   let minWidth='950px';
   
   const [infoProperties, setInfo] = useState({
     isDisplayed: false,
     info: '',
   });
+  
+  // useEffect(()=>{
+  //   setImage(level.photo)
+  // }, [typeOfData])
+
+  useEffect(()=>{
+    $('.mapF').maphilight({
+      stroke: false,
+      fillColor: '90C55B',
+      fillOpacity: 0.7
+    });
+  }, [image])
 
   let coords;
 
@@ -53,27 +65,32 @@ function Area({level, typeOfData}) {
   function scaleImage() {
     let image = document.getElementById("mapImg");
     let scaledImage = minWidth.slice(0, -2) * scale;
-    // alert(minWidth.slice(0, -2))
     image.style.width = `${scaledImage}px`;
   }
 
-  useEffect(()=>{
-    
-    $('.mapF').maphilight({
-      stroke: false,
-      fillColor: '90C55B',
-      fillOpacity: 0.7
-    });
+  function setChangeMap(e) {
+    e.preventDefault();
+    changeMap(typeOfData, e.currentTarget.id)
+  }
 
-    // scaleImage();
+  useEffect(()=>{
+    setImage(level.photo)
   }, [level]);
 
+  const renderImageName = () => {
+    return <img 
+      src={image}
+      usemap="#shape"
+      className='mapFF'
+      />;
+  }
+ 
   return(
     <div id="AreaId">
       <img 
         src={image}
-        usemap="#shape" 
-        className="mapF" 
+        usemap="#shape"
+        className="mapF"
         id="mapImg"
         alt="map"
         style={{width: `${minWidth.slice(0, -2) * scale}px`}}
@@ -93,6 +110,7 @@ function Area({level, typeOfData}) {
                 shape="poly" 
                 coords={tempAreaShape} 
                 href="#"
+                onClick={setChangeMap}
                 onMouseOver={visibleInfo}
                 onMouseLeave={()=>{invisibleInfo()}}
               /></a>
