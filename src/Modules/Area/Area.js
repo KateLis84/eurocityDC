@@ -1,8 +1,8 @@
-import {React, useEffect, useState} from 'react'
-import './Area.scss'
+import {React, useEffect, useState} from 'react';
+import './Area.scss';
 import $ from 'jquery'
-import { maphilight } from 'maphilight'
-import HoverInfo from './HoverInfo'
+import { maphilight } from 'maphilight';
+import HoverInfo from './HoverInfo';
 
 function Area({level, typeOfData, changeMap}) {
   // const [scale, setInitScale] = useState(1.2)

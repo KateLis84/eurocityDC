@@ -45,5 +45,4 @@ function Card({image, title, description, date}) {
     </div>
   );
 }
-
 export default Card;

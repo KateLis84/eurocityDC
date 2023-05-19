@@ -8,6 +8,7 @@ export default function FilterPage({setNewValues, preValues}) {
   let json = require("../../fakeData.json").complexes;
   const [city, setCity] = useState(json);
   let PreValueName = null;
+  
   const [complexes, setComplexes] = useState(()=>{
     if(preValues != null) {
       PreValueName = preValues.name;
@@ -59,7 +60,7 @@ export default function FilterPage({setNewValues, preValues}) {
   const [flats, setFlats] = useState(setDefaultData);
   const [filtered, setFilters] = useState(setDefaultData);
   const [rooms, setRooms] = useState([1, 2, 3, 4])
-  
+
   useEffect(()=>{
     setFlats(setNewFlats())
   }, [city, complexes])

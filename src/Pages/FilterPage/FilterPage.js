@@ -1,10 +1,9 @@
 import {React, useState, useEffect} from "react";
+import { useLocation } from 'react-router-dom';
 import Filters from './Filters.js';
-import { useLocation } from 'react-router-dom'
 import Card from '../../Components/Card/Card.js';
 
 export default function FilterPage() {
-
   const [filtered, setFiltered] = useState([])
   window.scrollTo(0, 0)
 
@@ -23,8 +22,6 @@ export default function FilterPage() {
     selectedComplex = location.state.selectedComplex
     console.log(selectedComplex)
   }
-  
-
 
   function setNewValues(flats) {
     setFiltered(flats)

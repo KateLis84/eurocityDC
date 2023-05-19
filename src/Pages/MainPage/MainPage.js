@@ -6,13 +6,10 @@ import MobileSlides from '../../Components/MobileSlides/MobileSlides';
 import Card from '../../Components/Card/Card'
 import ApartmentIcon from '@mui/icons-material/Apartment';
 
-function MainPage() {
 
-  // useEffect(()=>{
-  //   document.getElementsByTagName('header')[0].classList.add('header__mainPage')
-  //     document.getElementsByClassName("header__list")[0].style.color = "white"
-  //     document.getElementsByClassName("header__logo")[0].style.display = "block"
-  // }, [])
+let data = require("../../fakeData.json").topics;
+
+function MainPage() {
 
   return (
     <div className="mainPage">
@@ -23,18 +20,26 @@ function MainPage() {
       <div className='mainPage__cardBlock'>
         <div className='mainPage__title'>Новини</div>
         <div className='mainPage__cards'>
-          <Card/> 
-          <Card/>
-          <Card/>
+          {
+            data.news.slice(1, 4).map((el)=>{
+              return(
+                <Card image={el.photo} title={el.title} description={el.text.slice(0, 50)+"..."}/> 
+              )
+            })
+          }
         </div>
       </div>
 
       <div className='mainPage__cardBlock'>
         <div className='mainPage__title'>Статті</div>
         <div className='mainPage__cards'>
-          <Card/>
-          <Card/>
-          <Card/> 
+        {
+            data.articles.map((el)=>{
+              return(
+                <Card image={el.photo} title={el.title} description={el.text.slice(0, 50)+"..."}/> 
+              )
+            })
+          }
         </div>
       </div>
 
