@@ -1,0 +1,61 @@
+@import url(https://fonts.googleapis.com/css?family=Mr+Dafoe);
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
+
+$dark: rgba(00,00,00,.87);
+$light: rgba(255,255,255,.95);
+$hint-text:rgba(00,00,00,.25);
+$primary-color:#3D7658;
+$accent-color:rgba(10,191,188,1);
+$success-color:rgba(74, 86, 157,1);
+$break-xsmall: 320px;
+$break-small: 769px;
+$break-medium: 992px;
+$break-large: 1200px;
+
+.phoneInput
+{
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 1px 1px rgba(0,91,103,.1),0 1px 2px rgba(0,91,103,.25),inset 0 1px 1px rgba(255,255,255,.5);
+  font-size: 1em;
+  padding: 1em 0 1em 3em;
+  border-radius: 5px 0 0 5px;
+  color: $dark;
+  position: relative;
+}
+
+label
+{
+  color: $light;
+  margin-right: 0;
+  position: relative;
+  z-index: 0;
+}
+
+.phoneInput:focus
+{
+  color: $primary-color;
+}
+
+.input-icon
+{
+  position: absolute;
+  top: .05em;
+  left: .65em;
+  z-index: 2;
+  font-size: 1.5em;
+  color: $hint-text;
+  transition: all .5s;
+}
+
+.phoneInput:focus + .input-icon
+{
+  color: $primary-color;
+  transform: rotate(360deg);
+}
+
+.loadingBar
+{
+  z-index: 4;
+}

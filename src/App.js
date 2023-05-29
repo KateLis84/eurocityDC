@@ -7,6 +7,7 @@ import LevelPage from './Pages/LevelPage/LevelPage';
 import Testing from './Components/Test/Test.js';
 import JKPage from './Pages/JKPage/JKPage.js';
 import FilterPage from './Pages/FilterPage/FilterPage.js';
+import FlatPage from './Pages/FlatPage/FlatPage.js';
 
 function App() {
   return (
@@ -17,9 +18,9 @@ function App() {
         <Route path="/level" element={<LevelPage/>} />
         <Route path="/jkpage/:jkId" element={<JKPage/>} />
         <Route path="/filters" element={<FilterPage/>} />
+        <Route path="/flat/:jkId/:flatId" element={<FlatPage/>} />
       </Routes>
       <Footer/>
-      {/* <Testing/> */}
     </>
   );
 }
