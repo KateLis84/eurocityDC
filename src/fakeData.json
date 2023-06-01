@@ -71,6 +71,9 @@
         },
         "flats": [
             {
+              "id": 1,
+              "JKId": 1,
+              "status": true,
               "flat": "4",
               "area": "71.78",
               "rooms": 2,
@@ -91,6 +94,8 @@
               }
             },
             {
+              "id": 2,
+              "status": true,
               "flat": "5",
               "area": "41.92",
               "img": "../images/flats/flat2.jpg",
@@ -111,6 +116,8 @@
               }
             },
             {
+              "id": 3,
+              "status": false,
               "flat": "6",
               "area": "42.06",
               "img": "../images/flats/flat3.jpg",
@@ -131,6 +138,8 @@
               }
             },
             {
+              "id": 4,
+              "status": false,
               "flat": "7",
               "area": "42.06",
               "img": "../images/flats/flat4.jpg",
@@ -151,6 +160,8 @@
               }
             },
             {
+              "id": 5,
+              "status": false,
               "flat": "8",
               "area": "49.11",
               "img": "../images/flats/flat5.jpg",
@@ -200,6 +211,8 @@
           },
           "flats": [
             {
+              "id": 6,
+              "status": true,
               "flat": "9",
               "area": "71.78",
               "rooms": 2,
@@ -220,6 +233,8 @@
               }
             },
             {
+              "id": 7,
+              "status": true,
               "flat": "10",
               "area": "41.92",
               "img": "../images/flats/flat2.jpg",
@@ -240,6 +255,8 @@
               }
             },
             {
+              "id": 8,
+              "status": true,
               "flat": "11",
               "area": "42.06",
               "img": "../images/flats/flat3.jpg",
@@ -260,6 +277,8 @@
               }
             },
             {
+              "id": 9,
+              "status": true,
               "flat": "12",
               "area": "42.06",
               "img": "../images/flats/flat4.jpg",
@@ -280,6 +299,8 @@
               }
             },
             {
+              "id": 10,
+              "status": true,
               "flat": "13",
               "area": "49.11",
               "img": "../images/flats/flat5.jpg",
@@ -315,6 +336,8 @@
           },
           "flats": [
             {
+              "id": 11,
+              "status": false,
               "flat": "3",
               "area": "80.96",
               "img": "../images/flats/flat3.jpg",

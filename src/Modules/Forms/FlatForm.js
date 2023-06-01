@@ -41,9 +41,20 @@ export default function FlatForm() {
                 />
               </div>
               <div class="form-group">
-                <label class="form-remember">
-                  <IconsRadio/>
-                </label>
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required="required"
+                  data-parsley-ui-enabled="false"
+                  data-parsley-minlength="14"
+                  data-parsley-maxlength="14"
+                />
+              </div>
+              <div class="form-group">
+                <label for="messanger">Зв'язок</label>
+                <IconsRadio id="messanger"/>
               </div>
               <div class="form-group">
                 <button type="submit">Надіслати</button>

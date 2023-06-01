@@ -4,6 +4,7 @@ import ButtonsGroup from '../../Modules/Filters/ButtonsGroup.js';
 import Range from '../../Modules/Filters/Range.js';
 import Selection from '../../Modules/Filters/Selection.js';
 
+
 export default function FilterPage({setNewValues, preValues}) {
   let json = require("../../fakeData.json").complexes;
   const [city, setCity] = useState(json);

@@ -2,6 +2,7 @@ import {React, useState, useEffect} from "react";
 import { useLocation } from 'react-router-dom';
 import Filters from './Filters.js';
 import Card from '../../Components/Card/Card.js';
+import { HashLink as Link } from 'react-router-hash-link';
 
 export default function FilterPage() {
   const [filtered, setFiltered] = useState([])
@@ -35,15 +36,17 @@ export default function FilterPage() {
         {
           filtered.map((el)=>{
             return(
-              <Card 
-                image={el.img} 
-                title={"Квартира:" + el.flat}
-                description={
-                  `Кількість кімнат: ${el.rooms}
-                    Адреса: ${el.address}
-                    Житловий комплекс: ${el.complex}`
-                }
-              />
+              <Link to={"../flat/" + el.JKId+"/"+el.id} style={{all: 'unset'}}>
+                <Card 
+                  image={el.img} 
+                  title={"Квартира:" + el.flat}
+                  description={
+                    `Кількість кімнат: ${el.rooms}
+                      Адреса: ${el.address}
+                      Житловий комплекс: ${el.complex}`
+                  }
+                />
+              </Link>
             )
           })
         }

@@ -11,12 +11,6 @@ $semibold: 500;
 $bold: 700;
 $ultra: 800;
 
-// Base Font
-// $base-font-family: $body-font, sans-serif;
-// $base-font-size: 14px;
-// $base-font-weight: $regular;
-// $base-line-height: 1.6em;
-
 // Colors
 $black: #000000;
 $dark-gray: rgba($black, 0.8);
@@ -27,14 +21,9 @@ $white: #FFFFFF;
 $accent: #3D7658;
 
 // Form Settings
-$max-width: 600px;
+$max-width: 450px;
 $max-height: 400px;
 $gutters: 24px;
-
-html {
-  width: 100%;
-  height: 100%;
-}
 
 .overlay {
   position: absolute;
@@ -132,7 +121,7 @@ html {
       background: rgba($black, 0.1);
       width: 100%;
       border: 0;
-      border-radius: 4px;
+      border-radius: 0px;
       box-sizing: border-box;
       padding: 12px 20px;
       color: $gray;
@@ -160,7 +149,7 @@ html {
       background: $accent;
       width: 100%;
       border: 0;
-      border-radius: 4px;
+      border-radius: 0px;
       padding: 12px 20px;
       color: $white;
       font-family: inherit;
@@ -325,4 +314,127 @@ html {
 .cp-fab {
   background: $white !important;
   color: $accent !important;
+}
+
+.flat {
+  // padding: 0px 50px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+
+  &__info {
+    @include textBold;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  &__text {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+  }
+
+  &__status {
+    border-radius: 2px;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 15px;
+    color: white;
+
+    &_open {
+      background-color: #90C55B;
+    }
+
+    &_closed {
+      background-color: red
+    }
+  }
+
+  &__icons {
+    @include text;
+    color:#051C1B;
+    display: flex;
+    // flex-direction: column;
+    gap: 50px;
+    font-size: 30px;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+}
+
+$container-size: 600px;
+$grid-root: 7;
+$zoom-factor: 1.8;
+// Those ^ 3 things are all you'll need to edit
+$zoom-size: $container-size * $zoom-factor;
+$offset: $zoom-size - $container-size;
+$stepper-count: $grid-root;
+@if $grid-root % 2 == 1 {
+  $stepper-count: $grid-root - 1;
+}
+$stepper: $offset / $stepper-count;
+
+.grid-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: $container-size;
+  overflow: hidden;
+  position: relative;
+  width: $container-size + 100;
+
+  &:hover {
+    cursor: zoom-in;
+  }
+
+}
+  
+.grid-item {
+  height: 100% / $grid-root;
+  width: 100% / $grid-root;
+  
+  &:hover ~ img {
+    height: percentage($zoom-factor);
+    width: percentage($zoom-factor);
+  }
+  
+  @for $i from 1 through $grid-root {
+    &:hover:nth-of-type(#{$grid-root}n + #{$i}) ~ img {
+      left: (($i - 1) * $stepper) * -1;
+    }
+    
+    $t: (($i - 1) * $grid-root) + 1;
+    
+    &:hover:nth-of-type(1n + #{$t}) ~ .zoom-image {
+      top: (($i - 1) * $stepper) * -1;
+    }
+  }
+}
+
+.zoom-image {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: all 0.25s;
+  width: 100%;
+  z-index: -1;
+}
+
+// Colors for development
+.grid-item {
+  // background-color: rgba(48, 197, 255, 0.25);
+
+  &:nth-of-type(2n) {
+    // background-color: rgba(186, 59, 70, 0.25);
+  }
+}
+
+// Centering the thing for aesthetics
+.grid-wrapper {
+  margin: 0 auto;
 }
