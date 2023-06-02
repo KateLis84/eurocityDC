@@ -1,0 +1,54 @@
+@use '../../Constants/GeneralStyles/fonts.scss' as *;
+
+.videoBlock {
+  left: 0;
+
+  // padding: 20px;
+
+  color: white;
+  @include text;
+  &__video {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 4;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  &__text {
+    margin-top: 20px;
+    z-index: 5;
+
+    background-color: #2b614cee;
+    padding: 20px;
+    max-width: 30vw;
+
+    &_floatRight {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+
+    &_floatLeft {
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+    
+    &_title {
+      @include textBold;
+      font-size: 30px;
+      margin-bottom: 20px;
+      text-decoration: underline;
+    }
+
+    &_description {
+      font-size: 15px;
+
+    }
+  }
+}

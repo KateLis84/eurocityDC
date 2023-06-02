@@ -1,29 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Open+Sans:wght@300;400;700&family=Roboto:wght@500&display=swap');
 
 @mixin text{
-  font-family: 'Inter', sans-serif;
-  // font-family: 'Open Sans', sans-serif;
-  font-family: Montserrat,sans-serif;
+  // font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  // font-family: Montserrat,sans-serif;
   font-weight: 400;
   @media (min-width: 768px){
   }
 }
 
 @mixin textLight{
-  // font-family: 'Open Sans', sans-serif;
-  font-family: Montserrat,sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  // font-family: Montserrat,sans-serif;
   font-weight: 300;
   // color: rgba(255, 255, 255, 0.519);
 }
 
 @mixin textBold{
-  // font-family: 'Open Sans', sans-serif;
-  font-family: Montserrat,sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  // font-family: Montserrat,sans-serif;
   font-weight: 700;
 }
 
 @mixin textMedium {
-  // font-family: 'Open Sans', sans-serif;
-  font-family: Montserrat,sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  // font-family: Montserrat,sans-serif;
   font-weight: 500;
 }

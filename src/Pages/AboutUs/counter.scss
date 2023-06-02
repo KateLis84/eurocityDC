@@ -1,0 +1,17 @@
+
+@use '../../Constants/GeneralStyles/fonts.scss' as *;
+
+.stat-number {
+  @include textLight;
+  font-size: 220px;
+}
+
+.stat-one {
+  color: #FFF;
+  @include textLight;
+
+  &__text {
+    font-size: 100px;
+    margin-left: 150px;
+  }
+}

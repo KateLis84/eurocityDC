@@ -1,0 +1,26 @@
+@use '../../Constants/GeneralStyles/fonts.scss' as *;
+@import './counter.scss';
+@import './textAnim.scss';
+@import './video.scss';
+@import './diagram.scss';
+@import './split.scss';
+@import './TeamMembers.scss';
+
+.aboutUs * {
+  box-sizing: border-box;
+}
+
+.aboutUs{
+  background-image: url('https://img.lunstatic.net/building-800x600/21913.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  padding: 10px 100px;
+  padding-top: 150px;
+  min-height: 80vh;
+
+  display: grid;
+  grid-template-rows: repeat(4, 100vh);
+}
