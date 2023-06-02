@@ -2,11 +2,13 @@ import {React, useEffect} from "react";
 import './FlatPage.scss'
 import FlatForm from '../../Modules/Forms/FlatForm.js';
 import {useParams} from 'react-router-dom';
-import $ from 'jquery';
+import { HashLink as Link } from 'react-router-hash-link';
+import { useLocation } from 'react-router-dom'
 
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import WeekendIcon from '@mui/icons-material/Weekend';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 let data = require("../../fakeData.json").complexes;
 
@@ -18,6 +20,8 @@ export default function FlatPage() {
   const jk = data[jkArrayId];
   let level = 0;
   const flat = getFlat();
+
+  const from = useLocation().state.from
 
   function getFlat() {
     let res = 0;
@@ -39,11 +43,18 @@ export default function FlatPage() {
 
   return (
     <div style={{padding: '0px 50px', paddingTop:'140px'}}>
+      { from == "JKPage" ? 
+        <Link to={"/jkpage/"+flat.jkID}><span className="flat__direction">← Повернутись до ЖК</span></Link> : 
+        <Link to="/filters"><span className="flat__direction">← Повернутись до пошуку</span></Link>
+      }
+      
       <div className="flat">
         <div className="flat__info">
           <div className="flat__text">
             <div style={{ fontSize: "70px" }}>Квартира № {flat.flat}</div>
-            <div className={getStatus()}>Вільно</div>
+            <div className={getStatus()}>
+              {flat.status ? "Вільно" : "Зайнято"}
+            </div>
           </div>
           {/* flat__image */}
           <div className="grid-wrapper">
@@ -97,16 +108,19 @@ export default function FlatPage() {
             <div class="grid-item"></div>
             <div class="grid-item"></div>
             <img src={"../" + flat.img} alt="flat" id="zoom-image" className="zoom-image"/>
-            {/* <div className="flat__icons">
-              <div><ApartmentIcon sx={{fontSize: '40px'}}/> {level} поверх</div>
-              <div><AccessibilityNewIcon sx={{fontSize: '40px'}}/> {flat.area} площа</div>
-              <div><WeekendIcon sx={{fontSize: '40px'}}/> {flat.rooms} кімнат</div>
-            </div> */}
           </div>
         </div>
         <FlatForm />
       </div>
-      <div className="jkPage__btn buttonAnim">Переглянути ЖК</div>
+      <div>
+        
+        <div className="flat__icons" style={{margin: '50px'}}>
+          <div className="flat__icon"><AccessibilityNewIcon sx={{fontSize: '40px'}}/> {flat.area} площа</div>
+          <div className="flat__icon"><ApartmentIcon sx={{fontSize: '40px'}}/> {level} поверх</div>
+          <div className="flat__icon"><WeekendIcon sx={{fontSize: '40px'}}/> {flat.rooms} кімнат</div>
+          <div className="flat__icon"><AttachMoneyIcon sx={{fontSize: '40px'}}/> Ціна за запитом</div>
+        </div>
+      </div>
     </div>
   );
 }

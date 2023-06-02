@@ -31,12 +31,14 @@ export default function FilterPage() {
   return(
     <div className="filterPage">
       <Filters setNewValues={setNewValues} preValues={selectedComplex}/>
-
       <div className="filterPage__list">
         {
           filtered.map((el)=>{
             return(
-              <Link to={"../flat/" + el.JKId+"/"+el.id} style={{all: 'unset'}}>
+              <Link 
+                to={"/flat/" + el.jkID+"/"+el.id} style={{all: 'unset'}}
+                state={{from: 'FilterPage'}}
+              >
                 <Card 
                   image={el.img} 
                   title={"Квартира:" + el.flat}
@@ -45,6 +47,7 @@ export default function FilterPage() {
                       Адреса: ${el.address}
                       Житловий комплекс: ${el.complex}`
                   }
+                  locked = {el.status ? false : true}
                 />
               </Link>
             )

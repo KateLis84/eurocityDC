@@ -1,38 +1,19 @@
 import React from 'react';
 import './Card.scss'
 import '../Test/Test.scss'
-import jQuery from 'jquery'
+import lock from '../../Assets/Images/lock.png';
 
-function Card({image, title, description, date}) {
-
-  // jQuery(function($) {
-  //   var doAnimations = function() {
-      
-  //     var offset = $(window).scrollTop() + $(window).height(),
-  //         $animatables = $('.animatable');
-      
-  //     if ($animatables.length == 0) {
-  //       $(window).off('scroll', doAnimations);
-  //     }
-      
-  //     $animatables.each(function(i) {
-  //        var $animatable = $(this);
-  //       if (($animatable.offset().top + $animatable.height() - 20) < offset) {
-  //         $animatable.removeClass('animatable').addClass('animated');
-  //       }
-  //     });
-  
-  //   };
-    
-  //   $(window).on('scroll', doAnimations);
-  //   $(window).trigger('scroll');
-  // });
-
-  //  animatable bounceInLeft
+function Card({image, title, description, date, locked=false}) {
 
   return (
     <div className="card">
       <div className="card__pic" style={{backgroundImage: `url('${image}')`}}></div>
+      { locked ? 
+        <div 
+          className="card__lock"
+        >
+        </div> : null
+      }
       <div className="card__text">
         <div className="card__date">
           {date}

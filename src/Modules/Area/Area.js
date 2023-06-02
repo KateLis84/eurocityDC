@@ -3,6 +3,7 @@ import './Area.scss';
 import $ from 'jquery'
 import { maphilight } from 'maphilight';
 import HoverInfo from './HoverInfo';
+import { HashLink as Link } from 'react-router-hash-link';
 
 function Area({level, typeOfData, changeMap}) {
   // const [scale, setInitScale] = useState(1.2)
@@ -103,18 +104,36 @@ function Area({level, typeOfData, changeMap}) {
             for(let i = 0; i<el.x.length; i++){
               tempAreaShape += `${el.x[i]*scale}, ${el.y[i]*scale},`
             }
-            return(
-              <a href="#"><area 
-                id={index}
-                alt="flat"
-                shape="poly" 
-                coords={tempAreaShape} 
-                href="#"
-                onClick={setChangeMap}
-                onMouseOver={visibleInfo}
-                onMouseLeave={()=>{invisibleInfo()}}
-              /></a>
-            )
+            if(typeOfData == 'flats'){
+              return(
+                <Link 
+                  to={"/flat/" + infoProperties.info.jkID +"/"+ infoProperties.info.id}
+                  state={{from: 'JKPage'}}
+                >
+                  <area 
+                    id={index}
+                    alt="flat"
+                    shape="poly" 
+                    coords={tempAreaShape} 
+                    onMouseOver={visibleInfo}
+                    onMouseLeave={()=>{invisibleInfo()}}
+                  />
+                </Link>
+              )
+            } else if(typeOfData == 'JK'){
+              return(
+                <a href="#"><area 
+                  id={index}
+                  alt="flat"
+                  shape="poly" 
+                  coords={tempAreaShape} 
+                  href="#"
+                  onClick={setChangeMap}
+                  onMouseOver={visibleInfo}
+                  onMouseLeave={()=>{invisibleInfo()}}
+                /></a>
+              )
+            }
           })
           
         }

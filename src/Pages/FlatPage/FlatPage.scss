@@ -322,6 +322,20 @@ $gutters: 24px;
   grid-template-columns: 3fr 1fr;
   gap: 20px;
 
+  &__direction {
+    display: inline-block;
+    @include text;
+    color:#3D7658;
+    margin-bottom: 20px;
+    transition: .5s;
+
+    &:hover {
+      cursor:pointer;
+      text-decoration: underline;
+    }
+
+  }
+
   &__info {
     @include textBold;
     display: flex;
@@ -333,6 +347,7 @@ $gutters: 24px;
     display: flex;
     gap: 20px;
     align-items: flex-end;
+    user-select: none;
   }
 
   &__status {

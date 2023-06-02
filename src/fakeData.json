@@ -72,7 +72,7 @@
         "flats": [
             {
               "id": 1,
-              "JKId": 1,
+              "jkID": 1,
               "status": true,
               "flat": "4",
               "area": "71.78",
@@ -95,6 +95,7 @@
             },
             {
               "id": 2,
+              "jkID": 1,
               "status": true,
               "flat": "5",
               "area": "41.92",
@@ -117,6 +118,7 @@
             },
             {
               "id": 3,
+              "jkID": 1,
               "status": false,
               "flat": "6",
               "area": "42.06",
@@ -139,6 +141,7 @@
             },
             {
               "id": 4,
+              "jkID": 1,
               "status": false,
               "flat": "7",
               "area": "42.06",
@@ -161,6 +164,7 @@
             },
             {
               "id": 5,
+              "jkID": 1,
               "status": false,
               "flat": "8",
               "area": "49.11",
@@ -212,6 +216,7 @@
           "flats": [
             {
               "id": 6,
+              "jkId": 1,
               "status": true,
               "flat": "9",
               "area": "71.78",
@@ -234,6 +239,7 @@
             },
             {
               "id": 7,
+              "jkId": 1,
               "status": true,
               "flat": "10",
               "area": "41.92",
@@ -256,6 +262,7 @@
             },
             {
               "id": 8,
+              "jkId": 1,
               "status": true,
               "flat": "11",
               "area": "42.06",
@@ -278,6 +285,7 @@
             },
             {
               "id": 9,
+              "jkId": 1,
               "status": true,
               "flat": "12",
               "area": "42.06",
@@ -300,6 +308,7 @@
             },
             {
               "id": 10,
+              "jkId": 1,
               "status": true,
               "flat": "13",
               "area": "49.11",
@@ -337,6 +346,7 @@
           "flats": [
             {
               "id": 11,
+              "jkID": 1,
               "status": false,
               "flat": "3",
               "area": "80.96",
