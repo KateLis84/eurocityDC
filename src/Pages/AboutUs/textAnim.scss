@@ -276,7 +276,6 @@
 
 }
 
-
 @keyframes side-top {
 
   0%,
@@ -432,4 +431,36 @@
   // 100% {
   //   transform: translateY(-101%);
   // }
+}
+
+
+@media(max-width: 1100px) {
+  .stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sides {
+    display: none;
+  }
+  
+  .wrapper {
+    position: relative;
+    color: white;
+    font-size: 10vw;
+    border: 2px solid white;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    padding-top: 0.65rem;
+    padding-left: 0.5rem;
+    padding-right: 0.36rem;
+    padding-bottom: 0.2rem;
+    @include textBold;
+  }
+  
+  .slash {
+    display: none;
+  }
+  
 }

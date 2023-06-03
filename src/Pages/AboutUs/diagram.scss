@@ -95,3 +95,13 @@ $white: #FFF;
 		left: calc(50% - 175px);
 	}
 }
+
+@media(max-width: 1100px) {
+  .stat-one__text {
+    font-size: 10vw;
+    text-align: center;
+  }
+  .counter {
+    
+  }
+}

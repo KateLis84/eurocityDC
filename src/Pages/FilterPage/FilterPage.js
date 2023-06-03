@@ -9,10 +9,13 @@ export default function FilterPage() {
   window.scrollTo(0, 0)
 
   useEffect(()=>{
-    document.getElementsByTagName('header')[0].classList.remove('header__mainPage')
-    document.getElementsByTagName('header')[0].style.position = 'fixed';
-    document.getElementsByClassName("header__list")[0].style.color = "white"
-    document.getElementsByClassName("header__logo")[0].style.display = "none"
+    if(window.innerWidth>580) {
+      document.getElementsByTagName('header')[0].classList.remove('header__mainPage')
+      document.getElementsByTagName('header')[0].style.position = 'fixed';
+      document.getElementsByClassName("header__list")[0].style.color = "white"
+      document.getElementsByClassName("header__logo")[0].style.display = "none"
+    }
+    
   }, [])
 
   let selectedComplex = null;

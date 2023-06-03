@@ -52,3 +52,46 @@
     }
   }
 }
+
+
+@media(max-width: 1440px) {
+  .videoBlock {
+    left: 0;
+  
+    color: white;
+    @include text;
+    &__video {
+      position: static;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 4;
+    }
+  
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: none;
+    }
+  
+    &__text {
+      margin-top: 20px;
+      z-index: 5;
+  
+      background-color: #2b614cee;
+      padding: 20px;
+      max-width: none;
+      
+      &_title {
+        @include textBold;
+        font-size: 30px;
+        margin-bottom: 20px;
+        text-decoration: underline;
+      }
+  
+      &_description {
+        font-size: 15px;
+      }
+    }
+  }
+}

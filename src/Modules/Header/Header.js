@@ -21,7 +21,7 @@ function Header() {
       document.getElementsByClassName("header__logo")[0].style.display = "block"
     }
 
-    if(window.innerWidth<570 && isMobile==false) setMobile(true)
+    if(window.innerWidth<580 && isMobile==false) setMobile(true)
     else if(window.innerWidth<580 && isMobile==true) setMobile(false)
   }, [])
 

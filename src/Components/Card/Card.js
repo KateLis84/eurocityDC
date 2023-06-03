@@ -1,6 +1,5 @@
 import React from 'react';
 import './Card.scss'
-import '../Test/Test.scss'
 import lock from '../../Assets/Images/lock.png';
 
 function Card({image, title, description, date, locked=false}) {
