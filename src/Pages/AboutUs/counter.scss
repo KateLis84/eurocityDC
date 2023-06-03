@@ -15,3 +15,14 @@
     margin-left: 150px;
   }
 }
+
+.counter__block {
+  min-height: 100vh;
+
+  &:nth-child(2) {
+    text-align: right;
+    div {
+      transform: translateX(-10%);
+    }
+  }
+}

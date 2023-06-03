@@ -1,10 +1,10 @@
-import { React, useEffect, useState } from "react";
+import { React } from "react";
 import "./AboutUs.scss";
 
-import gsap from "gsap";
-import ScrollTrigger from "scrolltrigger";
+import { HashLink as Link } from 'react-router-hash-link';
 
 import aboutVideo from "../../Assets/Videos/AboutUs.mp4";
+import family from '../../Assets/Images/happyFamily.jpg';
 
 import $ from "jquery";
 
@@ -14,7 +14,7 @@ export default function AboutUs() {
 
   $(function () {
     var fx = function fx() {
-      $(".stat-number").each(function (i, el) {
+      $(".toCount").each(function (i, el) {
         var data = parseInt(this.dataset.n, 10);
         var props = {
           from: {
@@ -26,6 +26,30 @@ export default function AboutUs() {
         };
         $(props.from).animate(props.to, {
           duration: 1000 * 2,
+          step: function (now, fx) {
+            $(el).text(Math.ceil(now));
+          },
+          complete: function () {
+            el.textContent = "20+";
+            if (el.dataset.sym !== undefined) {
+              el.textContent = el.textContent.concat(el.dataset.sym);
+            }
+          },
+        });
+      });
+
+      $(".toCount1").each(function (i, el) {
+        var data = parseInt(this.dataset.n, 10);
+        var props = {
+          from: {
+            count: 0,
+          },
+          to: {
+            count: data,
+          },
+        };
+        $(props.from).animate(props.to, {
+          duration: 1000 * 3,
           step: function (now, fx) {
             $(el).text(Math.ceil(now));
           },
@@ -298,29 +322,10 @@ export default function AboutUs() {
     
   });
 
-  useEffect(() => {
-    // const left = document.querySelector(".left");
-    // const right = document.querySelector(".right");
-    // const container = document.querySelector(".containerS");
-    // left.addEventListener("mouseenter", () => {
-    //   container.classList.add("hover-left");
-    // });
-    // left.addEventListener("mouseleave", () => {
-    //   container.classList.remove("hover-left");
-    // });
-    // right.addEventListener("mouseenter", () => {
-    //   container.classList.add("hover-right");
-    // });
-    // right.addEventListener("mouseleave", () => {
-    //   container.classList.remove("hover-right");
-    // });
-    document.getElementById("teamInfo").style.marginTop = Math.round(document.getElementById("bgvid").offsetHeight/12) + "px"
-  }, []);
-
   return (
     <>
       <div className="aboutUs">
-        <div className="stage">
+        <div className="stage aboutUs__block">
           <div class="wrapper">
             <div class="slash"></div>
             <div class="sides">
@@ -340,15 +345,24 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
+        
+        <div className="stat-one aboutUs__block">
+        <div className="counter__block">
+            <span className="stat-number toCount" data-n="20">
+              <span className="Single">0</span>
+            </span>
+            <div className="stat-one__text">Років на ринку</div>
+          </div>
 
-        <div className="stat-one">
-          <span className="stat-number" data-n="1430">
-            <span className="Single">0</span>
-          </span>
-          <div className="stat-one__text">Задоволених клієнтів</div>
+          <div className="counter__block">
+            <span className="stat-number toCount1" data-n="1430">
+              <span className="Single">0</span>
+            </span>
+            <div className="stat-one__text">Задоволених клієнтів</div>
+          </div>
         </div>
 
-        <div id="section-3" style={{ boxSizing: "border-box" }}>
+        <div id="section-3" className="aboutUs__block" style={{ boxSizing: "border-box", paddingTop: '10vh'}}>
           <div
             className="stat-one__text"
             style={{ color: "white", marginBottom: "50px" }}
@@ -357,7 +371,7 @@ export default function AboutUs() {
           </div>
           <div class="example-row">
             <div class="example">
-              <h3>ЖК Стожари збудовано на</h3>
+              <h3>ЖК Стожари</h3>
               <div
                 class="js-radial counter radial"
                 data-finnish="100"
@@ -407,7 +421,7 @@ export default function AboutUs() {
           </div>
         </div>
 
-        <div className="videoBlock">
+        <div className="videoBlock aboutUs__block">
           <video
             id="bgvid"
             playsInLine
@@ -499,20 +513,12 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
-      {/* <div class="containerS">
-        <div class="split left">
-          <h1>The Designer</h1>
-          <a href="#" class="button">
-            Read More
-          </a>
-        </div>
-        <div class="split right">
-          <h1>The Programmer</h1>
-          <a href="#" class="button">
-            Read More
-          </a>
-        </div>
-      </div> */}
+      
+      <div className="readMore">
+        <img src={family} alt="family" className="readMore__photo"/>
+        <div className="readMore__text"><span style={{fontSize: '25px'}}>У</span> нашій компанії ваша задоволеність - наш головний пріоритет. Ми прагнемо забезпечити вам найкращий досвід покупки новобудови, надаючи індивідуальний та уважний підхід до кожного клієнта</div>
+        <div className="readMore__btnContainer"><Link class="btn-0" to="/filters">Знайти своє житло</Link></div>
+      </div>
     </>
   );
 }
