@@ -57,8 +57,6 @@ export default function ContactPage() {
           <iframe
           title="MainLoactionMap"
           src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d812.0465482157423!2d23.51093140101536!3d49.03748644393336!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1685904734041!5m2!1sru!2sua"
-          width="600"
-          height="450"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
