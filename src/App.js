@@ -8,6 +8,7 @@ import JKPage from './Pages/JKPage/JKPage.js';
 import FilterPage from './Pages/FilterPage/FilterPage.js';
 import FlatPage from './Pages/FlatPage/FlatPage.js';
 import AboutUs from './Pages/AboutUs/AboutUs.js';
+import ContactPage from './Pages/ContactPage/ContactPage.js';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/filters" element={<FilterPage/>} />
         <Route path="/flat/:jkId/:flatId" element={<FlatPage/>} />
         <Route path="/aboutus" element={<AboutUs/>} />
+        <Route path="/contacts" element={<ContactPage/>} />
       </Routes>
       <Footer/>
     </div>

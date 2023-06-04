@@ -44,7 +44,7 @@ function Header() {
           className='logo header__logo'/>
         <ul className="header__list">
           <Link to="../#JKgallery" class="routeLink"><li className="header__link">Проєкти</li></Link>
-          <Link to="/" class="routeLink"><li className="header__link">Контакти</li></Link>
+          <Link to="/contacts" class="routeLink"><li className="header__link">Контакти</li></Link>
           <Link to="/aboutus" class="routeLink"><li className="header__link">Про нас</li></Link>
         </ul>
       </header>

@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useEffect } from "react";
 import "./AboutUs.scss";
 
 import { HashLink as Link } from 'react-router-hash-link';
@@ -9,6 +9,15 @@ import family from '../../Assets/Images/happyFamily.jpg';
 import $ from "jquery";
 
 export default function AboutUs() {
+
+  useEffect(()=>{
+    if(window.innerWidth>580) {
+      document.getElementsByTagName('header')[0].classList.remove('header__mainPage')
+      document.getElementsByTagName('header')[0].style.position = 'fixed';
+      document.getElementsByClassName("header__list")[0].style.color = "white"
+      document.getElementsByClassName("header__logo")[0].style.display = "none"
+    }  
+  }, [])
 
   window.scrollTo(0, 0)
 
