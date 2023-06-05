@@ -23,7 +23,7 @@ function App() {
         <Route path="/flat/:jkId/:flatId" element={<FlatPage/>} />
         <Route path="/aboutus" element={<AboutUs/>} />
         <Route path="/contacts" element={<ContactPage/>} />
-        <Route path="/info" element={<ArticlePage/>} />
+        <Route path="/info/:infoType/:infoId" element={<ArticlePage/>} />
       </Routes>
       <Footer/>
     </div>

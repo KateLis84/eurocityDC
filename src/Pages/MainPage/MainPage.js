@@ -23,7 +23,7 @@ function MainPage() {
           {
             data.news.slice(1, 4).map((el)=>{
               return(
-                <Card image={el.photo} title={el.title} description={el.text.slice(0, 50)+"..."}/> 
+                <Link style={{all: 'unset'}} to={"/info/news/"+el.id}><Card image={el.photo} title={el.title} description={el.text.slice(0, 50)+"..."}/></Link>
               )
             })
           }
@@ -36,7 +36,7 @@ function MainPage() {
         {
             data.articles.map((el)=>{
               return(
-                <Card image={el.photo} title={el.title} description={el.text.slice(0, 50)+"..."}/> 
+                <Link style={{all: 'unset'}} to={"/info/articles/"+el.id}><Card image={el.photo} title={el.title} description={el.text.slice(0, 50)+"..."}/></Link>
               )
             })
           }
