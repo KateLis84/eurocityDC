@@ -2,11 +2,16 @@ import {React, useState, useEffect} from "react";
 import { useLocation } from 'react-router-dom';
 import Filters from './Filters.js';
 import Card from '../../Components/Card/Card.js';
+import Pagination from '../../Components/Pagination.js';
 import { HashLink as Link } from 'react-router-hash-link';
 
 export default function FilterPage() {
-  const [filtered, setFiltered] = useState([])
   window.scrollTo(0, 0)
+
+  const [filtered, setFiltered] = useState([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage, setPostPerPage] = useState(12)
+  
 
   useEffect(()=>{
     if(window.innerWidth>580) {
@@ -17,7 +22,6 @@ export default function FilterPage() {
     }
     
   }, [])
-
   let selectedComplex = null;
   const location = useLocation()
   if(useLocation().state == null){
@@ -26,9 +30,17 @@ export default function FilterPage() {
     selectedComplex = location.state.selectedComplex
     console.log(selectedComplex)
   }
-
   function setNewValues(flats) {
     setFiltered(flats)
+  }
+
+  // Pagination
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPost = filtered.slice(indexOfFirstPost, indexOfLastPost)
+
+  function paginate(PageNumber) {
+    setCurrentPage(PageNumber)
   }
 
   return(
@@ -36,7 +48,7 @@ export default function FilterPage() {
       <Filters setNewValues={setNewValues} preValues={selectedComplex}/>
       <div className="filterPage__list">
         {
-          filtered.map((el)=>{
+          currentPost.map((el)=>{
             return(
               <Link 
                 to={"/flat/" + el.jkID+"/"+el.id} style={{all: 'unset'}}
@@ -57,6 +69,8 @@ export default function FilterPage() {
           })
         }
       </div>
+
+      <Pagination postsPerPage={postsPerPage} totalPosts={filtered.length} paginate={paginate}/>
     </div>
   )
 }
