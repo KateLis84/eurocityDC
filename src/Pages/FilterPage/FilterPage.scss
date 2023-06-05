@@ -8,6 +8,13 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
   }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
 }
 
 .filterContainer {

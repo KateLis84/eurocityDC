@@ -70,7 +70,8 @@ export default function FilterPage() {
         }
       </div>
 
-      <Pagination postsPerPage={postsPerPage} totalPosts={filtered.length} paginate={paginate}/>
+      <div className="filterPage__pagination"><Pagination postsPerPage={postsPerPage} totalPosts={filtered.length} paginate={paginate}/></div>
+      
     </div>
   )
 }
