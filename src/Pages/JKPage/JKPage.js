@@ -1,10 +1,16 @@
 import {React, useEffect, useState} from "react";
 import './JKPage.scss';
 import '../../Constants/GeneralStyles/animations.scss'
+import '../InfoPage/InfoPage.scss'
 import {useParams} from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
+
+// Components
 import LevelMap from "../../Modules/Area/Area";
 import Pagination from '../../Components/LevelPagination/LevelPagination.js';
+import ToggleBtn from './ToggleBtn.js';
+import Card from '../../Components/Card/Card.js';
+
 
 // ICONS
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -16,6 +22,7 @@ import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
 
 let data = require("../../fakeData.json").complexes;
+let news = require("../../fakeData.json").topics.news;
 
 export default function JKpage() {
 
@@ -33,6 +40,7 @@ export default function JKpage() {
 
   const [toDisplay, setNewDisplay] = useState(JK);
   const [typeOfData, settypeOfData] = useState("JK");
+  const [MobilePhoto, setMobilePhoto] = useState(JK.photo);
 
   function ChangeMap(currentMap, index) {
     if(currentMap == "JK") {
@@ -98,6 +106,21 @@ export default function JKpage() {
     }
   }
 
+  function toggleBtnMobile(value) {
+    if (value === 'building') setMobilePhoto(JK.photo)
+    else setMobilePhoto(JK.levels[0].photo)
+  }
+
+  function getNews() {
+    let result = [];
+    news.map((el)=>{
+      if(el.tag.includes(JK.name)) result.push(el)
+    })
+
+    
+    return result.slice(0, 3);
+  }
+
   return (
     <div className="jkPage">
 
@@ -123,6 +146,11 @@ export default function JKpage() {
 
       <div className="jkPage__block jkPage__block_area">
         <LevelMap level={toDisplay} typeOfData={typeOfData} changeMap={ChangeMap}/>
+      </div>
+
+      <div className="jkPage__MobileArea">
+        <img src={MobilePhoto}/>
+        <div className="jkPage__MobileArea_toggleBtn"><ToggleBtn handleChange={toggleBtnMobile}/></div>
       </div>
 
       <div id="levelPagination" className="kPage__block jkPage__block_pagination">
@@ -168,6 +196,29 @@ export default function JKpage() {
             /></div>
           );
         })}
+      </div>
+
+      <div className="jkPage__block jkPage__block_news">
+      <div className="info__more">
+        <h3 className="jkPage__newsTitle">
+          Новини Житлового Комплексу
+        </h3>
+
+        <div className="info__moreCards">
+          {getNews().map((el) => {
+            console.log(el);
+            return (
+              <Link style={{ all: "unset" }} to={"/info/articles/" + el.id}>
+                <Card
+                  image={"../" + el.photo}
+                  title={el.title}
+                  description={el.text.slice(0, 50) + "..."}
+                />
+              </Link>
+            );
+          })}
+        </div>
+      </div>
       </div>
 
     </div>

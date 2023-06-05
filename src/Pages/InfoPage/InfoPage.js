@@ -90,7 +90,6 @@ export default function ArticlePage() {
           {getSimularResults().map((el) => {
             console.log(el);
             return (
-              <>
               <Link style={{ all: "unset" }} to={"/info/articles/" + el.id}>
                 <Card
                   image={"../" + el.photo}
@@ -98,22 +97,6 @@ export default function ArticlePage() {
                   description={el.text.slice(0, 50) + "..."}
                 />
               </Link>
-              <Link style={{ all: "unset" }} to={"/info/articles/" + el.id}>
-                <Card
-                  image={"../" + el.photo}
-                  title={el.title}
-                  description={el.text.slice(0, 50) + "..."}
-                />
-              </Link>
-              <Link style={{ all: "unset" }} to={"/info/articles/" + el.id}>
-                <Card
-                  image={"../" + el.photo}
-                  title={el.title}
-                  description={el.text.slice(0, 50) + "..."}
-                />
-              </Link>
-              </>
-              
             );
           })}
         </div>

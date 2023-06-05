@@ -13,7 +13,7 @@ import ArticlePage from './Pages/InfoPage/InfoPage.js';
 
 function App() {
   return (
-    <div style={{overflowX: 'hidden'}}>
+    <div>
       <Header/>
       <Routes>
         <Route path="/" element={<MainPage/>} />
