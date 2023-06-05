@@ -42,7 +42,7 @@ export default function FlatPage() {
   }
 
   return (
-    <div style={{padding: '0px 50px', paddingTop:'140px'}}>
+    <div className="flatContainer">
       { from == "JKPage" ? 
         <Link to={"/jkpage/"+flat.jkID}><span className="flat__direction">← Повернутись до ЖК</span></Link> : 
         <Link to="/filters"><span className="flat__direction">← Повернутись до пошуку</span></Link>
@@ -51,12 +51,11 @@ export default function FlatPage() {
       <div className="flat">
         <div className="flat__info">
           <div className="flat__text">
-            <div style={{ fontSize: "70px" }}>Квартира № {flat.flat}</div>
+            <div className="flat__text_title">Квартира № {flat.flat}</div>
             <div className={getStatus()}>
               {flat.status ? "Вільно" : "Зайнято"}
             </div>
           </div>
-          {/* flat__image */}
           <div className="grid-wrapper">
             <div class="grid-item"></div>
             <div class="grid-item"></div>
@@ -109,6 +108,7 @@ export default function FlatPage() {
             <div class="grid-item"></div>
             <img src={"../" + flat.img} alt="flat" id="zoom-image" className="zoom-image"/>
           </div>
+          <img src={"../" + flat.img} alt="flat" className="flat__mobileImage"/>
         </div>
         <FlatForm />
       </div>
