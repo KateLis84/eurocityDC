@@ -21,8 +21,8 @@ export default function ContactPage() {
             </span>
             <h4>Зв'яжіться з менеджером</h4>
             <h5>
-              +390 876 654 844 <br/>
-              +380 345 024 357
+              <span>+390 876 654 844</span> <br/>
+              <span>+380 345 024 357</span>то
             </h5>
           </div>
 

@@ -9,6 +9,7 @@ import FilterPage from './Pages/FilterPage/FilterPage.js';
 import FlatPage from './Pages/FlatPage/FlatPage.js';
 import AboutUs from './Pages/AboutUs/AboutUs.js';
 import ContactPage from './Pages/ContactPage/ContactPage.js';
+import ArticlePage from './Pages/InfoPage/InfoPage.js';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/flat/:jkId/:flatId" element={<FlatPage/>} />
         <Route path="/aboutus" element={<AboutUs/>} />
         <Route path="/contacts" element={<ContactPage/>} />
+        <Route path="/info" element={<ArticlePage/>} />
       </Routes>
       <Footer/>
     </div>

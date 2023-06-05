@@ -1,0 +1,68 @@
+@use '../../Constants/GeneralStyles/fonts.scss' as *;
+
+.info {
+  padding: 100px 100px;
+  @include text;
+  font-size: 25px;
+  display: inline-block;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__title {
+    text-align: center;
+    color: #2B614C;
+  }
+
+  &__img {
+    background-color: aqua;
+    width: 90%;
+    height: 70vh;
+    object-fit: cover;
+    align-self: center;
+
+    margin-bottom: 20px;
+  }
+
+  &__textBlock {
+    padding: 0px 150px;
+    line-height: 5vh;
+  }
+
+  &__firstLetter {
+    color: #2B614C;
+    margin: 10px;
+    line-height: 30px;
+    font-size: 75px;
+    float: left;
+  }
+
+  &__text {
+   margin-bottom: 90px;
+  }
+
+  &__more {
+    h3 {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__tags {
+    margin-bottom: 30px;
+    border-top: 1px solid #2B614C;
+    padding-top: 10px;
+  }
+
+  &__moreCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+
+}
+
+.test:hover {
+  cursor: pointer;
+  background-color: #2B614C;
+}
