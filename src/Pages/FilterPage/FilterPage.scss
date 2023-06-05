@@ -28,3 +28,45 @@
   align-items: center;
   gap: 60px
 }
+
+@media(max-width: 1100px) {
+  .filterPage {
+    padding: 100px 10px;
+    min-height: 100vh;
+  
+    &__list {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+  }
+  
+  .filterContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+}
+
+@media(max-width: 500px) {
+  .filterPage {
+    padding: 100px 10px;
+    min-height: 100vh;
+  
+    &__list {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+  
+  .filterContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+}
