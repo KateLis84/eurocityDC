@@ -2,7 +2,7 @@ import React from 'react';
 import './Card.scss'
 import lock from '../../Assets/Images/lock.png';
 
-function Card({image, title, description, date, locked=false}) {
+function Card({image, title, description, date, locked=false, typeOdData}) {
 
   return (
     <div className="card">

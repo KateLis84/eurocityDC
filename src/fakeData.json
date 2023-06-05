@@ -73,9 +73,10 @@
             {
               "id": 1,
               "jkID": 1,
+              "level": 1,
               "status": true,
               "flat": "4",
-              "area": "71.78",
+              "area": "71",
               "rooms": 2,
               "img": "../images/flats/flat1.jpg", 
               "mapCoords": {
@@ -96,9 +97,10 @@
             {
               "id": 2,
               "jkID": 1,
+              "level": 1,
               "status": true,
               "flat": "5",
-              "area": "41.92",
+              "area": "41",
               "img": "../images/flats/flat2.jpg",
               "rooms": 1,
               "mapCoords": {
@@ -119,9 +121,10 @@
             {
               "id": 3,
               "jkID": 1,
+              "level": 1,
               "status": false,
               "flat": "6",
-              "area": "42.06",
+              "area": "42",
               "img": "../images/flats/flat3.jpg",
               "rooms": 1,
               "mapCoords": {
@@ -142,9 +145,10 @@
             {
               "id": 4,
               "jkID": 1,
+              "level": 1,
               "status": false,
               "flat": "7",
-              "area": "42.06",
+              "area": "42",
               "img": "../images/flats/flat4.jpg",
               "rooms": 1,
               "mapCoords": {
@@ -165,9 +169,10 @@
             {
               "id": 5,
               "jkID": 1,
+              "level": 1,
               "status": false,
               "flat": "8",
-              "area": "49.11",
+              "area": "49",
               "img": "../images/flats/flat5.jpg",
               "rooms": 1,
               "mapCoords": {
@@ -216,10 +221,11 @@
           "flats": [
             {
               "id": 6,
-              "jkId": 1,
+              "jkID": 1,
+              "level": 2,
               "status": true,
               "flat": "9",
-              "area": "71.78",
+              "area": "71",
               "rooms": 2,
               "img": "../images/flats/flat1.jpg", 
               "mapCoords": {
@@ -239,10 +245,11 @@
             },
             {
               "id": 7,
-              "jkId": 1,
+              "jkID": 1,
+              "level": 2,
               "status": true,
               "flat": "10",
-              "area": "41.92",
+              "area": "41",
               "img": "../images/flats/flat2.jpg",
               "rooms": 1,
               "mapCoords": {
@@ -262,10 +269,11 @@
             },
             {
               "id": 8,
-              "jkId": 1,
+              "jkID": 1,
+              "level": 2,
               "status": true,
               "flat": "11",
-              "area": "42.06",
+              "area": "42",
               "img": "../images/flats/flat3.jpg",
               "rooms": 1,
               "mapCoords": {
@@ -285,10 +293,11 @@
             },
             {
               "id": 9,
-              "jkId": 1,
+              "jkID": 1,
+              "level": 2,
               "status": true,
               "flat": "12",
-              "area": "42.06",
+              "area": "42",
               "img": "../images/flats/flat4.jpg",
               "rooms": 1,
               "mapCoords": {
@@ -308,10 +317,11 @@
             },
             {
               "id": 10,
-              "jkId": 1,
+              "jkID": 1,
+              "level": 2,
               "status": true,
               "flat": "13",
-              "area": "49.11",
+              "area": "49",
               "img": "../images/flats/flat5.jpg",
               "rooms": 1,
               "mapCoords": {
@@ -347,9 +357,10 @@
             {
               "id": 11,
               "jkID": 1,
+              "level": 3,
               "status": false,
               "flat": "3",
-              "area": "80.96",
+              "area": "80",
               "img": "../images/flats/flat3.jpg",
               "rooms": 3,
               "mapCoords": {
@@ -439,8 +450,11 @@
             },
             "flats": [
                 {
+                  "id": 12,
                   "flat": "4",
-                  "area": "71.78",
+                  "jkID": 2,
+                  "level": 1,
+                  "area": "71",
                   "rooms": 2,
                   "img": "../images/flats/flat1.jpg", 
                   "mapCoords": {
@@ -459,8 +473,11 @@
                   }
                 },
                 {
+                  "id": 13,
                   "flat": "5",
-                  "area": "41.92",
+                  "jkID": 2,
+                  "level": 1,
+                  "area": "41",
                   "img": "../images/flats/flat2.jpg",
                   "rooms": 1,
                   "mapCoords": {
@@ -479,8 +496,11 @@
                   }
                 },
                 {
+                  "id": 14,
                   "flat": "6",
-                  "area": "42.06",
+                  "jkID": 2,
+                  "level": 1,
+                  "area": "42",
                   "img": "../images/flats/flat3.jpg",
                   "rooms": 1,
                   "mapCoords": {
@@ -499,8 +519,11 @@
                   }
                 },
                 {
+                  "id": 15,
                   "flat": "7",
-                  "area": "42.06",
+                  "jkID": 2,
+                  "level": 1,
+                  "area": "42",
                   "img": "../images/flats/flat4.jpg",
                   "rooms": 1,
                   "mapCoords": {
@@ -519,8 +542,11 @@
                   }
                 },
                 {
+                  "id": 16,
                   "flat": "8",
-                  "area": "49.11",
+                  "jkID": 2,
+                  "level": 1,
+                  "area": "49",
                   "img": "../images/flats/flat5.jpg",
                   "rooms": 1,
                   "mapCoords": {
@@ -539,8 +565,8 @@
                   }
                 }
             ]
-            },
-            {
+          },
+          {
               "level": 2,
               "freeFlats": 2,
               "photo": "../images/model1.jpg",
@@ -568,8 +594,11 @@
               },
               "flats": [
                 {
+                  "id": 17,
                   "flat": "9",
-                  "area": "71.78",
+                  "jkID": 2,
+                  "level": 2,
+                  "area": "71",
                   "rooms": 2,
                   "img": "../images/flats/flat1.jpg", 
                   "mapCoords": {
@@ -588,8 +617,11 @@
                   }
                 },
                 {
+                  "id": 18,
                   "flat": "10",
-                  "area": "41.92",
+                  "jkID": 2,
+                  "level": 2,
+                  "area": "41",
                   "img": "../images/flats/flat2.jpg",
                   "rooms": 1,
                   "mapCoords": {
@@ -608,8 +640,11 @@
                   }
                 },
                 {
+                  "id": 19,
                   "flat": "11",
-                  "area": "42.06",
+                  "jkID": 2,
+                  "level": 2,
+                  "area": "42",
                   "img": "../images/flats/flat3.jpg",
                   "rooms": 1,
                   "mapCoords": {
@@ -628,8 +663,11 @@
                   }
                 },
                 {
+                  "id": 20,
                   "flat": "12",
-                  "area": "42.06",
+                  "jkID": 2,
+                  "level": 2,
+                  "area": "42",
                   "img": "../images/flats/flat4.jpg",
                   "rooms": 1,
                   "mapCoords": {
@@ -648,8 +686,11 @@
                   }
                 },
                 {
+                  "id": 21,
                   "flat": "13",
-                  "area": "49.11",
+                  "jkID": 2,
+                  "level": 2,
+                  "area": "49",
                   "img": "../images/flats/flat5.jpg",
                   "rooms": 1,
                   "mapCoords": {
@@ -668,8 +709,8 @@
                   }
                 }
               ]
-            },
-            {
+          },
+          {
               "level": 3,
               "freeFlats": 0,
               "photo": "../images/model2.jpg",
@@ -683,8 +724,11 @@
               },
               "flats": [
                 {
+                  "id": 22,
                   "flat": "3",
-                  "area": "80.96",
+                  "jkID": 2,
+                  "level": 3,
+                  "area": "80",
                   "img": "../images/flats/flat3.jpg",
                   "rooms": 3,
                   "mapCoords": {
@@ -707,7 +751,7 @@
                   }
                 }
               ]
-            }
+          }
         ]
     },
     {
@@ -731,7 +775,9 @@
         "flats": [
           { 
             "flat": "77",
-            "area": "80.96",
+            "jkID": 3,
+            "level": 1,
+            "area": "80",
             "img": "../images/flats/flat6.jpg",
             "rooms": 1,
             "address": "вул. Одеська 25",
@@ -759,7 +805,9 @@
           "flats": [
             {
               "flat": "88",
-              "area": "80.96",
+              "jkID": 3,
+              "level": 2,
+              "area": "80",
               "img": "../images/flats/flat7.jpg",
               "rooms": 2,
               "mapCoords": {

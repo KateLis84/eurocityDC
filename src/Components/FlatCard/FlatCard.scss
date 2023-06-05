@@ -1,0 +1,97 @@
+@use '../../Constants/GeneralStyles/fonts.scss' as *;
+
+.flatCard {
+  width: auto;
+  box-shadow: 10px 0px 62px -30px rgba(0,0,0,0.75);
+  user-select: none;
+
+  &__image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  &__info{
+
+    padding: 10px;
+
+    &_above{
+      @include textBold;
+      color: gray;
+      margin-bottom: 8px;
+    }
+
+    &_main {
+      @include text;
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    &_tag{
+      @include textBold;
+      color: white;
+      display: inline-block;
+      text-align: center;
+      padding: 8px;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 15px;
+      letter-spacing: .5px;
+      margin-bottom: 8px;
+
+      &_green {
+        background-color: #90C55B;
+      }
+
+      &_red {
+        background-color: red;
+      }
+
+    }
+
+    &_warning {
+      color: gray;
+      font-size: 12px;
+      float: right;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    border-top: 1px solid rgba(128, 128, 128, 0.577);
+    font-size: 17px;
+
+    &_rooms {
+      display: flex;
+      align-items: center;
+      // background-color: red;
+    }
+
+    &_area {
+      display: flex;
+      align-items: center;
+      // background-color: red;
+    }
+  }
+
+  &__outlined {
+    @include textBold;
+    color: #2B614C;
+    display: inline-block;
+    margin-right: 5px;
+    &_small {
+      margin: 10px;
+    }
+
+    &_big {
+      font-size: 35px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+  
+}
