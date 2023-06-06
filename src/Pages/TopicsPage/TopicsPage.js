@@ -46,9 +46,13 @@ export default function TopicsPage({filters = 'none'}) {
   function FilterByChip() {
     let res = [];
 
-    news.map((el)=>{
+    topics.news.map((el)=>{
       chips.map((chip)=>{
-        if(el.tag.includes(chip) && !res.includes(el)) res.push(el)
+        console.log(el.tag)
+        console.log(chip)
+        if(el.tag.includes(chip) && !res.includes(el)) {
+          res.push(el)
+        }
       })
     })
 
@@ -80,7 +84,7 @@ export default function TopicsPage({filters = 'none'}) {
 
         <div className="topics__secondGridContainer">
           {
-            topics.news.slice(1, 5).map((el, index)=>{
+            topics.news.slice(1, 4).map((el, index)=>{
               return (
                 <div
                   className={index == 0 ? "topics__gridElement topics__gridElement_second" : "topics__gridElement"}
@@ -111,7 +115,7 @@ export default function TopicsPage({filters = 'none'}) {
                     <div className="news__text">
                       <div className="news__title">{el.title}</div>
                       <div className="news__text">
-                        {el.text.slice(0, 75) + "..."}
+                        {el.text.slice(0, 35) + "..."}
                       </div>
                     </div>
                   </div>

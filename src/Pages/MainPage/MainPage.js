@@ -34,7 +34,7 @@ function MainPage() {
         <div className='mainPage__title'>Статті</div>
         <div className='mainPage__cards'>
         {
-            data.articles.map((el)=>{
+            data.articles.slice(0, 3).map((el)=>{
               return(
                 <Link style={{all: 'unset'}} to={"/info/articles/"+el.id}><Card image={el.photo} title={el.title} description={el.text.slice(0, 50)+"..."}/></Link>
               )
