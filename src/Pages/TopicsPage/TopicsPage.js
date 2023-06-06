@@ -73,27 +73,33 @@ export default function TopicsPage({filters = 'none'}) {
   return (
     <div className="topics">
       <div className="topics__mainGrid">
-        <div
-          className="topics__gridElement"
-          style={{ backgroundImage: `url(${topics.news[0].photo})` }}
-        >
-          <div className="topics__gridElement_text">
-            <h1>{topics.news[0].title}</h1>
-          </div>
-        </div>
+        
+          <Link
+            to={"/info/news/1"}
+            className="topics__gridElement"
+            style={{ textDecoration: 'none', backgroundImage: `url(${topics.news[0].photo})` }}
+          >
+            {/* <Link style={{all: 'unset'}} to={"/info/news/1"}> */}
+              <div className="topics__gridElement_text">
+                <h1>{topics.news[0].title}</h1>
+              </div>
+            {/* </Link> */}
+          </Link>
+        
 
         <div className="topics__secondGridContainer">
           {
             topics.news.slice(1, 4).map((el, index)=>{
               return (
-                <div
+                <Link 
+                  to={"/info/news/" + el.id}
                   className={index == 0 ? "topics__gridElement topics__gridElement_second" : "topics__gridElement"}
-                  style={{ backgroundImage: `url(${el.photo})` }}
+                  style={{ textDecoration: 'none', backgroundImage: `url(${el.photo})` }}
                 >
                   <div className="topics__gridElement_text">
                     <h1>{el.title}</h1>
                   </div>
-                </div>
+                </Link>
               );
             })
           }
