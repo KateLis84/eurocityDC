@@ -10,7 +10,7 @@ export default function FlatForm() {
   }, [])
 
   return (
-    <>
+    <div>
       <div class="form">
         <div class="form-toggle"></div>
         <div class="form-panel one">
@@ -65,6 +65,6 @@ export default function FlatForm() {
         <div class="form-panel two">
         </div>
       </div>
-    </>
+    </div>
   );
 }

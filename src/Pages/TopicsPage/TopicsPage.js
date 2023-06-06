@@ -26,6 +26,18 @@ export default function TopicsPage({filters = 'none'}) {
     }
   }
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (window.innerWidth > 580) {
+      document
+        .getElementsByTagName("header")[0]
+        .classList.remove("header__mainPage");
+      document.getElementsByTagName("header")[0].style.position = "fixed";
+      document.getElementsByClassName("header__list")[0].style.color = "white";
+      document.getElementsByClassName("header__logo")[0].style.display = "none";
+    }
+  }, []);
+
   useEffect(()=>{
     if(topic == 'Новини') setInfo(news)
     else if(topic == 'Статті') setInfo(topics.articles)
@@ -79,11 +91,9 @@ export default function TopicsPage({filters = 'none'}) {
             className="topics__gridElement"
             style={{ textDecoration: 'none', backgroundImage: `url(${topics.news[0].photo})` }}
           >
-            {/* <Link style={{all: 'unset'}} to={"/info/news/1"}> */}
-              <div className="topics__gridElement_text">
-                <h1>{topics.news[0].title}</h1>
-              </div>
-            {/* </Link> */}
+            <div className="topics__gridElement_text">
+              <h1>{topics.news[0].title}</h1>
+            </div>
           </Link>
         
 

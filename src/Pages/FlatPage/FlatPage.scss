@@ -532,7 +532,6 @@ $stepper: $offset / $stepper-count;
 
   .form {
     @include text;
-    // z-index: 15;
     position: relative;
     background: $white;
     width: 100%;
@@ -689,7 +688,6 @@ $stepper: $offset / $stepper-count;
 
 @media(max-width: 760px) {
   .flat {
-    // padding: 0px 50px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;

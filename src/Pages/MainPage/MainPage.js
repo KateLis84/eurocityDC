@@ -11,6 +11,10 @@ let data = require("../../fakeData.json").topics;
 
 function MainPage() {
 
+  useEffect(()=>{
+    
+  }, [])
+
   return (
     <div className="mainPage">
       <div className='mainPage__title' id="JKgallery">Проєкти</div>

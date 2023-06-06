@@ -38,7 +38,7 @@ export default function ArticlePage() {
     if(typeOfData === "news") {
       requiredData.map((el, index)=>{
         el.tag.map((tag)=>{
-          if (data.tag.includes(tag) && !result.includes(el)) {
+          if (data.tag.includes(tag) && !result.includes(el) && el!= data) {
             result.push(el)
           }
         })
@@ -60,7 +60,10 @@ export default function ArticlePage() {
       <div className="info__textBlock">
         <div className="info__firstLetter">{firstLetter}</div>
         <div className="info__text">{restOfText}</div>
+        
       </div>
+
+      <Link to="/topics" className="info__btn buttonAnim">Переглянути інші новини →</Link>
 
       <div className="info__more">
         <h3>

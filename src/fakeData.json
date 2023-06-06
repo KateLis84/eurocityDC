@@ -785,6 +785,7 @@
         "photo": "../images/model1.jpg",
         "flats": [
           { 
+            "id": 23,
             "flat": "77",
             "jkID": 3,
             "level": 1,
@@ -816,6 +817,7 @@
           "photo": "../images/model2.jpg",
           "flats": [
             {
+              "id": 24,
               "flat": "88",
               "jkID": 3,
               "level": 2,

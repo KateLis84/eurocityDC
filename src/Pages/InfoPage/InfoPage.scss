@@ -10,6 +10,28 @@
   flex-direction: column;
   justify-content: space-between;
 
+  &__btn {
+    @include textLight;
+    color: white;
+    
+    line-height: 33px;
+    background-color: #2B614C;
+    border: 2px solid #2B614C;
+    box-sizing: border-box;
+    padding: 5px 0px;
+    width: 370px;
+    text-align: center;
+
+    align-self: end;
+
+    &:hover {
+      cursor: pointer;
+      background-color: transparent;
+      border: 2px solid #2B614C;
+      color: #2B614C
+    }
+  }
+
   &__title {
     text-align: center;
     color: #2B614C;
