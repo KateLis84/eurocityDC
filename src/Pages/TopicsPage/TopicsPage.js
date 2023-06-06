@@ -2,6 +2,7 @@ import {React, useState, useEffect} from 'react';
 import './TopicsPage.scss';
 import Tabs from './Tabs.js';
 import Chip from "@mui/material/Chip";
+import { HashLink as Link } from 'react-router-hash-link';
 
 let topics = require("../../fakeData.json").topics;
 
@@ -101,18 +102,20 @@ export default function TopicsPage({filters = 'none'}) {
           <div className="topics__list_container">
             {info.map((el)=>{
               return(
-                <div className="topics__list_element news">
-                <div
-                  className="news__image"
-                  style={{ backgroundImage: `url(${el.photo})` }}
-                ></div>
-                <div className="news__text">
-                  <div className="news__title">{el.title}</div>
-                  <div className="news__text">
-                    {el.text.slice(0, 75) + "..."}
+                <Link style={{ all: "unset" }} to={"/info/" + (topic=="Новини"?"news":"articles") + "/" + el.id}>
+                  <div className="topics__list_element news">
+                    <div
+                      className="news__image"
+                      style={{ backgroundImage: `url(${el.photo})` }}
+                    ></div>
+                    <div className="news__text">
+                      <div className="news__title">{el.title}</div>
+                      <div className="news__text">
+                        {el.text.slice(0, 75) + "..."}
+                      </div>
+                    </div>
                   </div>
-                </div>
-            </div>
+                </Link>
               )
             })}
           </div>

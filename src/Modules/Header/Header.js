@@ -46,6 +46,7 @@ function Header() {
           <Link to="../#JKgallery" class="routeLink"><li className="header__link">Проєкти</li></Link>
           <Link to="/contacts" class="routeLink"><li className="header__link">Контакти</li></Link>
           <Link to="/aboutus" class="routeLink"><li className="header__link">Про нас</li></Link>
+          <Link to="/topics" class="routeLink"><li className="header__link">Новини</li></Link>
         </ul>
       </header>
     )
