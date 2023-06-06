@@ -10,6 +10,7 @@ import FlatPage from './Pages/FlatPage/FlatPage.js';
 import AboutUs from './Pages/AboutUs/AboutUs.js';
 import ContactPage from './Pages/ContactPage/ContactPage.js';
 import ArticlePage from './Pages/InfoPage/InfoPage.js';
+import TopicsPage from './Pages/TopicsPage/TopicsPage.js';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/aboutus" element={<AboutUs/>} />
         <Route path="/contacts" element={<ContactPage/>} />
         <Route path="/info/:infoType/:infoId" element={<ArticlePage/>} />
+        <Route path="/topics" element={<TopicsPage/>} />
       </Routes>
       <Footer/>
     </div>
