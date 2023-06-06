@@ -4,6 +4,7 @@
   width: auto;
   box-shadow: 10px 0px 62px -30px rgba(0,0,0,0.75);
   user-select: none;
+  transition: opacity .38s ease-in-out, transform .35s ease-in-out;
 
   &__image {
     width: 100%;

@@ -90,7 +90,7 @@ export default function ArticlePage() {
           {getSimularResults().map((el) => {
             console.log(el);
             return (
-              <Link style={{ all: "unset" }} to={"/info/articles/" + el.id}>
+              <Link style={{ all: "unset" }} to={"/info/"+ typeOfData + "/" + el.id}>
                 <Card
                   image={"../" + el.photo}
                   title={el.title}

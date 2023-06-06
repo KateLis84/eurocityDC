@@ -208,7 +208,7 @@ export default function JKpage() {
           {getNews().map((el) => {
             console.log(el);
             return (
-              <Link style={{ all: "unset" }} to={"/info/articles/" + el.id}>
+              <Link style={{ all: "unset" }} to={"/info/news/" + el.id}>
                 <Card
                   image={"../" + el.photo}
                   title={el.title}

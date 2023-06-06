@@ -3,6 +3,7 @@ import "./FilterPage.scss";
 import ButtonsGroup from '../../Modules/Filters/ButtonsGroup.js';
 import Range from '../../Modules/Filters/Range.js';
 import Selection from '../../Modules/Filters/Selection.js';
+import CheckboxGroup from '../../Modules/Filters/CheckboxGroup.js';
 
 
 export default function FilterPage({setNewValues, preValues}) {
@@ -41,6 +42,7 @@ export default function FilterPage({setNewValues, preValues}) {
   function setNewFlats() {
     let cities = [];
     let complexesNames = [];
+
     complexes.map((comp)=>{
       complexesNames.push(comp.name);
     })
@@ -49,7 +51,8 @@ export default function FilterPage({setNewValues, preValues}) {
         complex.levels.map((level)=>{
           if(level.level >= floors[0] && level.level <= floors[1]){
             level.flats.map((flat)=>{
-              cities.push(flat)
+              if(checkedFilter.free == true && flat.status == true) cities.push(flat)
+              else if(checkedFilter.occupied == true && flat.status == false) cities.push(flat)
             })
           }
         })
@@ -62,9 +65,18 @@ export default function FilterPage({setNewValues, preValues}) {
   const [filtered, setFilters] = useState(setDefaultData);
   const [rooms, setRooms] = useState([1, 2, 3, 4])
 
+  const [checkedFilter, setCheckedFilter] = useState({
+    free: true,
+    occupied: true
+  })
+
   useEffect(()=>{
     setFlats(setNewFlats())
   }, [city, complexes])
+
+  useEffect(()=>{
+    setFlats(setNewFlats())
+  }, [checkedFilter])
 
   useEffect(()=>{
     setFlats(setNewFlats())
@@ -115,16 +127,34 @@ export default function FilterPage({setNewValues, preValues}) {
     setFloors(floors)
   }
 
+  function changeOccupiedFlats(value) {
+    setCheckedFilter(value)
+  }
+
   return (
     <div className="filterContainer">
       <div className="filterContainer__block filterContainer__place">
-        <Selection data={json} changeValue={changeCity} preValue={null} typeOfData="Місто"/>
-        <Selection data={city} changeValue={changeComplex} preValue={PreValueName} typeOfData="Комплекс"/>
+        <Selection
+          data={json}
+          changeValue={changeCity}
+          preValue={null}
+          typeOfData="Місто"
+        />
+        <div className="filterContainer__place_checkbox">
+          <div className="filterContainer__place_txt">Квартири</div>
+          <CheckboxGroup handleOccupiedFlats={changeOccupiedFlats}/>
+        </div>
+        <Selection
+          data={city}
+          changeValue={changeComplex}
+          preValue={PreValueName}
+          typeOfData="Комплекс"
+        />
       </div>
 
       <div className="filterContainer__block filterContainer__flat">
-        <ButtonsGroup flats={flats} changeData={filterRooms}/>
-        <Range data={json} changeFloor={changeFloor}/>
+        <ButtonsGroup flats={flats} changeData={filterRooms} />
+        <Range data={json} changeFloor={changeFloor} />
       </div>
     </div>
   );
