@@ -3,10 +3,9 @@ import { useLocation } from "react-router-dom";
 import Filters from "./Filters.js";
 import Card from "../../Components/Card/Card.js";
 import Pagination from "../../Components/Pagination.js";
-
 import FlatCard from "../../Components/FlatCard/FlatCard.js";
-
 import { HashLink as Link } from "react-router-hash-link";
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export default function FilterPage() {
   window.scrollTo(0, 0);
@@ -46,17 +45,19 @@ export default function FilterPage() {
     <div className="filterPage">
       <Filters setNewValues={setNewValues} preValues={selectedComplex} />
       <div className="filterPage__list">
-        {currentPost.map((el) => {
+        {currentPost.map((el, index) => {
           return (
-            <Link
-              to={"/flat/" + el.jkID + "/" + el.id}
-              style={{ all: "unset" }}
-              state={{ from: "FilterPage" }}
-            >
-              <FlatCard
-                data={el}
-              />
-            </Link>
+            <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+              <Link
+                to={"/flat/" + el.jkID + "/" + el.id}
+                style={{ all: "unset" }}
+                state={{ from: "FilterPage" }}
+              >
+                <FlatCard
+                  data={el}
+                />
+              </Link>
+            </ScrollAnimation>
           );
         })}
       </div>

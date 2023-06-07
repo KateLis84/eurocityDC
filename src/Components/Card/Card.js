@@ -1,18 +1,12 @@
-import React from 'react';
+import {React} from 'react';
 import './Card.scss'
 import lock from '../../Assets/Images/lock.png';
 
-function Card({image, title, description, date, locked=false, typeOdData}) {
+function Card({image, title, description, date}) {
 
   return (
     <div className="card">
       <div className="card__pic" style={{backgroundImage: `url('${image}')`}}></div>
-      { locked ? 
-        <div 
-          className="card__lock"
-        >
-        </div> : null
-      }
       <div className="card__text">
         <div className="card__date">
           {date}

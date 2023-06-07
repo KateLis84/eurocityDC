@@ -2,8 +2,10 @@ import {React, useEffect, useState} from "react";
 import './JKPage.scss';
 import '../../Constants/GeneralStyles/animations.scss'
 import '../InfoPage/InfoPage.scss'
+import '../../Constants/GeneralStyles/scrollAnimations.scss';
 import {useParams} from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 // Components
 import LevelMap from "../../Modules/Area/Area";
@@ -120,103 +122,122 @@ export default function JKpage() {
 
   return (
     <div className="jkPage">
-
       <div className="jkPage__block jkPage__block_info">
         <div className="jkPage__txt_title">{JK.name}</div>
-        <Link 
-          to="/filters" 
-          state={{ selectedComplex: JK }} 
+        <Link
+          to="/filters"
+          state={{ selectedComplex: JK }}
           className="jkPage__btn buttonAnim"
         >
-            Переглянути усі квартири <ArrowForwardIcon/>
+          Переглянути усі квартири <ArrowForwardIcon />
         </Link>
       </div>
 
-      <div 
-        id="levelBack" 
+      <div
+        id="levelBack"
         className="jkPage__btn jkPage__btn_return"
-        onClick={() => {ChangeMap("level", 0)}}
-      > 
-        <ArrowBackIcon/> 
+        onClick={() => {
+          ChangeMap("level", 0);
+        }}
+      >
+        <ArrowBackIcon />
         Повернутись до ЖК
       </div>
 
       <div className="jkPage__block jkPage__block_area">
-        <LevelMap level={toDisplay} typeOfData={typeOfData} changeMap={ChangeMap}/>
+        <LevelMap
+          level={toDisplay}
+          typeOfData={typeOfData}
+          changeMap={ChangeMap}
+        />
       </div>
 
       <div className="jkPage__MobileArea">
-        <img src={MobilePhoto}/>
-        <div className="jkPage__MobileArea_toggleBtn"><ToggleBtn handleChange={toggleBtnMobile}/></div>
+        <img src={MobilePhoto} />
+        <div className="jkPage__MobileArea_toggleBtn">
+          <ToggleBtn handleChange={toggleBtnMobile} />
+        </div>
       </div>
 
-      <div id="levelPagination" className="kPage__block jkPage__block_pagination">
-        <Pagination data={JK} setMap={ChangeMap}/>
+      <div
+        id="levelPagination"
+        className="kPage__block jkPage__block_pagination"
+      >
+        <Pagination data={JK} setMap={ChangeMap} />
       </div>
 
-
-      <h3>Про комплекс</h3>
+      <ScrollAnimation animateIn="TopBottom" animateOnce={true}>
+        <h3>Про комплекс</h3>
+      </ScrollAnimation>
       <div className="jkPage__block jkPage__block_txtInfo">
         <div className="jkPage__txt_description">
-          {JK.description}
+          <ScrollAnimation animateIn="LeftRight" animateOnce={true}>
+            {JK.description}
+          </ScrollAnimation>
         </div>
         <div className="jkPage__BlockiconInfo">
-          <div className="jkPage__iconInfo">
-            <DirectionsWalkIcon sx={{fontSize: "50px"}}/>
-            {JK.details.fromCityCenter} хв від центру міста
-          </div>
-            {addView()}
-            {addFacilities()}
+          <ScrollAnimation animateIn="RightLeft" animateOnce={true}>
+            <div className="jkPage__iconInfo">
+              <DirectionsWalkIcon sx={{ fontSize: "50px" }} />
+              {JK.details.fromCityCenter} хв від центру міста
+            </div>
+          </ScrollAnimation>
+          <ScrollAnimation animateOnce={true} animateIn="RightLeft" delay={100}>{addView()}</ScrollAnimation>
+          <ScrollAnimation animateOnce={true} animateIn="RightLeft" delay={200}>{addFacilities()}</ScrollAnimation>
         </div>
       </div>
 
-      <div className="jkPage__block">
-        <iframe
-          className="jkPage__block_map"
-          title="map"
-          src={JK.details.googleMap}
-          style={{border: 0}}
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
+      <ScrollAnimation animateIn="fadeIn" delay={100} animateOnce={true}>
+        <div className="jkPage__block">
+          <iframe
+            className="jkPage__block_map"
+            title="map"
+            src={JK.details.googleMap}
+            style={{ border: 0 }}
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </ScrollAnimation>
 
       <div className="jkPage__block jkPage__block_gallery">
-        {JK.gallery.map((img) => {
+        {JK.gallery.map((img, index) => {
           return (
-            <div className="jkPage__block jkPage__block_gallery_wrapper">
-            <img
-              src={"../" + img}
-              alt="building"
-              className="jkPage__block_gallery_image"
-            /></div>
+            <ScrollAnimation animateIn="fadeIn" delay={index+"00"} animateOnce={true}>
+              <div className="jkPage__block jkPage__block_gallery_wrapper">
+                <img
+                  src={"../" + img}
+                  alt="building"
+                  className="jkPage__block_gallery_image"
+                />
+              </div>
+            </ScrollAnimation>
           );
         })}
       </div>
 
       <div className="jkPage__block jkPage__block_news">
-      <div className="info__more">
-        <h3 className="jkPage__newsTitle">
-          Новини Житлового Комплексу
-        </h3>
+        <div className="info__more">
+          <h3 className="jkPage__newsTitle">Новини Житлового Комплексу</h3>
 
-        <div className="info__moreCards">
-          {getNews().map((el) => {
-            return (
-              <Link style={{ all: "unset" }} to={"/info/news/" + el.id}>
-                <Card
-                  image={"../" + el.photo}
-                  title={el.title}
-                  description={el.text.slice(0, 50) + "..."}
-                />
-              </Link>
-            );
-          })}
+          <div className="info__moreCards">
+            {getNews().map((el, index) => {
+              return (
+                <ScrollAnimation animateIn="fadeIn" delay={index+"00"} key={index} animateOnce={true}>
+                  <Link style={{ all: "unset" }} to={"/info/news/" + el.id}>
+                    <Card
+                      image={"../" + el.photo}
+                      title={el.title}
+                      description={el.text.slice(0, 50) + "..."}
+                    />
+                  </Link>
+                </ScrollAnimation>
+              );
+            })}
+          </div>
         </div>
       </div>
-      </div>
-
     </div>
   );
 }

@@ -1,7 +1,9 @@
 import {React, useEffect} from "react";
 import "./InfoPage.scss";
+import '../../Constants/GeneralStyles/scrollAnimations.scss';
 import { HashLink as Link } from 'react-router-hash-link';
 import {useParams} from 'react-router-dom';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import Chip from "@mui/material/Chip";
 import Card from '../../Components/Card/Card'
@@ -84,15 +86,17 @@ export default function ArticlePage() {
         ) : null}
 
         <div className="info__moreCards">
-          {getSimularResults().map((el) => {
+          {getSimularResults().map((el, index) => {
             return (
-              <Link style={{ all: "unset" }} to={"/info/"+ typeOfData + "/" + el.id}>
-                <Card
-                  image={"../" + el.photo}
-                  title={el.title}
-                  description={el.text.slice(0, 50) + "..."}
-                />
-              </Link>
+              <ScrollAnimation animateIn="TopBottom" delay={index+"00"} key={index} animateOnce={true}>
+                <Link style={{ all: "unset" }} to={"/info/"+ typeOfData + "/" + el.id}>
+                  <Card
+                    image={"../" + el.photo}
+                    title={el.title}
+                    description={el.text.slice(0, 50) + "..."}
+                  />
+                </Link>
+              </ScrollAnimation>
             );
           })}
         </div>

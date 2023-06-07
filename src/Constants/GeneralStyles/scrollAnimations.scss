@@ -1,0 +1,75 @@
+.LeftRight {
+  animation-name: LeftRight;
+}
+
+.LeftRightNotScroll{
+  animation: LeftRight .5s;
+}
+
+@keyframes LeftRight {
+  0%{
+    transform: translateX(-50px)
+  }
+  100% {
+    transform: translateX(0px)
+  }
+}
+
+.TopBottom {
+  animation-name: TopBottom;
+}
+
+@keyframes TopBottom {
+  0%{
+    opacity: 0;
+    transform: translateY(-50px)
+  }
+  50%{
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px)
+  }
+}
+
+.RightLeft {
+  animation-name: RightLeft;
+}
+
+@keyframes RightLeft {
+  0%{
+    transform: translateX(50px)
+  }
+  100% {
+    transform: translateX(0px)
+  }
+}
+
+.scaleNotScroll {
+  opacity: 0;
+  animation: scaleNotScroll .5s linear 0.5s 1 normal forwards;
+
+  &_delay1{
+    animation-delay: .1s;
+  }
+  &_delay2{
+    animation-delay: .3s;
+  }
+  &_delay3{
+    animation-delay: .5s;
+  }
+}
+
+@keyframes scaleNotScroll {
+  0%{
+    opacity: 0;
+    transform: scale(0.5)
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1)
+  }
+}
