@@ -1,22 +1,42 @@
-import {React, useEffect} from 'react';
+import * as React from 'react';
 import './ContactPage.scss';
 import '../../Constants/GeneralStyles/scrollAnimations.scss';
 import FAQ from './FAQ.js';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
+// ICONS
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EmailIcon from '@mui/icons-material/Email';
 import ScrollAnimation from 'react-animate-on-scroll';
 
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 export default function ContactPage() {
 
-  window.scrollTo(0, 0)
-
-  useEffect(() => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0)
     document.getElementById("heroEffectHeader").style.display = "none";
     document.getElementById("customHeader").className = 'header header-scroll';
   }, []);
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = (event) => {
+    let text = event.currentTarget.innerText;
+    navigator.clipboard.writeText(text);
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
 
   return (
     <div className="contacts">
@@ -30,8 +50,8 @@ export default function ContactPage() {
             
             <h4>Зв'яжіться з менеджером</h4>
             <h5>
-              <span>+390 876 654 844</span> <br />
-              <span>+380 345 024 357</span>то
+              <span onClick={handleClick}>+390 876 654 844</span> <br />
+              <span onClick={handleClick}>+380 345 024 357</span>
             </h5>
           </div>
 
@@ -41,8 +61,8 @@ export default function ContactPage() {
             </span>
             <h4>Зв'яжіться з менеджером</h4>
             <h5>
-              eurocitydevelopment@gmail.com <br />
-              eurocity@gmail.com
+              <span onClick={handleClick}>eurocitydevelopment@gmail.com</span> <br />
+              <span onClick={handleClick}>eurocity@gmail.com</span>
             </h5>
           </div>
 
@@ -53,13 +73,13 @@ export default function ContactPage() {
             <h4>Завітайте до компанії</h4>
             <h5>
               вул. Богдана Хмельницького 45 <br />
-              переглянути на карті
+              <a href="#contactsPlace" style={{all: 'unset'}}><span>переглянути на карті</span></a>
             </h5>
           </div>
         </div>
       </div>
 
-      <div className="contacts__block contacts__block_green contacts__block_map">
+      <div className="contacts__block contacts__block_green contacts__block_map" id="contactsPlace">
       <h1>Де ми знаходимось?</h1>
           <div className="contacts__place">
           <ScrollAnimation animateIn="LeftRight" delay={100} animateOnce={true}>
@@ -73,11 +93,11 @@ export default function ContactPage() {
           </ScrollAnimation>
 
           <div className="contacts__place_info">
-          <ScrollAnimation animateIn="TopBottom" animateOnce={true} delay={100}><span>вул. Богдана Хмельницького 45</span></ScrollAnimation>
+            <ScrollAnimation animateIn="TopBottom" animateOnce={true} delay={100}><span>вул. Богдана Хмельницького 45</span></ScrollAnimation>
 
-          <ScrollAnimation animateIn="TopBottom" animateOnce={true} delay={200}><span>Графік роботи:</span></ScrollAnimation>
-          <ScrollAnimation animateIn="TopBottom" animateOnce={true} delay={300}><span>пн-пт: 10:00-21:00</span></ScrollAnimation>
-          <ScrollAnimation animateIn="TopBottom" animateOnce={true} delay={400}><span>сб-нд: 12:00-17:00</span></ScrollAnimation>
+            <ScrollAnimation animateIn="TopBottom" animateOnce={true} delay={200}><span>Графік роботи:</span></ScrollAnimation>
+            <ScrollAnimation animateIn="TopBottom" animateOnce={true} delay={300}><span style={{marginBottom: '5px'}}>пн-пт: 10:00-21:00</span></ScrollAnimation>
+            <ScrollAnimation animateIn="TopBottom" animateOnce={true} delay={400}><span>сб-нд: 12:00-17:00</span></ScrollAnimation>
           </div>
         </div>
       </div>
@@ -85,6 +105,11 @@ export default function ContactPage() {
       <div className="contacts__block contacts__block_hwite contacts__block_FAQ">
         <FAQ />
       </div>
+      <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Текст скопійовано!
+        </Alert>
+      </Snackbar>
     </div>
   );
 }
