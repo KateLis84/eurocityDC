@@ -88,7 +88,7 @@ export default function ArticlePage() {
         <div className="info__moreCards">
           {getSimularResults().map((el, index) => {
             return (
-              <ScrollAnimation animateIn="TopBottom" delay={index+"00"} key={index} animateOnce={true}>
+              <ScrollAnimation animateIn="TopBottom" delay={index+"00"} key={index}>
                 <Link style={{ all: "unset" }} to={"/info/"+ typeOfData + "/" + el.id}>
                   <Card
                     image={"../" + el.photo}

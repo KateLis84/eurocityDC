@@ -28,9 +28,9 @@ let news = require("../../fakeData.json").topics.news;
 
 export default function JKpage() {
 
-  window.scrollTo(0, 0);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.getElementById("heroEffectHeader").style.display = "none";
     document.getElementById("customHeader").className = 'header header-scroll';
   }, []);
@@ -166,24 +166,24 @@ export default function JKpage() {
         <Pagination data={JK} setMap={ChangeMap} />
       </div>
 
-      <ScrollAnimation animateIn="TopBottom" animateOnce={true}>
+      <ScrollAnimation animateIn="TopBottom">
         <h3>Про комплекс</h3>
       </ScrollAnimation>
       <div className="jkPage__block jkPage__block_txtInfo">
         <div className="jkPage__txt_description">
-          <ScrollAnimation animateIn="LeftRight" animateOnce={true}>
+          <ScrollAnimation animateIn="LeftRight">
             {JK.description}
           </ScrollAnimation>
         </div>
         <div className="jkPage__BlockiconInfo">
-          <ScrollAnimation animateIn="RightLeft" animateOnce={true}>
+          <ScrollAnimation animateIn="RightLeft">
             <div className="jkPage__iconInfo">
               <DirectionsWalkIcon sx={{ fontSize: "50px" }} />
               {JK.details.fromCityCenter} хв від центру міста
             </div>
           </ScrollAnimation>
-          <ScrollAnimation animateOnce={true} animateIn="RightLeft" delay={100}>{addView()}</ScrollAnimation>
-          <ScrollAnimation animateOnce={true} animateIn="RightLeft" delay={200}>{addFacilities()}</ScrollAnimation>
+          <ScrollAnimation animateIn="RightLeft" delay={100}>{addView()}</ScrollAnimation>
+          <ScrollAnimation animateIn="RightLeft" delay={200}>{addFacilities()}</ScrollAnimation>
         </div>
       </div>
 
