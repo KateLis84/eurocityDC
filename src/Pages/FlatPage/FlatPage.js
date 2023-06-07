@@ -14,6 +14,13 @@ let data = require("../../fakeData.json").complexes;
 
 export default function FlatPage() {
 
+    window.scrollTo(0, 0)
+
+  useEffect(() => {
+    document.getElementById("heroEffectHeader").style.display = "none";
+    document.getElementById("customHeader").className = 'header header-scroll';
+  }, []);
+
   const jkArrayId = useParams().jkId-1;
   const flatId = useParams().flatId;
 

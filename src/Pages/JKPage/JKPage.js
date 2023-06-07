@@ -26,14 +26,12 @@ let news = require("../../fakeData.json").topics.news;
 
 export default function JKpage() {
 
-  
-  useEffect(()=>{
-    window.scrollTo(0, 0)
-    document.getElementsByTagName('header')[0].classList.remove('header__mainPage')
-    document.getElementsByTagName('header')[0].style.position = 'fixed';
-    document.getElementsByClassName("header__list")[0].style.color = "white"
-    document.getElementsByClassName("header__logo")[0].style.display = "none"
-  }, [])
+  window.scrollTo(0, 0);
+
+  useEffect(() => {
+    document.getElementById("heroEffectHeader").style.display = "none";
+    document.getElementById("customHeader").className = 'header header-scroll';
+  }, []);
 
   const params = useParams();
   const JK = data[params.jkId-1];
@@ -53,7 +51,6 @@ export default function JKpage() {
     else if (currentMap == "levelToLevel") {
       setNewDisplay(JK.levels[index]);
       settypeOfData("flats");
-      console.log(toDisplay)
     } 
     else if(currentMap == "level") {
       document.getElementById("levelPagination").style.display = "none"
@@ -206,7 +203,6 @@ export default function JKpage() {
 
         <div className="info__moreCards">
           {getNews().map((el) => {
-            console.log(el);
             return (
               <Link style={{ all: "unset" }} to={"/info/news/" + el.id}>
                 <Card

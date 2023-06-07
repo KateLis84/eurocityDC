@@ -25,17 +25,11 @@ export default function TopicsPage({filters = 'none'}) {
       setChips([...chips, element.id])
     }
   }
-
+  
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (window.innerWidth > 580) {
-      document
-        .getElementsByTagName("header")[0]
-        .classList.remove("header__mainPage");
-      document.getElementsByTagName("header")[0].style.position = "fixed";
-      document.getElementsByClassName("header__list")[0].style.color = "white";
-      document.getElementsByClassName("header__logo")[0].style.display = "none";
-    }
+    document.getElementById("heroEffectHeader").style.display = "none";
+    document.getElementById("customHeader").className = 'header header-scroll';
   }, []);
 
   useEffect(()=>{
@@ -60,8 +54,6 @@ export default function TopicsPage({filters = 'none'}) {
 
     topics.news.map((el)=>{
       chips.map((chip)=>{
-        console.log(el.tag)
-        console.log(chip)
         if(el.tag.includes(chip) && !res.includes(el)) {
           res.push(el)
         }

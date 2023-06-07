@@ -1,97 +1,323 @@
 @use '../../Constants/GeneralStyles/fonts.scss' as *;
 
-html {
-  scroll-behavior: smooth;
-}
-
-.routeLink {
-  all: unset;
-}
-
-.header{
+.header {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  z-index: 10;
   @include text;
-  background-repeat: no-repeat;
+  -webkit-transition: all 0.4s linear 0s;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+.header .logo-container {
+  width: 100px;
+  height: auto;
+  margin-left: 50px;
+  padding: 5px 0px;
+  float: left;
+  border: 0px solid black;
+  animation: none;
+}
+.header .logo-container{
+  width: 50%;
+  -webkit-transition: all 0.4s linear 0s;
+}
+.header ul {
+  margin: 0 50px 0 0;
+  list-style-type: none;
+  padding: 0;
+  float: right;
+  border: 0px solid black;
+}
+.header ul li {
+  display: table-cell;
+  border: 0px solid crimson;
+}
+.header ul li .header__link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 30px 15px;
+  color: white;
+  border-top: 5px solid transparent;
+  -webkit-transition: padding 0.4s linear 0s;
+  font-size: 16px;
+}
+.header ul li .header__link:hover {
+  border-top: 5px solid white;
+}
+.header-scroll {
+  display: block;
+  height: 60px;
+  // background-color: #051C1B;
+  background-color: white;
+  animation: top-in-basic 1 0.4s 0s;
+  -webkit-box-shadow: 0px 0px 2px 2px #ccc;
+  box-shadow: 0px 0px 2px 2px #ccc;
+}
+.header-scroll ul li .header__link {
+  padding: 15px 15px; 
+  color: #1e1e1e;
+}
+.header-scroll ul li .header__link:hover {
+  border-top: 5px solid black;
+}
+.header-scroll .logo-container {
+  animation: left-in-basic 1 0.8s 0s;
+}
+.header-scroll .logo-container .header__logo{
+  all: unset;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.header-scroll .logo-container h1 {
+  margin: 2px 0px 20px 0px;
+  color: #051C1B;
+}
+.display-none-mobile {
+  display: table;
+}
+.display-block {
+  display: block;
+}
+.banner-wrapper-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  background-image: url('https://www.w3schools.com/howto/img_parallax.jpg');
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  font-size: 20px;
-  background-color: #051C1B;
-  left: 0;
-  right: 0;
-  z-index: 4;
-
-  &__mainPage {
-    background-image: url(../../Assets/Images/headerImage.png);
-    height: 100vh;
-
-    &::before{
-      content: "";
-      position: absolute;
-      background-color: rgba(0, 0, 0, 0.226);
-      height: 100vh;
-      top: 0;
-      left: 0;
-      width: 100%;
-    }
-  }
-
-  &__list{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    color: white;
-    color: black;
-
-    @media(max-width: 800px) {
-      display: none;
-    }
-  }
-  
-  &__link{
-    padding: 5px;
-    margin-left: 45px;
-    align-items: center;
-    user-select: none;
-    position: relative;
-  
-    &::after{
-      content: '';
-      display: block;
-      width: 0;
-      height: 1px;
-      background: #3d7557;
-      transition: width .4s;
-    }
-  
-    &:hover{
-      cursor: pointer;
-    }
-  
-    &:hover:after{
-      width: 100%;
-    }
-  
-    &:active{
-      color: #3D7658;
-    }
-  }
-
-  @media (max-width: 800px) {
-    min-width: 100vw;
-  }
+  transition: all 0.1s ease 0s;
 }
-
-.logo{
+.foreground {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -57%);
-  user-select: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+.banner-wrapper-fixed .foreground h1 {
+  text-align: center;
+  color: white;
+  margin-top: 250px;
+  font-size: 50px;
+  padding: 0px 30px;
+}
+.heading {
+  padding: 20px 0px;
+  font-size: 40px;
+  margin: 0;
+  text-align: center;
+}
+.section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: white;
+}
+.box {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color: white;
+  margin: 10px 0px 30px 0px;
+  -webkit-box-shadow: 0px 0px 2px 2px #ccc;
+  box-shadow: 0px 0px 2px 2px #ccc;
+}
+.heart {
+  font-size: 18px;
+  margin: 0 4px;
+  color: crimson;
+}
+.top-in-basic {
+  animation: top-in-basic 1 1s 0s;
+}
+.left-in-basic {
+  animation: left-in-basic 1 1s 0s;
+}
+.fade {
+  animation: fade 1 1s 0s;
 }
 
-main{
-  height: 100vh;
+.toggle-btn {
+  display: none;
+}
+
+@keyframes flip {
+  0% {transform: rotateY(-45deg);}
+  100%{transform: rotateY(0deg);}
+}
+@keyframes fade {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes top-in-basic {
+  0%{transform: translateY(-2000px)}
+  100%{transform: translateY(0px)}
+}
+@keyframes left-in-basic {
+  0%{transform: translateX(-2000px)}
+  100%{transform: translateX(0px)}
+}
+@media (max-width:768px){
+  .header {
+    height: auto;
+    background-color: transparent;
+    -webkit-box-shadow: 0px 0px 0px 0px transparent;
+    box-shadow: 0px 0px 0px 0px transparent;
+  }
+  .header .logo-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+    border-bottom: 5px solid #ccc;
+    background-color: white;
+  }
+  .header .logo-container h1 {
+    color: black;
+    padding-left: 20px;
+    margin: 10px;
+    text-align: left;
+  }
+  .header-scroll .logo-container {
+    animation: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .header ul {
+    float: none;
+    width: 100%;
+    margin: 63px 0 0 0;
+    z-index: 9;
+    background-color: white;
+    border: 0px solid black;
+  }
+  .display-none-mobile {
+    display: none;
+  }
+  .display-block {
+    display: block;
+  }
+  .header ul li {
+    display: block;
+    margin: 0;
+    text-align: center;
+  }
+  .header ul li a {
+    width: 100%;
+    color: black;
+    margin: 0;
+    padding: 20px 0 20px 0;
+  }
+  .header ul li a:hover {
+    background-color: black;
+    color: white;
+  }
+  .toggle-btn {
+    font-size: 30px;
+    display: block;
+    align-self: center;
+    // margin: 
+  }
+  .banner-wrapper-fixed {
+  }
+}
+
+
+// HERO EFFECT
+
+$heroHeight: 100vh;
+.heroEffects {
+    height: $heroHeight;
+    position: relative;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    .bg {
+        height: $heroHeight;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-image: url(../../Assets/Images/headerImage.png);
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        background-position: center center;
+        transform: scale(1); //need this (to set the start) for some cross-browser issues
+    }
+    .shade {
+        opacity: 0;
+        background: rgba(0, 0, 0, .8);
+        z-index: 3;
+        height: $heroHeight;
+        position: fixed;
+        width: 100%;
+    }
+    .title {
+        width: 100%;
+        .text {
+          z-index: 1;
+          width: 100%;
+          text-align: center;
+          color: White;
+          padding: 4em;
+          background-color: #000000be;
+        }
+    }
+    .arrow {
+        position: fixed;
+        left: 50%;
+        margin-left: -20px;
+        bottom: 0;
+        width: 40px;
+        height: 40px;
+        opacity: 1;
+    }
+}
+
+.centerV {
+  display: flex;
+  justify-content: center;
+
+}
+
+.bouncy {
+  animation: Weeeeeeeeeee 3s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes Weeeeeeeeeee {
+    0% {
+        transform: translate(0, 0px);
+        animation-timing-function: cubic-bezier(.19, .28, .27, 1);
+    }
+    11% {
+        transform: translate(0, -25px) scaleX(.8);
+        animation-timing-function: cubic-bezier(.57, .01, .84, .5);
+    }
+    20% {
+        transform: translate(0, 0px) scaleY(.8);
+        animation-timing-function: cubic-bezier(.19, .28, .27, 1);
+    }
+    28% {
+        transform: translate(0, -10px);
+        animation-timing-function: cubic-bezier(.57, .01, .84, .5);
+    }
+    36% {
+        transform: translate(0, 0px);
+        animation-timing-function: cubic-bezier(.19, .28, .27, 1);
+    }
+    100% {
+        transform: translate(0, 0px);
+        animation-timing-function: cubic-bezier(.19, .28, .27, 1);
+    }
 }

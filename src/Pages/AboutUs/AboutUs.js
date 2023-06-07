@@ -10,14 +10,10 @@ import $ from "jquery";
 
 export default function AboutUs() {
 
-  useEffect(()=>{
-    if(window.innerWidth>580) {
-      document.getElementsByTagName('header')[0].classList.remove('header__mainPage')
-      document.getElementsByTagName('header')[0].style.position = 'fixed';
-      document.getElementsByClassName("header__list")[0].style.color = "white"
-      document.getElementsByClassName("header__logo")[0].style.display = "none"
-    }  
-  }, [])
+  useEffect(() => {
+    document.getElementById("heroEffectHeader").style.display = "none";
+    document.getElementById("customHeader").className = 'header header-scroll';
+  }, []);
 
   window.scrollTo(0, 0)
 

@@ -18,14 +18,10 @@ export default function ArticlePage() {
   const firstLetter = data.text[0];
   const restOfText = data.text.substring(1);
 
-  useEffect(()=>{
-    if(window.innerWidth>580) {
-      document.getElementsByTagName('header')[0].classList.remove('header__mainPage')
-      document.getElementsByTagName('header')[0].style.position = 'fixed';
-      document.getElementsByClassName("header__list")[0].style.color = "white"
-      document.getElementsByClassName("header__logo")[0].style.display = "none"
-    }
-  }, [])
+  useEffect(() => {
+    document.getElementById("heroEffectHeader").style.display = "none";
+    document.getElementById("customHeader").className = 'header header-scroll';
+  }, []);
 
   function getData() {
     if(typeOfData === "news") return JsonData.news[infoId-1];
@@ -45,8 +41,6 @@ export default function ArticlePage() {
       })
     }
     else result = requiredData
-
-    console.log(result)
 
     return result.slice(0, 3);
   }
@@ -91,7 +85,6 @@ export default function ArticlePage() {
 
         <div className="info__moreCards">
           {getSimularResults().map((el) => {
-            console.log(el);
             return (
               <Link style={{ all: "unset" }} to={"/info/"+ typeOfData + "/" + el.id}>
                 <Card

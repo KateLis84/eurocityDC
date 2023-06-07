@@ -59,7 +59,6 @@ function Area({level, typeOfData, changeMap}) {
   function setScale() {
     let screenWidth = window.screen.width;
     let imageWidth = screenWidth * 0.78;
-    console.log("SCALE" + (imageWidth/950).toFixed(1));
     return (imageWidth/950).toFixed(1);
   }
 

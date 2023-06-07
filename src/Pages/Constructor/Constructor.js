@@ -29,9 +29,6 @@ function Constructor() {
     let s_top = shape.coords.y;
     let s_bottom = shape.coords.y + shape.area.height;
 
-    console.log(s_top + " " + s_bottom);
-    console.log(y + " " + shape.area.width)
-
     if(
       x > s_left && 
       x < s_right && 

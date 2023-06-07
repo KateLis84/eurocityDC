@@ -5,12 +5,10 @@ export default class Element {
     this.coords = coords;
     this.color = color;
 
-
-    console.log("created "+ this.shape)
   }
 
   sh() {
-    console.log(this.shape);
+
   }
 
 }

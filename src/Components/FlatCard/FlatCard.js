@@ -4,8 +4,6 @@ import './FlatCard.scss'
 export default function FlatCard({data}) {
   let ComplexData = require("../../fakeData.json").complexes;
 
-  console.log(data.jkID)
-  // 
   return (
     <div className="flatCard">
       <img src={data.img} alt="flat" className="flatCard__image" />

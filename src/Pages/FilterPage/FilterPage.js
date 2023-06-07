@@ -16,22 +16,17 @@ export default function FilterPage() {
   const [postsPerPage, setPostPerPage] = useState(12);
 
   useEffect(() => {
-    if (window.innerWidth > 580) {
-      document
-        .getElementsByTagName("header")[0]
-        .classList.remove("header__mainPage");
-      document.getElementsByTagName("header")[0].style.position = "fixed";
-      document.getElementsByClassName("header__list")[0].style.color = "white";
-      document.getElementsByClassName("header__logo")[0].style.display = "none";
-    }
+    document.getElementById("heroEffectHeader").style.display = "none";
+    document.getElementById("customHeader").className = 'header header-scroll';
   }, []);
+
+
   let selectedComplex = null;
   const location = useLocation();
   if (useLocation().state == null) {
-    console.log("nullss");
+
   } else {
     selectedComplex = location.state.selectedComplex;
-    console.log(selectedComplex);
   }
   function setNewValues(flats) {
     setFiltered(flats);

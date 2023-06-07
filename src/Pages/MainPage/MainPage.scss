@@ -2,9 +2,16 @@
 .mainPage{ 
   padding: 140px;
   padding-top: 100px;
+  background-color: #fff;
 
   @media (max-width: 800px) {
     padding: 0;
+  }
+
+  &__mainPhoto {
+    height: 100vh;
+    background-image: url(../../Assets/Images/headerImage.png)
+
   }
 
   &__slides{

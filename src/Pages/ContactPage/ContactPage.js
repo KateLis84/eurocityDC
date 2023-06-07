@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import './ContactPage.scss';
 import FAQ from './FAQ.js';
 
@@ -8,6 +8,13 @@ import EmailIcon from '@mui/icons-material/Email';
 
 
 export default function ContactPage() {
+
+  window.scrollTo(0, 0)
+
+  useEffect(() => {
+    document.getElementById("heroEffectHeader").style.display = "none";
+    document.getElementById("customHeader").className = 'header header-scroll';
+  }, []);
 
   return (
     <div className="contacts">
