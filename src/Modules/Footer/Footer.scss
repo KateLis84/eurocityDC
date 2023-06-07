@@ -8,6 +8,11 @@
   padding: 30px;
   padding-left: 150px;
 
+  & .footer__text:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
   @media(max-width: 1000px) {
     grid-template-columns: 1fr;
     padding: 0;
