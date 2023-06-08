@@ -13,11 +13,11 @@ function Header() {
   let location = useLocation()
   
   window.addEventListener('load',function(){
-    document
-      .getElementsByTagName("header")[0]
-      .addEventListener("click", function () {
-        toggle_menu();
-      });
+    // document
+    //   .getElementsByTagName("header")[0]
+    //   .addEventListener("click", function () {
+    //     toggle_menu();
+    //   });
   });
 
   window.addEventListener("scroll", function () {
@@ -76,7 +76,7 @@ function Header() {
             <Link to="/" className="header__logo">
               <h1>EuroCity</h1>
             </Link>
-            <span class = "toggle-btn">&#9776;</span>
+            <span className="toggle-btn" onClick={toggle_menu}>&#9776;</span>
           </div>
           <ul class="display-none-mobile">
             <li>

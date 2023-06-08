@@ -25,37 +25,39 @@ export default function MobileSlide() {
             if(el.description.length>80) desc = el.description.slice(0, 90) + "..."
             else desc = el.description;
               return (
-                <SwiperSlide class="swiper-slide"
-                style={{minHeight: '100%'}}
-                >
-                  <div class="swiper-slide__block">
-                    <div
-                      class="swiper-slide__block__img"
-                      data-swiper-parallax-y="70%"
-                    >
-                      <img src={el.photo} alt="" />
-                    </div>
-                    <div class="swiper-slide__block__text">
-                      <h2 data-swiper-parallax-x="-60%" class="main__title">
-                        {el.name}
-                        <span>.</span>
-                      </h2>
-                      <p data-swiper-parallax-x="-40%" class="paragraphe">
-                        {desc}
-                      </p>
-                      <Link
-                        to={`/jkpage/${index+1}`}
-                        data-swiper-parallax-x="-30%"
-                        class="link"
+                
+                  <SwiperSlide
+                    class="swiper-slide"
+                    style={{ minHeight: "100%" }}
+                  >
+                    <div class="swiper-slide__block">
+                      <div
+                        class="swiper-slide__block__img"
+                        data-swiper-parallax-y="70%"
                       >
-                        Дізнатись більше
-                      </Link>
-                      <span data-swiper-parallax-y="60%" class="number">
-                        {index+1}
-                      </span>
+                        <img src={el.photo} alt="" />
+                      </div>
+                      <div class="swiper-slide__block__text">
+                        <h2 data-swiper-parallax-x="-60%" class="main__title">
+                          {el.name}
+                          <span>.</span>
+                        </h2>
+                        <p data-swiper-parallax-x="-40%" class="paragraphe">
+                          {desc}
+                        </p>
+                        <Link
+                          to={`/jkpage/${index + 1}`}
+                          data-swiper-parallax-x="-30%"
+                          class="link sliderFont"
+                        >
+                        <div> Дізнатись більше</div></Link>
+                        <span data-swiper-parallax-y="60%" class="number" >
+                          {index + 1}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </SwiperSlide>
+                  </SwiperSlide>
+                
               );
             })
           }
