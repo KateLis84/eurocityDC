@@ -17,7 +17,7 @@ export default function FilterPage({setNewValues, preValues}) {
       return [preValues]
     } else return json;
   });
-  const [floors, setFloors] = useState([1, 4])
+  const [floors, setFloors] = useState([1, 5])
 
   const setDefaultData = useMemo(() => {
     let cities = [];
@@ -63,7 +63,7 @@ export default function FilterPage({setNewValues, preValues}) {
 
   const [flats, setFlats] = useState(setDefaultData);
   const [filtered, setFilters] = useState(setDefaultData);
-  const [rooms, setRooms] = useState([1, 2, 3, 4])
+  const [rooms, setRooms] = useState([1, 2, 3, 4, 5])
 
   const [checkedFilter, setCheckedFilter] = useState({
     free: true,

@@ -115,8 +115,6 @@ export default function JKpage() {
     news.map((el)=>{
       if(el.tag.includes(JK.name)) result.push(el)
     })
-
-    
     return result.slice(0, 3);
   }
 

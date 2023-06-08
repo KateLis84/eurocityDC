@@ -85,7 +85,7 @@ export default function ContactPage() {
           <ScrollAnimation animateIn="LeftRight" delay={100} animateOnce={true}>
             <iframe
               title="MainLoactionMap"
-              src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d812.0465482157423!2d23.51093140101536!3d49.03748644393336!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1685904734041!5m2!1sru!2sua"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2572.685891785086!2d24.025508376466505!3d49.848359271483446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add0cf67889b9%3A0xb36d4c57ac65208!2z0YPQuy4g0JHQvtCz0LTQsNC90LAg0KXQvNC10LvRjNC90LjRhtC60L7Qs9C-LCA0NSwg0JvRjNCy0L7Qsiwg0JvRjNCy0L7QstGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!5e0!3m2!1sru!2sua!4v1686182269977!5m2!1sru!2sua"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"

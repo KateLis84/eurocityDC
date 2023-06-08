@@ -12,7 +12,7 @@ export default function FilterPage() {
 
   const [filtered, setFiltered] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostPerPage] = useState(12);
+  const [postsPerPage, setPostPerPage] = useState(8);
 
   useEffect(() => {
     document.getElementById("heroEffectHeader").style.display = "none";
