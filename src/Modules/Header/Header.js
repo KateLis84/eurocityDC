@@ -74,7 +74,7 @@ function Header() {
         <header class="header" id="customHeader">
           <div class="logo-container">
             <Link to="/" className="header__logo">
-              <h1>EuroCity</h1>
+              <h1>Company</h1>
             </Link>
             <span className="toggle-btn" onClick={toggle_menu}>&#9776;</span>
           </div>

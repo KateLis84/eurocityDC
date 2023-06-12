@@ -8,13 +8,13 @@ import { HashLink as Link } from "react-router-hash-link";
 import ScrollAnimation from 'react-animate-on-scroll';
 
 export default function FilterPage() {
-  window.scrollTo(0, 0);
 
   const [filtered, setFiltered] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostPerPage] = useState(8);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.getElementById("heroEffectHeader").style.display = "none";
     document.getElementById("customHeader").className = 'header header-scroll';
   }, []);

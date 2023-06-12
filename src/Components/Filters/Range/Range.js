@@ -9,7 +9,6 @@ import '../Filters.scss';
 
 function ValueLabelComponent(props) {
   const { children, value } = props;
-
   return (
     <Tooltip enterTouchDelay={0} placement="top" title={value}>
       {children}
@@ -22,7 +21,7 @@ ValueLabelComponent.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-const AirbnbSlider = styled(Slider)(({ theme }) => ({
+const CustomSlider = styled(Slider)(({ theme }) => ({
   color: '#3a8589',
   height: 3,
   padding: '13px 0',
@@ -93,7 +92,7 @@ export default function CustomizedSlider({maxValue, setNewLevels}) {
 
   
   return (
-    <AirbnbSlider
+    <CustomSlider
       slots={{ thumb: AirbnbThumbComponent }}
         getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
         defaultValue={[1, maxValue]}

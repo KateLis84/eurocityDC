@@ -39,7 +39,7 @@ function MainPage() {
             {data.news.slice(1, 4).map((el, index) => {
               return (
                 <ScrollAnimation animateIn='TopBottom' delay={index+"00"} animateOnce={true}>
-                  <Link style={{ all: "unset" }} to={"/info/news/" + el.id}>
+                  <Link style ={{all: 'unset'}} to={"/info/news/" + el.id}>
                     <Card
                       image={el.photo}
                       title={el.title}
